@@ -1137,6 +1137,7 @@ body {
         <button type="button" class="hub-tab-btn" id="tabBrowser" onclick="switchRoom('room-browser', this)">BROWSER [B]</button>
         <button type="button" class="hub-tab-btn" id="tabReading" onclick="switchRoom('room-reading', this)">READING ROOM &amp; LENS [L]</button>
         <button type="button" class="hub-tab-btn" id="tabRotunda" onclick="switchRoom('room-rotunda', this)">⊙ ROTUNDA [R]</button>
+        <button type="button" class="hub-tab-btn" id="tabComponents" onclick="switchRoom('room-components', this)">⊞ COMPONENTS [C]</button>
       </nav>
 
       <div class="hub-clock" id="hubClockDisplay" title="Europe/Stockholm official time">TUE 07 OCT · 12:35:00 · STOCKHOLM</div>
@@ -1214,6 +1215,24 @@ body {
         </div>
         <div class="hub-subbar-right">
           <button type="button" class="hub-subbar-btn" onclick="document.getElementById('hubDemoSeal').scrollIntoView({behavior:'smooth'});">CANON STAMP ↓</button>
+        </div>
+      </div>
+
+      <!-- SUBBAR 06: COMPONENTS (EPOQ IIII REGISTER) -->
+      <div class="hub-chrome-subbar" id="subbar-components">
+        <div class="hub-subbar-left">
+          <span>EPOQ IIII · SOVEREIGN COMPONENT REGISTER</span> · 
+          <a href="#tokens" onclick="document.getElementById('tokens').scrollIntoView({behavior:'smooth'}); return false;">001_TOKENS</a> · 
+          <a href="#type" onclick="document.getElementById('type').scrollIntoView({behavior:'smooth'}); return false;">002_TYPE</a> · 
+          <a href="#color" onclick="document.getElementById('color').scrollIntoView({behavior:'smooth'}); return false;">003_COLOR</a> · 
+          <a href="#hub" onclick="document.getElementById('hub').scrollIntoView({behavior:'smooth'}); return false;">004_HUB</a> · 
+          <a href="#cli" onclick="document.getElementById('cli').scrollIntoView({behavior:'smooth'}); return false;">005_CLI</a> · 
+          <a href="#identity" onclick="document.getElementById('identity').scrollIntoView({behavior:'smooth'}); return false;">006_IDENTITY</a> · 
+          <a href="#site" onclick="document.getElementById('site').scrollIntoView({behavior:'smooth'}); return false;">007_SITE</a>
+        </div>
+        <div class="hub-subbar-right">
+          <span class="ann">ALL SOVEREIGN COMPONENTS · LIVE EPOQ CANON</span>
+          <button type="button" class="hub-subbar-btn" onclick="window.scrollTo({top:0, behavior:'smooth'});">TOP ↑</button>
         </div>
       </div>
     </div>
@@ -2223,6 +2242,1276 @@ body {
   </main>
 
   <!-- ═══════════════════════════════════════════════════════════════════
+       ROOM 06: COMPONENTS ([C] — Sovereign EPOQ IIII Register)
+       Verbatim components from https://www.intelligencematters.se/epoq
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main id="room-components" class="hub-room">
+  <section id="tokens" class="epoq-section">
+    <div class="section-mark">
+      <h2 class="serif-page-title">001_tokens · containers</h2>
+      <p class="sec-tagline serif-8-caps">System tokens — if it is reusable, it becomes a rule. Spacing is structure; containers are the only box. Nothing floats by eye.</p>
+    </div>
+
+    <!-- ── THE VIEWPORT (Jacob 2026-07-12: "The spine + The grid makes even less sense now — make a
+         viewport") — the grid + the spacing spine shown LIVING inside the 1280 container: 3 × 400
+         columns + 2 × 40 gutters at TRUE scale, the spine ruled along the foot. Replaces the abstract
+         spacing/grid boxes. The grid is not a box — only the container is. -->
+    <div class="writing-key tok-band">
+      <div class="mono m6 ann wk-cap">The viewport · 1280 — the grid lives inside the container · 3 × 400 + 2 × 40 · every gap on --s-1…6</div>
+      <div class="viewport">
+        <div class="viewport-scroll">
+          <div class="viewport-grid">
+            <div class="viewport-col"><span class="mono m6 ann">400 · --col</span></div>
+            <div class="viewport-gutter"><span class="mono m6 ann">40</span></div>
+            <div class="viewport-col"><span class="mono m6 ann">400 · --col</span></div>
+            <div class="viewport-gutter"><span class="mono m6 ann">40</span></div>
+            <div class="viewport-col"><span class="mono m6 ann">400 · --col</span></div>
+          </div>
+        </div>
+        <div class="viewport-spine">
+          <span class="mono m6 ann vp-lead">the spacing spine</span>
+          <span class="mono m6 ann">8 · --s-1</span>
+          <span class="mono m6 ann">16 · --s-2</span>
+          <span class="mono m6 ann">24 · --s-3</span>
+          <span class="mono m6 ann">40 · --s-4 · the atom = --gutter</span>
+          <span class="mono m6 ann">80 · --s-5</span>
+          <span class="mono m6 ann">120 · --s-6</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="writing-key tok-band">
+      <div class="mono m6 ann wk-cap">Container widths · the only three — 400 minor · 840 major · 1280 full — composite row recipes across the 40px gutter</div>
+
+      <!-- ROW RECIPE 01: Canonical Asymmetry (u-minor 400 + gutter 40 + u-major 840 = 1280) -->
+      <div class="gridrow">
+        <div class="container-tile u-minor">
+          <div class="m-stage">
+            <span class="mono m6 ann">01 · u-minor · 400</span>
+            <h4 class="serif-heading-3">The Minor</h4>
+            <p class="serif-body-1">The single-column measure (<code>var(--col)</code>). Serves as the inspector column, metadata sidebar, atom rail, and mobile-safe default. Three fill the desktop row.</p>
+          </div>
+          <div class="spec-rail mono m6">
+            <span class="family">u-minor</span>
+            <span>width: var(--col) · 400 · 1 column</span>
+          </div>
+        </div>
+
+        <div class="container-tile u-major">
+          <div class="m-stage">
+            <span class="mono m6 ann">02 · u-major · 840</span>
+            <h3 class="serif-heading-3">The Major</h3>
+            <p class="serif-body-1">The double-column reading measure (<code>var(--col-2)</code>: 2 × 400 + 40 = 840). Houses the editorial body, primary workbench, code specimens, and tablet viewport. Paired with <code>u-minor</code> across the 40px gutter, it completes the 1280 container (400 + 40 + 840 = 1280).</p>
+          </div>
+          <div class="spec-rail mono m6">
+            <span class="family">u-major</span>
+            <span>width: var(--col-2) · 840 · 2 cols + 40 gutter</span>
+            <span>400 + 40 + 840 = 1280</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW RECIPE 02: Full Monolith & Row Arithmetic (u-full 1280) -->
+      <div class="gridrow">
+        <div class="container-tile u-full">
+          <div class="m-stage">
+            <span class="mono m6 ann">03 · u-full · 1280 · row recipes &amp; viewport continuum</span>
+            <h3 class="serif-heading-3">The Full Canvas &amp; Row Recipes</h3>
+            <p class="serif-body-1">The maximum container (<code>width: 100%</code> · 1280 cap: 3 × 400 + 2 × 40 = 1280). Houses panoramic plates, interactive apparatus, and full-width workbenches. All compositions resolve through exactly four lawful row recipes:</p>
+            <div class="cw-map">
+              <table>
+                <caption>TABLE I. — The four lawful row recipes</caption>
+                <thead><tr><th>Recipe</th><th>Formula</th><th>Span</th><th>Anatomy</th></tr></thead>
+                <tbody>
+                  <tr><td>01 Asymmetric A</td><td><code>400 + 40 + 840</code></td><td>1280px</td><td>Inspector column (u-minor) + Reading sheet (u-major)</td></tr>
+                  <tr><td>02 Asymmetric B</td><td><code>840 + 40 + 400</code></td><td>1280px</td><td>Reading sheet (u-major) + Inspector column (u-minor)</td></tr>
+                  <tr><td>03 Triptych</td><td><code>3 × 400 + 2 × 40</code></td><td>1280px</td><td>Three equal card tiles across the viewport</td></tr>
+                  <tr><td>04 Monolith</td><td><code>1280</code></td><td>1280px</td><td>Single full canvas / interactive orchestrator</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="spec-rail mono m6">
+            <span class="family">u-full</span>
+            <span>width: 100% · 1280 cap · 3 cols + 2 gutters</span>
+            <span>viewport continuum: 180 thumb · 360 phone-safe · 400 mobile · 840 tablet · 1280 desktop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION VS SUBSECTION — one honest demo, real classes, real tokens -->
+    <div class="writing-key tok-band">
+      <div class="mono m6 ann wk-cap">Vertical rhythm · section vs. subsection</div>
+      <div class="container-tile u-major"><div class="m-stage"><span class="serif-page-title">Major section A</span></div></div>
+      <div class="stack-demo-gap is-section"><span class="mono m6 ann">section + section { padding-top: var(--section-gap); } · 120px</span></div>
+      <div class="container-tile u-major"><div class="m-stage"><span class="serif-page-title">Major section B</span></div></div>
+      <div class="stack-demo-gap is-subsection"><span class="mono m6 ann">.tok-band + .tok-band { margin-top: var(--subsection-gap); } · 80px</span></div>
+      <div class="container-tile u-major"><div class="m-stage"><span class="serif-heading-3">Subsection</span></div></div>
+      <p class="mono m6 ann" style="margin-top:var(--s-2)"><!-- canon-lint:allow — E15: caption text margin -->Same mechanism as <code>[data-density="tight"]</code>, already used on <code>#ohm</code> and <code>#rendering-hands</code> — a section boundary and a sub-block boundary read at two visibly different heights.</p>
+    </div>
+
+    <!-- ── THE WOUND · the lawful interruption (minted 2026-07-10) — the grid is the
+         infrastructure; authorship enters through ONE named, bounded interruption per
+         composition, and it must carry meaning. Every displacement a spine measure. ── -->
+    <div class="container-tile u-full station">
+      <div class="stage">
+        <span class="mono m6 ann wk-cap">THE WOUND · the lawful interruption — one per composition · it must carry meaning · every displacement a spine measure · the captions align by subgrid</span>
+        <div class="wound-demo">
+          <figure class="wound-cell">
+            <div class="wound-base"><span class="wound-chip"></span><span class="wound-chip is-wounded wound-bleed"></span><span class="wound-chip"></span></div>
+            <figcaption class="mono m6 ann">THE BLEED — the field runs past the sheet's rule by a measured inset; the sheet cuts it at the edge</figcaption>
+          </figure>
+          <figure class="wound-cell">
+            <div class="wound-base"><span class="wound-chip"></span><span class="wound-chip is-wounded wound-misregister"></span><span class="wound-chip"></span></div>
+            <figcaption class="mono m6 ann">THE MISREGISTER — the pass prints off-register · one step right, half a step up · never freehand</figcaption>
+          </figure>
+          <figure class="wound-cell">
+            <div class="wound-base"><span class="wound-chip"></span><span class="wound-reserve" aria-hidden="true"></span><span class="wound-chip is-wounded"></span></div>
+            <figcaption class="mono m6 ann">THE RESERVE — the held white; the space is kept and nothing may fill it</figcaption>
+          </figure>
+          <figure class="wound-cell">
+            <div class="wound-base"><span class="ctl-row"><span class="ctl-chip">one</span><span class="ctl-chip">gathering</span><span class="ctl-chip">wraps</span></span></div>
+            <figcaption class="mono m6 ann">THE GATHERING — the named cluster · wrap · gap · align — already canon as the control row; named here</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="spec-rail mono m6">
+        <span class="family">the wound</span>
+        <span>bleed · misregister · reserve — one per composition</span>
+        <span>the gathering rides along · measured, never freehand</span>
+      </div>
+    </div>
+
+    <div class="spec-rail mono m6 reg-rail">
+      <span class="family">001 · the measure</span>
+      <span>grid · spacing · containers · viewports — drawn to scale above, not re-listed</span>
+      <span class="open-ruling">80 is the subsection breath · 120 is the section breath · the container is the only box</span>
+    </div>
+  </section>
+
+<section id="type" class="type-section">
+    <!-- Type role → semantic HTML mapping:
+         - Display 36px → <h1> headlines
+         - Section 24px → <h2> section titles
+         - Card 16px → <h3> card titles
+         - Body 14px → <p> prose (default)
+         - Pills 9px → <span class="serif-8-caps"> labels, metadata
+         - Code 7px → <code> inline code, annotations
+    -->
+    <div class="section-mark">
+      <h2 class="serif-page-title">002_type</h2>
+      <p class="sec-tagline serif-8-caps">Six voices from Figma 653:363 — Scheherazade for prose, Red Hat Mono for the machine. Each specimen measured, not asserted.</p>
+    </div>
+
+    <div class="type-gallery" aria-label="EPQ III text styles">
+      <article class="type-specimen">
+        <span class="type-meta mono m6 ann">00 · Display</span>
+        <span class="type-sample serif-display">Intelligence Matters EPQ III</span>
+        <span class="type-measure mono m6">--fz-display · 36 · 1 · −3%</span>
+      </article>
+      <article class="type-specimen">
+        <span class="type-meta mono m6 ann">01 · Section</span>
+        <span class="type-sample serif-page-title">The Roster of Contributors</span>
+        <span class="type-measure mono m6">--fz-page-title · 24 · 1 · −2%</span>
+      </article>
+      <article class="type-specimen">
+        <span class="type-meta mono m6 ann">02 · Card</span>
+        <span class="type-sample serif-heading-3">Intelligence Matters EPQ III</span>
+        <span class="type-measure mono m6">--fz-heading-3 · 16 · 1 · −1%</span>
+      </article>
+      <article class="type-specimen">
+        <span class="type-meta mono m6 ann">03 · Body</span>
+        <span class="type-sample serif-body-1">Desire rarely begins with access; it begins with distance.</span>
+        <span class="type-measure mono m6">--fz-body-1 · 14 · 1.6 · +5%</span>
+      </article>
+      <article class="type-specimen">
+        <span class="type-meta mono m6 ann">04 · Pills</span>
+        <span class="type-sample serif-8-caps">Intelligence Matters EPQ III</span>
+        <span class="type-measure mono m6">--fz-serif-8 · 9 · 2 · +20%</span>
+      </article>
+      <article class="type-specimen">
+        <span class="type-meta mono m6 ann">05 · Code</span>
+        <span class="type-sample mono m6">Intelligence Matters EPQ III</span>
+        <span class="type-measure mono m6">--fz-mono-6 · 7 · 2 · +30%</span>
+      </article>
+    </div>
+
+  </section>
+
+<section id="color">
+    <div class="section-mark">
+      <h2 class="serif-page-title">003_color</h2>
+      <p class="sec-tagline serif-8-caps">Paper and the working family — ink for prose and code; button and pill hold graphite (#272727). Grey and two violets for borders, fills, and signal. Colour is never an ambient field.</p>
+    </div>
+    <div class="gridrow">
+      <div class="container-tile u-full">
+        <div class="m-stage">
+          <span class="mono m6 ann">The palette · paper + ink + graphite + grey + two violets · light → dark</span>
+                    <div class="pal-strip">
+            <div class="pal-cell" data-rgb="255,255,255">
+              <div class="pal-swatch" style="background:var(--paper)"></div>
+              <span class="pal-cap mono m6">Paper</span>
+              <span class="pal-hx mono m6">#FFFFFF</span>
+              <span class="pal-oklch mono m6">—</span>
+            </div>
+            <div class="pal-cell" data-rgb="0,0,0">
+              <div class="pal-swatch" style="background:var(--ink)"></div>
+              <span class="pal-cap mono m6">Ink</span>
+              <span class="pal-hx mono m6">#000000</span>
+              <span class="pal-oklch mono m6">—</span>
+            </div>
+            <div class="pal-cell" data-rgb="39,39,39">
+              <div class="pal-swatch" style="background:var(--graphite)"></div>
+              <span class="pal-cap mono m6">Graphite</span>
+              <span class="pal-hx mono m6">#272727</span>
+              <span class="pal-oklch mono m6">—</span>
+            </div>
+            <div class="pal-cell" data-rgb="81,81,81">
+              <div class="pal-swatch" style="background:var(--grey-51)"></div>
+              <span class="pal-cap mono m6">Grey 51</span>
+              <span class="pal-hx mono m6">#515151</span>
+              <span class="pal-oklch mono m6">—</span>
+            </div>
+            <!-- Signal colors: use for status, alerts, attention states only — never as base background or ambient fill -->
+            <div class="pal-cell" data-rgb="95,82,149">
+              <div class="pal-swatch" style="background:var(--dusk)"></div>
+              <span class="pal-cap mono m6">Dusk</span>
+              <span class="pal-hx mono m6">#5F5295</span>
+              <span class="pal-oklch mono m6">—</span>
+              <span class="pal-sig mono m6">signal only</span>
+            </div>
+            <div class="pal-cell" data-rgb="111,117,215">
+              <div class="pal-swatch" style="background:var(--hum)"></div>
+              <span class="pal-cap mono m6">Hum</span>
+              <span class="pal-hx mono m6">#6F75D7</span>
+              <span class="pal-oklch mono m6">—</span>
+              <span class="pal-sig mono m6">signal only</span>
+            </div>
+          </div>
+          <span class="mono m6 ann" style="margin-top:var(--s-3);display:block"><!-- canon-lint:allow — E15: caption text margin -->The signal instruments · strong, dark-stage-only, added onto the palette 2026-07-10</span>
+          <div class="pal-strip">
+            <div class="pal-cell" data-rgb="142,0,255">
+              <div class="pal-swatch" style="background:var(--signal-go)"></div>
+              <span class="pal-cap mono m6">Signal · Go</span>
+              <span class="pal-hx mono m6">#8E00FF</span>
+              <span class="pal-oklch mono m6">—</span>
+              <span class="pal-sig mono m6">field success · signal only</span>
+            </div>
+            <div class="pal-cell" data-rgb="44,255,5">
+              <div class="pal-swatch" style="background:var(--signal-live)"></div>
+              <span class="pal-cap mono m6">Signal · Live</span>
+              <span class="pal-hx mono m6">#2CFF05</span>
+              <span class="pal-oklch mono m6">—</span>
+              <span class="pal-sig mono m6">the matrix green · dark-stage only, never on paper</span>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rail mono m6">
+          <span class="family">The palette</span>
+          <span>paper + ink + graphite + grey + two violets + two signal instruments · OKLCH · light → dark</span>
+          <span>Hum + Dusk are signal colors only: live, linked, selected, canonical.</span>
+          <span>button + pill · graphite #272727 · paper on ink-fill only</span>
+          <span class="open-ruling">colour is an instrument, never a field</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+                                                                                                                                                    <!-- ── 004_HUB · compiled from hub-atoms.json — do not hand-edit rows ── -->
+  <section id="hub" class="line-machine">
+    <div class="section-mark">
+      <h2 class="serif-page-title">004_hub</h2>
+      <p class="sec-tagline serif-8-caps">Atoms first — pills, dots, badges, warmth, chips, buttons. Rows carry the work: cards, streams, signals, presence. Glass rides the motion ramp for agency only. Authored in hub-atoms.json, compiled by the press.</p>
+    </div>
+    <p class="lede serif-body-1 fullwidth">Every atom is designed once, before any row exists — a pill or a dot means the same thing wherever it lands, so a card, a stream, or a glass instrument can borrow it without redrawing it. 39 parts, one stylesheet, and nothing recomposed twice.</p>
+    <div id="100_atoms" class="hub-tier">
+      <span class="sec-code mono m6">100_atoms</span>
+      <span class="sec-desc">The smallest chrome primitives — pills, dots, badges, warmth, chips, buttons, and labels. Design these before rows. — 22 parts.</span>
+    <div class="hub-tier-grid">
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Pills</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="ctl-pill">default</span></div>
+          <span class="hub-atom-spec mono m6 ann">print square · serif 8 · +20% track</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="ctl-pill ghost">ghost</span></div>
+          <span class="hub-atom-spec mono m6 ann">graphite fill · paper text · no border</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="ctl-pill accent">accent</span></div>
+          <span class="hub-atom-spec mono m6 ann">signal-go border</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="ctl-pill attention">attention</span></div>
+          <span class="hub-atom-spec mono m6 ann">signal-attn border</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="ctl-pill filled">filled</span></div>
+          <span class="hub-atom-spec mono m6 ann">ink fill · paper text</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Square dots</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><span class="hub-mo-dot-ramp"><span class="hub-mo-d l0 is-ghost"></span><span class="hub-mo-d l1 is-ghost"></span><span class="hub-mo-d l2"></span><span class="hub-mo-d l3"></span><span class="hub-mo-d l4"></span><span class="hub-mo-d l5"></span></span></div>
+          <span class="hub-atom-spec mono m6 ann">L0–L5 · ghost → solid</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="pix-dot accent"></span></div>
+          <span class="hub-atom-spec mono m6 ann">L4 hum · solid</span>
+        </div>
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><span class="hub-mo-live-dot"><span class="hub-mo-concentric hub-mo-concentric--sm" aria-hidden="true"><span class="sq sq-l4"></span><span class="sq sq-l3"></span><span class="sq sq-l2"></span><span class="sq sq-l0"></span></span><span class="pix-dot live"></span></span></div>
+          <span class="hub-atom-spec mono m6 ann">L4 · ripple 2.4s · ghost</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">File / status badges</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="hub-fbadge is-polished"><span class="fb-dot"></span> polished</span></div>
+          <span class="hub-atom-spec mono m6 ann">solid dot</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="hub-fbadge is-draft"><span class="fb-dot"></span> draft</span></div>
+          <span class="hub-atom-spec mono m6 ann">ring dot</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="hub-fbadge is-locked"><span class="fb-dot"></span> locked</span></div>
+          <span class="hub-atom-spec mono m6 ann">struck ring</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Filter chips</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><button type="button" class="ctl-chip is-hover">hover</button></div>
+          <span class="hub-atom-spec mono m6 ann">serif 8 · ink-03 hover · square</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><button type="button" class="ctl-chip active">selected</button></div>
+          <span class="hub-atom-spec mono m6 ann">ink fill · paper text · square</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Buttons</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><button type="button" class="ctl-btn primary">primary</button></div>
+          <span class="hub-atom-spec mono m6 ann">ink fill · hard flip · serif 8</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><button type="button" class="ctl-btn">default</button></div>
+          <span class="hub-atom-spec mono m6 ann">paper · line-box border · serif 8</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><button type="button" class="ctl-btn glass">glass</button></div>
+          <span class="hub-atom-spec mono m6 ann">glass tint · square · blur</span>
+        </div>
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><button type="button" class="ctl-btn" disabled>disabled</button></div>
+          <span class="hub-atom-spec mono m6 ann">disabled attr · ink text</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Labels & meta</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><span class="hub-label"><span>Section header</span><span class="hub-label-meta">12 live</span></span></div>
+          <span class="hub-atom-spec mono m6 ann">mono caps · meta right</span>
+        </div>
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><p class="hub-note">A note with the left ink anchor — measured, not asserted.</p></div>
+          <span class="hub-atom-spec mono m6 ann">2px left rule</span>
+        </div>
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><span class="hub-kv"><span class="hub-kv-key">Owner</span><span class="hub-kv-val">Jacob Hägg</span></span></div>
+          <span class="hub-atom-spec mono m6 ann">key 80px · val serif</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">THE SHELF-MARK · the address a part carries</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><span class="hub-shelfmark"><span>005</span><span>acc.0001</span><span>tier 200</span></span></div>
+          <span class="hub-atom-spec mono m6 ann">dept · accession · slot — the real acc.0001 address; accession.py's Phase-5 vocabulary, minted 2026-07-10</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">THE FOLIO WALK · prev · folios · next</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom">
+          <div class="hub-atom-demo hub-spec-demo"><nav class="folio-walk" aria-label="the folio walk"><a href="#hub" rel="prev">‹</a><a href="#hub" aria-current="page">01</a><a href="#hub">02</a><a href="#hub">03</a><a href="#hub" rel="next">›</a></nav></div>
+          <span class="hub-atom-spec mono m6 ann">links, so the keyboard walks it by nature · the current folio prints solid</span>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="container-tile u-full station hub-tier-demo">
+      <div class="stage hub-spec-stack">
+        <span class="mono m6 ann wk-cap">Motion register · Figma GFVDHzPgeMjx4KSkjyW4NE · four instruments at hub scale</span>
+        <div class="hub-motion-plate">
+          <div class="hub-mo-panel">
+            <span class="hub-motion-cap">1 · Glyph display → dot matrix</span>
+            <span class="hub-mo-glyph-unit"><span class="hub-mo-glyph is-live" data-cols="11" data-rows="7"></span><span class="hub-mo-glyph-rule" aria-hidden="true"></span><span class="hub-mo-glyph-readout" aria-hidden="true"></span></span>
+            <span class="hub-mo-legend mono m6 ann">11×7 · rule row · letters below · 900ms frame swap</span>
+          </div>
+          <div class="hub-mo-panel">
+            <span class="hub-motion-cap">2 · Loading bar → warmth</span>
+            <span class="hub-mo-load is-live" data-blocks="16"><span class="blk l0" style="--i:0"></span><span class="blk l0" style="--i:1"></span><span class="blk l1" style="--i:2"></span><span class="blk l1" style="--i:3"></span><span class="blk l2" style="--i:4"></span><span class="blk l2" style="--i:5"></span><span class="blk l3" style="--i:6"></span><span class="blk l3" style="--i:7"></span><span class="blk l4" style="--i:8"></span><span class="blk l4" style="--i:9"></span><span class="blk l5" style="--i:10"></span><span class="blk l5" style="--i:11"></span><span class="blk l5" style="--i:12"></span><span class="blk l5" style="--i:13"></span><span class="blk l5" style="--i:14"></span><span class="blk l5" style="--i:15"></span></span>
+            <div class="hub-mo-status-track"><div class="hub-mo-status-fill"></div></div>
+            <span class="hub-mo-legend mono m6 ann">stagger .15s · fade .5s · gradient status 3.2s</span>
+          </div>
+          <div class="hub-mo-panel">
+            <span class="hub-motion-cap">3 · Segment reveal → filter chips</span>
+            <span class="hub-mo-chips ctl-chips is-live">
+              <button type="button" class="ctl-chip" style="--i:0">all</button>
+              <button type="button" class="ctl-chip active" style="--i:1">hot</button>
+              <button type="button" class="ctl-chip" style="--i:2">warm</button>
+              <button type="button" class="ctl-chip" style="--i:3">cold</button>
+              <button type="button" class="ctl-chip" style="--i:4">held</button>
+            </span>
+            <span class="hub-mo-legend mono m6 ann">left-to-right lit · 3.6s loop · active holds L0</span>
+          </div>
+          <div class="hub-mo-panel">
+            <span class="hub-motion-cap">4 · Concentric → buttons</span>
+            <div class="hub-mo-concentric-stack">
+              <div class="hub-mo-sqf">
+                <div class="hub-mo-concentric hub-mo-concentric--plate" aria-hidden="true">
+                  <span class="sq sq-l4"></span><span class="sq sq-l3"></span>
+                  <span class="sq sq-l2"></span><span class="sq sq-l0"></span>
+                </div>
+              </div>
+              <div class="hub-mo-btn-row is-live">
+                <button type="button" class="ctl-btn">default</button>
+                <button type="button" class="ctl-btn primary">primary</button>
+                <button type="button" class="ctl-btn glass">glass</button>
+              </div>
+            </div>
+            <span class="hub-mo-legend mono m6 ann">default · primary · glass · press cycles 2.4s · ripple 1.07</span>
+          </div>
+        </div>
+      </div>
+      <div class="spec-rail mono m6"><span class="family">100 · motion</span><span>glyph · loading · status · concentric · hub-glyphs.js</span></div>
+    </div>
+    </div>
+    <div id="200_rows" class="hub-tier">
+      <span class="sec-code mono m6">200_rows</span>
+      <span class="sec-desc">The workhorses — stream, signal, action, presence, and entity patterns that carry most product UI. — 15 parts.</span>
+    <div class="hub-tier-grid">
+    <div class="hub-family hub-family--wide">
+      <div class="mono m6 ann hub-family-cap">Project / plate card</div>
+      <div class="hub-card-plate">
+        <div class="hub-card-plate-stack">
+        <div class="hub-card is-live" style="--i:0">
+          <div class="hub-card-top" style="--j:0">
+            <span class="hub-card-id"><span class="hub-card-p">P2</span><span>axel</span></span>
+            <span class="hub-card-state"><span class="pix-dot idle"></span></span>
+          </div>
+          <div class="hub-card-name" style="--j:1"><span class="hub-card-no">#08</span><span class="hub-card-nm">Canon refinery</span></div>
+          <p class="hub-card-next" style="--j:2">Review token drift before ship.</p>
+        </div>
+        <div class="hub-card is-hot is-live" style="--i:1">
+          <div class="hub-card-top" style="--j:0">
+            <span class="hub-card-id"><span class="hub-card-p">P1</span><span>jacob</span></span>
+            <span class="hub-card-state"><span class="pix-dot live"></span> live</span>
+          </div>
+          <div class="hub-card-name" style="--j:1"><span class="hub-card-no">#12</span><span class="hub-card-nm">Cortex hub redesign</span></div>
+          <p class="hub-card-next" style="--j:2">Wire the 100–500 register into styles.css and ship the specimen page.</p>
+          <div class="hub-card-tags" style="--j:3"><span class="ctl-pill accent">desk</span><span class="ctl-pill">glass</span></div>
+          <div class="hub-card-mo" style="--j:4">
+            <div class="hub-mo-status-track"><div class="hub-mo-status-fill"></div></div>
+          </div>
+        </div>
+        <div class="hub-card is-dim is-live" style="--i:2">
+          <div class="hub-card-top" style="--j:0">
+            <span class="hub-card-id"><span class="hub-card-p">P3</span><span>hermes</span></span>
+            <span class="hub-card-state"><span class="pix-dot idle"></span></span>
+          </div>
+          <div class="hub-card-name" style="--j:1"><span class="hub-card-no">#04</span><span class="hub-card-nm">Scout batch review</span></div>
+          <p class="hub-card-next" style="--j:2">Staged — waiting on operator.</p>
+        </div>
+        </div>
+        <div class="hub-card-plate-specs">
+        <span class="hub-atom-spec mono m6 ann">top hairline · no box</span>
+        <span class="hub-atom-spec mono m6 ann">2px attn tick left</span>
+        <span class="hub-atom-spec mono m6 ann">ink body · line-quiet border</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Domain / data bar</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-databar"><span class="hub-databar-label">warmth</span><div class="hub-databar-track"><span class="hub-databar-fill" style="width:64%"></span></div><span class="hub-databar-num">64%</span></div></div>
+          <span class="hub-atom-spec mono m6 ann">meter instrument</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Child row</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-child"><span>indented child</span><span class="hub-child-st">watching</span></div></div>
+          <span class="hub-atom-spec mono m6 ann">s-3 inset · under parent</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Presence card</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-pres"><div class="hub-pres-top"><span class="hub-pres-ch">agent · scout</span><span class="pix-dot live"></span></div><p class="hub-pres-focus">Staging batch · 3 drafts ready</p></div></div>
+          <span class="hub-atom-spec mono m6 ann">channel · live dot · focus</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Entity card</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-entity"><span class="hub-entity-st">review</span><span class="hub-entity-title">Lifecycle card</span><p class="hub-entity-body">One status, one owner, one line of body — the entity as it moves through the door.</p><span class="hub-entity-foot">owner · op1</span></div></div>
+          <span class="hub-atom-spec mono m6 ann">status · title · body · owner</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Comment thread</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-comment"><span class="hub-comment-anchor">¶12 · the anchor</span><p class="hub-comment-body">Snippet, then the body, then the verdict — a comment is a small ruling.</p><div class="hub-comment-verdict"><span class="ctl-pill accent">resolved</span><button type="button" class="ctl-btn is-sm">reply</button></div></div></div>
+          <span class="hub-atom-spec mono m6 ann">anchor · prose · ctl-btn row</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Signal Lock band</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-lock-band"><p class="hub-lock-band-msg">One loud framed message the operator cannot miss.</p><div class="hub-lock-band-row"><span class="ctl-pill attention">blocker</span><a class="dlink" href="#"><span class="dmark">∂</span>&nbsp;open digest</a></div></div></div>
+          <span class="hub-atom-spec mono m6 ann">loud frame · chips · digest link</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">THE QUEUE · the work waits in order</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-queue"><div class="hub-action is-due"><span class="hub-action-time">today</span><div class="hub-action-body"><span class="hub-action-title">Review token drift before ship</span></div><div class="hub-action-acts"><span class="ctl-pill">due</span></div></div><div class="hub-action is-working"><span class="hub-action-time">now</span><div class="hub-action-body"><span class="hub-action-title">Press the hub register</span></div><div class="hub-action-acts"><span class="ctl-pill">working</span></div></div><div class="hub-action"><span class="hub-action-time">next</span><div class="hub-action-body"><span class="hub-action-title">Recut the wall labels</span></div><div class="hub-action-acts"></div></div></div></div>
+          <span class="hub-atom-spec mono m6 ann">position is the DOM order, counted by CSS — never a typed number</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">THE CHRONOLOGY · dated milestones</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-chronology"><div class="chrono-row"><span class="chrono-d">2026-07-09</span><span class="chrono-x serif-body-1">THE FLOOR opens — the mechanism, empty by design</span></div><div class="chrono-row"><span class="chrono-d">2026-07-10</span><span class="chrono-x serif-body-1">acc.0001 — 005 HUB, the first part on the wall</span></div><div class="chrono-row"><span class="chrono-d">2026-07-10</span><span class="chrono-x serif-body-1">acc.0002–0013 — the floor fills, thirteen of thirteen</span></div></div></div>
+          <span class="hub-atom-spec mono m6 ann">every date is the accession register's own — measured, not performed</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">THE BUILD LEDGER · the versions that exist</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-build-ledger"><div class="bl-row"><span class="bl-v">v3.54</span><span class="bl-x serif-body-1">the first pin — the consumer snapshot</span><span class="bl-n">immutable</span></div><div class="bl-row"><span class="bl-v">v3.58.1</span><span class="bl-x serif-body-1">the current pin — cut at the release</span><span class="bl-n">immutable</span></div><div class="bl-row"><span class="bl-v" data-live-version></span><span class="bl-x serif-body-1">the live channel — mutates as the system shapes</span><span class="bl-n">latest</span></div></div></div>
+          <span class="hub-atom-spec mono m6 ann">the two pins are real (/v/) · the live line is painted from the page's own meta</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">THE DOSSIER · the composed record</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-dossier"><div class="hub-dossier-head"><span class="hub-shelfmark"><span>005</span><span>acc.0001</span><span>dossier</span></span><span class="mono m6 ann" data-live-version></span></div>
+        <div class="hub-card is-hot is-live" style="--i:0">
+          <div class="hub-card-top" style="--j:0">
+            <span class="hub-card-id"><span class="hub-card-p">P1</span><span>jacob</span></span>
+            <span class="hub-card-state"><span class="pix-dot live"></span> live</span>
+          </div>
+          <div class="hub-card-name" style="--j:1"><span class="hub-card-no">#12</span><span class="hub-card-nm">Cortex hub redesign</span></div>
+          <p class="hub-card-next" style="--j:2">Wire the 100–500 register into styles.css and ship the specimen page.</p>
+          <div class="hub-card-tags" style="--j:3"><span class="ctl-pill accent">desk</span><span class="ctl-pill">glass</span></div>
+          <div class="hub-card-mo" style="--j:4">
+            <div class="hub-mo-status-track"><div class="hub-mo-status-fill"></div></div>
+          </div>
+        </div>
+<p class="hub-diff mono m6">status: <del>review</del> <ins>approved</ins> · reviewer OP1 <span class="sig">[α]</span></p></div></div>
+          <span class="hub-atom-spec mono m6 ann">shelf-mark · card · verdict — existing parts composed, nothing new invented</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">THE SIDE RACK · the agency at the edge</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-siderack-demo"><div class="hub-siderack hub-mo-glass hub-glass-pad hub-glass-material"><span class="mono m6 ann">THE SIDE RACK · the agency slides over the record from the edge</span><span class="ctl-row"><button type="button" class="ctl-btn is-sm">approve</button><button type="button" class="ctl-btn is-sm">annotate</button></span></div></div></div>
+          <span class="hub-atom-spec mono m6 ann">shown open — dialog semantics when it traps (aria-modal, the record goes inert)</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family hub-family--wide">
+      <div class="mono m6 ann hub-family-cap">THE STATE PLATE · P1.4 — every rendered state, real</div>
+      <div class="state-plate">
+      <div class="state-row"><span class="state-row-label">button</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">rest</span><button type="button" class="ctl-btn">rest</button></div><div class="state-cell"><span class="state-cell-tag mono m6">hover</span><button type="button" class="ctl-btn is-press-demo">hover</button></div><div class="state-cell"><span class="state-cell-tag mono m6">focus-visible</span><button type="button" class="ctl-btn">tab to focus</button></div><div class="state-cell"><span class="state-cell-tag mono m6">active</span><button type="button" class="ctl-btn primary">active</button></div><div class="state-cell"><span class="state-cell-tag mono m6">disabled</span><button type="button" class="ctl-btn" disabled>disabled</button></div></div></div>
+      <div class="state-row"><span class="state-row-label">field</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">rest</span><div class="field"><label>e-mail</label><input type="email" placeholder="rest"></div></div><div class="state-cell"><span class="state-cell-tag mono m6">focus</span><div class="field"><label>e-mail</label><input type="email" placeholder="tab to focus"></div></div><div class="state-cell"><span class="state-cell-tag mono m6">error</span><div class="field is-error"><label>e-mail</label><input type="email" value="not-an-email"><span class="hint">not a valid address</span></div></div><div class="state-cell"><span class="state-cell-tag mono m6">success</span><div class="field is-success"><label>e-mail</label><input type="email" value="jacob@intelligencematters.se"><span class="hint">verified</span></div></div><div class="state-cell"><span class="state-cell-tag mono m6">warning</span><div class="field is-warning"><label>e-mail</label><input type="email" value="jacob@old-domain.se"><span class="hint">domain retiring — confirm</span></div></div></div></div>
+      <div class="state-row"><span class="state-row-label">chip</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">rest</span><span class="ctl-chip">rest</span></div><div class="state-cell"><span class="state-cell-tag mono m6">hover</span><span class="ctl-chip is-hover">hover</span></div><div class="state-cell"><span class="state-cell-tag mono m6">selected</span><span class="ctl-chip active">selected</span></div></div></div>
+      <div class="state-row"><span class="state-row-label">toggle</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">off</span><label class="pix-ctl"><input type="checkbox" aria-label="toggle off"><span class="pix-toggle"><span class="lane"></span><span class="knob"></span></span></label></div><div class="state-cell"><span class="state-cell-tag mono m6">on</span><label class="pix-ctl"><input type="checkbox" checked aria-label="toggle on"><span class="pix-toggle"><span class="lane"></span><span class="knob"></span></span></label></div></div></div>
+      <div class="state-row"><span class="state-row-label">check · radio</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">unchecked</span><label class="pix-ctl"><input type="checkbox" aria-label="unchecked"><span class="pix-check"><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.5 6.5 L4.5 9.5 L10.5 2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg></span></label></div><div class="state-cell"><span class="state-cell-tag mono m6">checked</span><label class="pix-ctl"><input type="checkbox" checked aria-label="checked"><span class="pix-check"><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1.5 6.5 L4.5 9.5 L10.5 2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg></span></label></div><div class="state-cell"><span class="state-cell-tag mono m6">radio rest</span><label class="pix-ctl"><input type="radio" name="sp-r" aria-label="radio rest"><span class="pix-radio"><svg viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1"/><g class="core"><rect x="4.5" y="4.5" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1"/><rect x="7.5" y="7.5" width="3" height="3" fill="currentColor"/></g></svg></span></label></div><div class="state-cell"><span class="state-cell-tag mono m6">radio selected</span><label class="pix-ctl"><input type="radio" name="sp-r" checked aria-label="radio selected"><span class="pix-radio"><svg viewBox="0 0 18 18" aria-hidden="true" focusable="false"><rect x="0.5" y="0.5" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1"/><g class="core"><rect x="4.5" y="4.5" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1"/><rect x="7.5" y="7.5" width="3" height="3" fill="currentColor"/></g></svg></span></label></div></div></div>
+      <div class="state-row"><span class="state-row-label">tabs</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">rest</span><span class="mono m6" style="border-bottom:var(--hairline) solid transparent">rest</span></div><div class="state-cell"><span class="state-cell-tag mono m6">selected</span><span class="mono m6" style="border-bottom:var(--hairline) solid var(--ink)">selected</span></div></div></div>
+      <div class="state-row"><span class="state-row-label">cmdk row</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">rest</span><a class="hub-cmdk-row" href="#">rest</a></div><div class="state-cell"><span class="state-cell-tag mono m6">selected</span><a class="hub-cmdk-row is-sel" href="#">selected</a></div></div></div>
+      <div class="state-row"><span class="state-row-label">dialog</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">open</span><dialog class="cmp-dialog" open style="position:static;margin:0">shown inline — the real surface is a native modal</dialog></div></div></div>
+      <div class="state-row"><span class="state-row-label">toast</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">shown</span><div class="cmp-toast show state-toast-demo">specimen · no backend — nothing was sent</div></div></div></div>
+      <div class="state-row"><span class="state-row-label">authority</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">draft</span><span class="hub-fbadge is-draft"><span class="fb-dot"></span> draft</span></div><div class="state-cell"><span class="state-cell-tag mono m6">locked</span><span class="hub-fbadge is-locked"><span class="fb-dot"></span> locked</span></div><div class="state-cell"><span class="state-cell-tag mono m6">approval required</span><div class="hub-lock-band"><p class="hub-lock-band-msg mono m6">held for approval</p></div></div><div class="state-cell"><span class="state-cell-tag mono m6">canonical</span><span class="mono m6">acc.0001 · gate ✓ — <a href="system.html#acc-0001">the wall</a></span></div></div></div>
+      <div class="state-row"><span class="state-row-label">data</span><div class="state-cells"><div class="state-cell"><span class="state-cell-tag mono m6">live</span><span class="pres-chip is-live"><span class="pix-dot"></span>live</span></div><div class="state-cell"><span class="state-cell-tag mono m6">stale</span><span class="pres-chip is-stale"><span class="pix-dot"></span>stale</span></div><div class="state-cell"><span class="state-cell-tag mono m6">struck</span><p class="hub-diff mono m6">status: <del>review</del> <ins>approved</ins></p></div><div class="state-cell"><span class="state-cell-tag mono m6">empty</span><div class="state-empty"><p class="mono m6">the bare shelf — nothing accessioned here yet</p></div></div></div></div>
+      </div>
+    </div>
+    </div>
+
+    <div class="container-tile u-full station hub-tier-demo">
+      <div class="stage hub-spec-stack">
+        <span class="mono m6 ann wk-cap">Live specimens · rows & cards</span>
+        <div class="hub-card is-hot">
+          <div class="hub-card-top">
+            <span class="hub-card-id"><span class="hub-card-p">P1</span><span>jacob</span></span>
+            <span class="hub-card-state"><span class="pix-dot live"></span> live</span>
+          </div>
+          <div class="hub-card-name"><span class="hub-card-no">#12</span><span class="hub-card-nm">Cortex hub redesign</span></div>
+          <p class="hub-card-next">Wire the 100–500 register into styles.css and ship the specimen page.</p>
+          <div class="hub-card-tags"><span class="ctl-pill accent">desk</span><span class="ctl-pill">glass</span></div>
+        </div>
+        <div class="hub-stream is-hot">
+          <span class="hub-stream-grip">⋮⋮</span>
+          <span class="hub-stream-p is-attn">P1</span>
+          <h3 class="hub-stream-title">Signal stream · priority lane</h3>
+          <p class="hub-stream-next">Review the staged scout batch before Monday send.</p>
+          <div class="hub-stream-meta"><span class="ctl-pill filled">working</span><span>due · 2d</span></div>
+        </div>
+        <div class="hub-action is-due">
+          <span class="hub-action-time">−1d</span>
+          <div class="hub-action-body">
+            <span class="hub-action-title">Approve outreach draft · Acme Corp</span>
+            <div class="hub-action-meta"><span class="ctl-pill attention">overdue</span></div>
+          </div>
+          <div class="hub-action-acts"><button type="button" class="ctl-btn is-sm">decide</button><button type="button" class="ctl-btn is-sm glass">Hermes</button></div>
+        </div>
+        <div class="hub-sigrow"><span>09:14</span><span class="sig-txt">Warmth crossed 70 on Rhode</span><span class="sig-delta">+12</span></div>
+        <div class="hub-pres"><div class="hub-pres-top"><span class="hub-pres-ch">hermes · agent</span><span class="pix-dot live"></span></div><p class="hub-pres-focus">Staging scout batch · 3 drafts ready</p></div>
+        <div class="hub-lock-band">
+          <p class="hub-lock-band-msg">Signal lock — one loud framed message the operator cannot miss.</p>
+          <div class="hub-lock-band-row"><span class="ctl-pill attention">blocker</span><a class="dlink" href="#"><span class="dmark">∂</span>&nbsp;open digest</a></div>
+        </div>
+      </div>
+      <div class="spec-rail mono m6"><span class="family">200 · rows</span><span>cards · streams · actions · presence · lock band</span></div>
+    </div>
+    </div>
+    <div id="300_controls" class="hub-tier">
+      <span class="sec-code mono m6">300_controls</span>
+      <span class="sec-desc">design/system/RULES.md §4's six-component operational set, closed onto the token spine. Four — Chip · Card · Pulse Dot · Warmth Bar — already live in 100/200 above and carry over as-is, not re-shown here; only the two the §4 set adds beyond them render: Segmented Control and the slotted List Row. — 2 parts.</span>
+    <div class="hub-tier-grid">
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">Segmented Control</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><span class="ctl-chips"><button type="button" class="ctl-chip active">all</button><button type="button" class="ctl-chip">hot</button><button type="button" class="ctl-chip">warm</button><button type="button" class="ctl-chip">cold</button></span></div>
+          <span class="hub-atom-spec mono m6 ann">RULES.md §4 Segmented Control — a row of Chips filtering in-view, distinct from Tabs</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-family">
+      <div class="mono m6 ann hub-family-cap">List Row — leading · main · trailing</div>
+      <div class="hub-family-grid">
+        <div class="hub-atom hub-atom--wide">
+          <div class="hub-atom-demo hub-spec-demo"><div class="hub-list-row"><span class="hub-list-row-lead"><span class="pix-dot live"></span></span><span class="hub-list-row-main">Canon refinery — token drift review</span><span class="hub-list-row-trail mono m6">2d</span></div></div>
+          <span class="hub-atom-spec mono m6 ann">RULES.md §4 List Row — leading pulse-dot · main prose · trailing meta, py-3</span>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="400_glassci" class="hub-tier">
+      <span class="sec-code mono m6">400_glassci</span>
+      <span class="sec-desc">Cut for the company hub — the record is drawn in characters, agency floats on glass, the bones are presence, the prompt is the door. — physical refraction, procedural formats &amp; archetype synthesis.</span>
+      <div class="spec-rail mono m6"><span class="family">running</span><span><a href="/comdev">company os</a></span><span><a href="/poster">posters</a></span><span><a href="/formats">formats</a></span><span><a href="/glassci">glassci</a></span><span><a href="/deck">deck</a></span><span><a href="/document">dossier</a></span><span><a href="/hub-replicate">hub telemetry</a></span></div>
+    <div class="hub-tier-grid">
+      <div class="hub-family">
+        <div class="mono m6 ann hub-family-cap">The four laws of glassci</div>
+        <div class="hub-family-grid">
+          <div class="hub-atom">
+            <div class="hub-atom-demo hub-spec-demo">
+              <div class="tui" style="text-align:left; padding:var(--s-1);">
+                <span class="mono m6 ann">LAW 01 · SUBSTRATE</span>
+                <p class="serif-body-1" style="margin:0; color:var(--ink);">A photo hides distortion; a monospace grid measures it. The grid is an instrument that proves the glass is physically there.</p>
+              </div>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">01 · monospace grid substrate</span>
+          </div>
+          <div class="hub-atom">
+            <div class="hub-atom-demo hub-spec-demo">
+              <div class="tui" style="text-align:left; padding:var(--s-1);">
+                <span class="mono m6 ann">LAW 02 · PHOSPHOR</span>
+                <p class="serif-body-1" style="margin:0; color:var(--ink);">Characters as glowing phosphor. Light leaves the tile as emission rather than reflection; the interior stays black.</p>
+              </div>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">02 · lit from inside</span>
+          </div>
+          <div class="hub-atom">
+            <div class="hub-atom-demo hub-spec-demo">
+              <div class="tui" style="text-align:left; padding:var(--s-1);">
+                <span class="mono m6 ann">LAW 03 · OBSIDIAN</span>
+                <p class="serif-body-1" style="margin:0; color:var(--ink);">The pane is deep black glass; the specular hairline rim is the only white present. No muddy grey compromises.</p>
+              </div>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">03 · black glass &amp; specular rim</span>
+          </div>
+          <div class="hub-atom">
+            <div class="hub-atom-demo hub-spec-demo">
+              <div class="tui" style="text-align:left; padding:var(--s-1);">
+                <span class="mono m6 ann">LAW 04 · DISPERSION</span>
+                <p class="serif-body-1" style="margin:0; color:var(--ink);">Prism splits strictly onto named palette inks: Signal Go and Attention. No red, no green cliches.</p>
+              </div>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">04 · legislated dispersion</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hub-family">
+        <div class="mono m6 ann hub-family-cap">Archetype Synthesis — Where Glassci &amp; Formats Live in Practice</div>
+        <div class="hub-family-grid">
+          <div class="hub-atom hub-atom--wide">
+            <div class="hub-atom-demo hub-spec-demo" style="text-align:left; padding:var(--s-2);">
+              <span class="mono m6 ann">APPLICATION 01 // OPERATIONAL</span>
+              <h3 class="serif-heading-3" style="margin:0; color:var(--ink);"><a href="/comdev" style="color:inherit; text-decoration:none;">Company OS Slack (comdev.html) &rarr;</a></h3>
+              <p class="serif-body-1" style="margin:0; color:var(--ink);">The conceptual AI agent Slack surface uses Glassci telemetry cards for actor status, 88% instrument warmth meters, and double hairline active indicators.</p>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">01 · company os slack telemetry</span>
+          </div>
+          <div class="hub-atom hub-atom--wide">
+            <div class="hub-atom-demo hub-spec-demo" style="text-align:left; padding:var(--s-2);">
+              <span class="mono m6 ann">APPLICATION 02 // EDITORIAL</span>
+              <h3 class="serif-heading-3" style="margin:0; color:var(--ink);"><a href="/poster" style="color:inherit; text-decoration:none;">Posters &amp; Publishing Desk (poster.html) &rarr;</a></h3>
+              <p class="serif-body-1" style="margin:0; color:var(--ink);">Dynamic procedural vector graphics render crisply at any DPI or scale, replacing static raster graphics with mathematical vectors.</p>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">02 · editorial publishing desk</span>
+          </div>
+          <div class="hub-atom hub-atom--wide">
+            <div class="hub-atom-demo hub-spec-demo" style="text-align:left; padding:var(--s-2);">
+              <span class="mono m6 ann">APPLICATION 03 // VECTOR ENGINES</span>
+              <h3 class="serif-heading-3" style="margin:0; color:var(--ink);"><a href="/formats" style="color:inherit; text-decoration:none;">Procedural Formats Studio &rarr;</a></h3>
+              <p class="serif-body-1" style="margin:0; color:var(--ink);">Six pure mathematical SVG vector engines: Matrix dot-terminal, Telemetry scope, Interferometer wave, Radar dial, Grid cross, and Angle encoder.</p>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">03 · six procedural vector engines</span>
+          </div>
+          <div class="hub-atom hub-atom--wide">
+            <div class="hub-atom-demo hub-spec-demo" style="text-align:left; padding:var(--s-2);">
+              <span class="mono m6 ann">APPLICATION 04 // PHYSICAL LABORATORY</span>
+              <h3 class="serif-heading-3" style="margin:0; color:var(--ink);"><a href="/glassci" style="color:inherit; text-decoration:none;">Physical Material Studies &rarr;</a></h3>
+              <p class="serif-body-1" style="margin:0; color:var(--ink);">Eight laboratory material cuts: Stage on black, Inverted paper, Black mirror, Loupe magnification, and Multi-axis text refraction.</p>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">04 · physical material studies</span>
+          </div>
+          <div class="hub-atom hub-atom--wide">
+            <div class="hub-atom-demo hub-spec-demo" style="text-align:left; padding:var(--s-2);">
+              <span class="mono m6 ann">APPLICATION 05 // PRESENTATION</span>
+              <h3 class="serif-heading-3" style="margin:0; color:var(--ink);"><a href="/deck" style="color:inherit; text-decoration:none;">The System Keynote Deck (deck.html) &rarr;</a></h3>
+              <p class="serif-body-1" style="margin:0; color:var(--ink);">Ten-slide sovereign presentation archetype with keyboard navigation, glass stage hero, and live numeric status strip.</p>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">05 · keynote slide archetype</span>
+          </div>
+          <div class="hub-atom hub-atom--wide">
+            <div class="hub-atom-demo hub-spec-demo" style="text-align:left; padding:var(--s-2);">
+              <span class="mono m6 ann">APPLICATION 06 // FORMAL RECORD</span>
+              <h3 class="serif-heading-3" style="margin:0; color:var(--ink);"><a href="/document" style="color:inherit; text-decoration:none;">The Executive Dossier (document.html) &rarr;</a></h3>
+              <p class="serif-body-1" style="margin:0; color:var(--ink);">Living documents in plain HTML: administrative docket records, formal axiomatic propositions, and cryptographic accession seals.</p>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">06 · living dossier archetype</span>
+          </div>
+          <div class="hub-atom hub-atom--wide">
+            <div class="hub-atom-demo hub-spec-demo" style="text-align:left; padding:var(--s-2);">
+              <span class="mono m6 ann">APPLICATION 07 // MISSION CONTROL</span>
+              <h3 class="serif-heading-3" style="margin:0; color:var(--ink);"><a href="/hub-replicate" style="color:inherit; text-decoration:none;">HHG Hub Living Telemetry &rarr;</a></h3>
+              <p class="serif-body-1" style="margin:0; color:var(--ink);">The 200m submarine waterproof operational cockpit: 3.2s heartbeat sweep, 88% warmth meters, and active agent dispatch indicators.</p>
+            </div>
+            <span class="hub-atom-spec mono m6 ann">07 · hhg hub mission control</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hub-family hub-family--plate">
+        <div class="mono m6 ann hub-family-cap">Live Material Stage — Monospace Substrate &amp; Refracting Lens</div>
+        <div class="hub-glass-stage fi-plate" style="position:relative; min-height:calc(var(--s-5) * 3); overflow:hidden; border:var(--hairline) solid var(--line); background:#000000;">
+          <pre class="glassci-field" style="margin:0; padding:var(--s-1); font-family:var(--font-mono); font-size:var(--fz-mono-cli); line-height:var(--lh-mono-cli); color:var(--paper-62); pointer-events:none; -webkit-user-select:none; user-select:none;"><!-- canon-lint:allow — E9: CLI terminal stage mono escape -->0x0000  ┌─[ CORTEX PROTOCOL // EPOQ III // REGISTER 400 ]────────────┐
+0x0010  │ CLOCK: 2026-09-27T14:02:14Z · SECTOR: NORDIC PRIME         │
+0x0020  │ OPERATOR: [OP1] · AGENCY: AUTONOMOUS FLEET ACTIVE          │
+0x0030  │ DISPERSION AXIS: #8E00FF (SIGNAL GO) / #3600DA (ATTN)       │
+0x0040  └────────────────────────────────────────────────────────────┘
+TEL_01: WARMTH 88% ──[████████████████████░░░░] NOMINAL
+TEL_02: ACTOR: @HERMES   · TASK: GTM CADENCE   · STAGED [OK]
+TEL_03: ACTOR: @SCOUT    · TASK: PIPELINE SEG  · RUNNING 12m
+0x00A0  01001100 01001001 01010001 01010101 01001001 01000100
+0x00B0  01000111 01001100 01000001 01010011 01010011 01000011 01001001
+0x00C0  PRESENCE CONFIRMED · LENS POSITION TRACKED AT HIGH PRECISION</pre>
+          <div class="glassci" id="hub-interactive-lens" data-glassci data-glassci-radius="14" data-glassci-depth="12" data-glassci-strength="16" data-glassci-dispersion="3" data-glassci-bleed="18" data-glassci-rim="0.85" data-glassci-blur="4" style="position:absolute; top:var(--s-3); left:var(--s-6); width:calc(var(--s-5) * 3); height:calc(var(--s-5) + var(--s-4)); cursor:grab; z-index:2;">
+            <div class="lens-meta mono m6" style="padding:var(--s-1); color:var(--paper); font-size:var(--fz-mono-6); letter-spacing:var(--track-code);">DRAG LENS // 400_GLASSCI</div>
+          </div>
+        </div>
+        <div class="spec-rail mono m6"><span class="family">Physical specimen</span><span>pure SVG displacement · monospace phosphor substrate · drag lens to inspect refraction</span></div>
+      </div>
+    </div>
+    </div>
+    <div class="spec-rail mono m6 reg-rail">
+      <span class="family">The HUB register</span>
+      <span>100 atoms · 200 rows · 300 controls · 400 glassci</span>
+      <span>link styles.css — never fork · press-hub-atoms.py compiles specimens</span>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- ── 005_CLI · compiled from cli-atoms.json — do not hand-edit ── -->
+  <section id="cli" class="line-machine cli-section">
+    <div class="section-mark">
+      <h2 class="serif-page-title">005_cli</h2>
+      <p class="sec-tagline serif-8-caps">Terminal design — monospace spine, live code telemetry. The wildest instruments from the register, composed for command-line surfaces.</p>
+    </div>
+    <p class="lede serif-body-1 fullwidth">Soft glass, hard terminal. REPL spine with a lawful cursor — the muse reads through the dark stage; the receipt rack widened into its own live, filterable instrument; a status line and a log-levels stream carry the terminal's own language; the session is a terminal on paper. 5 parts · cli-terminal.js drives motion.</p>
+    <div class="container-tile u-full station cli-tier-demo">
+      <div class="stage cli-spec-stack">
+        <span class="mono m6 ann wk-cap">CLI register · repl · instrument rack · Glassmorphism with a terminal injury</span>
+        <div class="cli-plate">
+          <div class="cli-panel-row">
+            <div class="cli-panel">
+              <span class="cli-cap mono m6">1 · REPL → command-line spine</span>
+              <div class="cli-stage cli-stage--repl">
+                <img class="cli-portrait" src="muse/m-head.svg" alt="" aria-hidden="true">
+                <div class="cli-repl-head mono m6">
+                  <span>hhg@cortex</span><span class="cli-repl-sep">·</span><span>scout-run</span>
+                </div>
+                <div class="cli-repl-body mono m6" data-cli-repl></div>
+                <div class="cli-repl-prompt mono m6">
+                  <span class="cli-prompt-glyph">›</span>
+                  <span data-cli-input></span><span class="cli-cursor">▌</span>
+                </div>
+              </div>
+              <span class="cli-legend mono m6 ann">Acrylic skin. Command-line spine.</span>
+            </div>
+            <div class="cli-panel cli-panel--rack">
+              <span class="cli-cap mono m6">2 · Rack → code telemetry</span>
+              <div class="cli-stage cli-stage--rack">
+                <div class="cli-rack-toolbar">
+                  <span class="cli-rack-filters ctl-chips" data-cli-log-filters>
+                    <button type="button" class="ctl-chip active" data-log-filter="all">all</button>
+                    <button type="button" class="ctl-chip" data-log-filter="glass">glass</button>
+                    <button type="button" class="ctl-chip" data-log-filter="scout">scout</button>
+                    <button type="button" class="ctl-chip" data-log-filter="pipeline">pipeline</button>
+                  </span>
+                  <button type="button" class="ctl-btn is-sm" data-cli-log-ping>ping</button>
+                </div>
+                <div class="cli-rack-cell cli-rack-log cli-rack-log--wide">
+                  <div class="cli-receipt-log mono m6" data-cli-log>
+                    <div class="cli-receipt-line is-pinned" data-log-cat="header">&gt; <span class="cli-receipt-mark">EPOQ_RACK_PATCH</span> ( &quot;005_cli&quot;, live )</div>
+                  </div>
+                </div>
+              </div>
+              <span class="cli-legend mono m6 ann">Live code telemetry. Filter · ping · hover to pause.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spec-rail mono m6 reg-rail">
+        <span class="family">005 · cli</span>
+        <span>repl · receipt · status · log · the session</span>
+        <span>press-cli.py · cli-terminal.js</span>
+      </div>
+    </div>
+
+    <!-- ── THE TERMINAL LANGUAGE — the status line + the log-levels stream (Jacob 2026-07-11:
+         expand cli + terminal language and design). Two more instruments on the dark stage. ── -->
+    <div class="gridrow">
+      <div class="container-tile station u-full">
+        <div class="stage">
+          <span class="mono m6 ann wk-cap">The terminal language — the status line + the log-levels stream, on the dark stage</span>
+          <div class="cli-langrow">
+            <div class="cli-lang-panel">
+              <span class="cli-cap mono m6">the status line — mode · path · branch · counts</span>
+              <div class="cli-statusbar">
+                <span class="seg seg--mode">NORMAL</span>
+                <span class="seg">~/cortex</span>
+                <span class="seg">&#8850; main</span>
+                <span class="seg">3 lanes</span>
+                <span class="seg seg--clock">14:22</span>
+              </div>
+            </div>
+            <div class="cli-lang-panel">
+              <span class="cli-cap mono m6">the log-levels stream — ok · info · warn · err</span>
+              <div class="cli-log" role="log" aria-label="a terminal log, four levels">
+                <div class="cli-log-row is-ok"><span class="cli-log-lv">ok</span><span class="cli-log-msg">build passed &#183; 0 errors &#183; 148 tokens resolved</span></div>
+                <div class="cli-log-row is-info"><span class="cli-log-lv">info</span><span class="cli-log-msg">accession #14 &#183; THE LINE sequential, in sync</span></div>
+                <div class="cli-log-row is-warn"><span class="cli-log-lv">warn</span><span class="cli-log-msg">2 hatches signed &#183; canon-lint&#58;allow</span></div>
+                <div class="cli-log-row is-err"><span class="cli-log-lv">err</span><span class="cli-log-msg">1 containment breach @ &#8804;400px &#183; held</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rail mono m6"><span class="family">005 · terminal language</span><span>status line · log levels · the dark stage</span></div>
+      </div>
+    </div>
+
+    <!-- ── THE SESSION — .term (promoted from im-site, its first coverage audit,
+         2026-07-11) — a paper terminal, not the glass-stage register. Static specimen: the
+         consumer wires the scroll-in typewriter; this is the grammar at rest, full text. ── -->
+    <div class="gridrow">
+      <div class="container-tile station u-full">
+        <div class="stage">
+          <span class="mono m6 ann">The session · a paper terminal</span>
+          <div class="term" aria-label="a terminal session, set as an instrument">
+            <div class="term-body mono">
+              <div class="term-stream">
+                <span class="term-row term-cmd"><span class="pr">op@epoq3</span>:~$ why-a-register</span>
+                <span class="term-row term-out">A system that isn't machine-readable can't be operated, only <span class="tism">described</span>.</span>
+                <span class="term-row term-out">So nothing here is freelanced — every part traces to a ticket on THE LINE.</span>
+                <span class="term-row term-gap" aria-hidden="true"></span>
+                <span class="term-row term-truth apart">The record over rhetoric.</span>
+                <span class="term-row term-truth">Measured, never performed.</span>
+                <span class="term-row term-cmd"><span class="pr">op@epoq3</span>:~$ <span class="cli-cursor">▌</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rail mono m6">
+          <span class="family">the session</span>
+          <span>a terminal reads on paper too — the register is about being a terminal, not the stage under it</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- ── 016_IDENTITY · the wordmark register — absorbed from Figma Wordmarks (2026-07-01) ── -->
+  <section id="identity" class="epoq-section">
+    <div class="section-mark">
+      <h2 class="serif-page-title">006_identity</h2>
+      <p class="sec-tagline serif-8-caps">The wordmark register — one name, four faces. Text, stack, glyph, drawn. Then the measured truth beneath two of them: the Θ mark and the wordmark drawn from the real font outlines. Every face is a specimen; nothing is a logo file.</p>
+    </div>
+    <div class="gridrow">
+      <div class="container-tile u-minor">
+        <div class="m-stage wm-stage"><span class="wm-word">Intelligence Matters</span></div>
+        <div class="spec-rail mono m6"><span class="family">wordmark · text</span><span>Scheherazade New · 36 · −3%</span></div>
+      </div>
+      <div class="container-tile u-minor">
+        <div class="m-stage wm-stage"><span class="wm-caps">Intelligence<br>Matters</span></div>
+        <div class="spec-rail mono m6"><span class="family">wordmark · stacked</span><span>caps · +20% · two lines</span></div>
+      </div>
+      <div class="container-tile u-minor">
+        <div class="m-stage wm-stage"><span class="wm-glyph">Θ</span></div>
+        <div class="spec-rail mono m6"><span class="family">glyph · theta</span><span>the symbol voice · E11 sanction</span></div>
+      </div>
+    </div>
+    <div class="gridrow">
+      <div class="container-tile u-minor">
+        <div class="m-stage wm-stage"><pre class="wm-drawn">┌─┤ INTELLIGENCE MATTERS ├────┐
+│                             │
+│                             │
+└─────────────────────────────┘</pre></div>
+        <div class="spec-rail mono m6"><span class="family">wordmark · drawn</span><span>the name sits in the rule — the record is the mark</span></div>
+      </div>
+      <div class="container-tile u-minor">
+        <div class="m-stage st-480"><img class="muse-plate" src="muse/m-head.svg" alt="The muse — the head, drawn in characters"></div>
+        <div class="spec-rail mono m6"><span class="family">the muse · head</span><span>400 × 480 · the head alone · spline-drawn strokes, the coat follows the flow — the 2ch tradition</span></div>
+      </div>
+    </div>
+
+    <!-- ── THE FORENSIC PLATES — measured construction, ported from the design-two identity
+         showcase (2026-07-11). The drawn truth under two of the four faces: the Θ mark measured
+         from the Times outline, the wordmark from Scheherazade New. Static SVGs (the storeroom
+         convention, like the spheres) — the geometry is computed from the real outlines, not
+         asserted; every printed value is measured. A blueprint scrolls at drawing scale. ── -->
+    <div class="gridrow">
+      <div class="container-tile u-full">
+        <div class="m-stage forensic-stage">
+          <span class="mono m6 ann">Θ · forensic construction — the Times outline, measured</span>
+          <img class="forensic-plate forensic-plate--fit" src="identity/theta-construction.svg" alt="Forensic construction of the Θ mark measured from the Times outline: three contours — outer ellipse, inner counter, crossbar — counter 870 × 1274 du, stroke-contrast 3.18 to 1, with on-curve, off-curve and anatomy callouts.">
+        </div>
+        <div class="spec-rail mono m6"><span class="family">glyph · theta · construction</span><span>Times New Roman · U+0398 · 3 contours · counter 870×1274 du · stroke-contrast 3.18:1</span></div>
+      </div>
+    </div>
+    <div class="gridrow">
+      <div class="container-tile u-full">
+        <div class="m-stage forensic-stage" style="overflow-x:auto;">
+          <span class="mono m6 ann">WORDMARK · forensic construction — Scheherazade New, measured at UPM 2048</span>
+          <img class="forensic-plate forensic-plate--wide" src="identity/wordmark-construction.svg" alt="Forensic construction of the Intelligence Matters wordmark measured from Scheherazade New outlines at UPM 2048: each glyph at its cursor advance, five cardinal datums, total advance 14984 design units, with anatomy callouts.">
+        </div>
+        <div class="spec-rail mono m6"><span class="family">wordmark · construction</span><span>Scheherazade New · UPM 2048 · 5 cardinal datums · advance 14984 du</span></div>
+      </div>
+    </div>
+    <div class="gridrow">
+      <div class="container-tile u-major">
+        <div class="m-stage" style="padding:var(--s-3); background:var(--paper);">
+          <span class="mono m6 ann">HARDWARE CHASSIS TAG · PHYSICAL 3D SPEC (NEGATIVE SPACE)</span>
+          <svg viewBox="0 0 720 240" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Physical Brass Chassis Tag Specification">
+            <!-- Plate base 720x240 (72x24mm) -->
+            <rect x="0.5" y="0.5" width="719" height="239" fill="none" stroke="#000" stroke-width="1"/>
+            <rect x="12.5" y="12.5" width="695" height="215" fill="none" stroke="#000" stroke-width="0.5"/>
+
+            <!-- Mounting screws (4 corners) -->
+            <circle cx="28" cy="28" r="8" fill="none" stroke="#000" stroke-width="0.5"/>
+            <line x1="22" y1="28" x2="34" y2="28" stroke="#000" stroke-width="0.5"/>
+            <circle cx="692" cy="28" r="8" fill="none" stroke="#000" stroke-width="0.5"/>
+            <line x1="686" y1="28" x2="698" y2="28" stroke="#000" stroke-width="0.5"/>
+            <circle cx="28" cy="212" r="8" fill="none" stroke="#000" stroke-width="0.5"/>
+            <line x1="22" y1="212" x2="34" y2="212" stroke="#000" stroke-width="0.5"/>
+            <circle cx="692" cy="212" r="8" fill="none" stroke="#000" stroke-width="0.5"/>
+            <line x1="686" y1="212" x2="698" y2="212" stroke="#000" stroke-width="0.5"/>
+
+            <!-- Internal plate text -->
+            <text x="60" y="62" font-family="Red Hat Mono" font-size="11" letter-spacing="3" fill="#000">HÆGG &amp; HÆGG GROUP // CORTEX LIVING SUBSTRATE</text>
+            <text x="60" y="112" font-family="Scheherazade New" font-size="34" fill="#000">HHG · CORTEX</text>
+            <text x="60" y="148" font-family="Red Hat Mono" font-size="11" letter-spacing="2" fill="#000">SPECIFICATION: EPOQ III · 200M SUBMERSIBLE GRADE</text>
+            <text x="60" y="180" font-family="Red Hat Mono" font-size="10" letter-spacing="1" fill="#000">ALLOY: CuZn39Pb3 BRASS · RELIEF: 0.50mm · OBSIDIAN MILLED</text>
+            <text x="660" y="180" font-family="Red Hat Mono" font-size="11" letter-spacing="2" fill="#000" text-anchor="end">SN-2026-HHG-001</text>
+          </svg>
+        </div>
+        <figcaption class="spec-rail mono m6">
+          <span class="family">hardware tag</span>
+          <span>72 × 24 mm · CuZn39Pb3 brass · 0.5mm relief · 3D venue spec</span>
+        </figcaption>
+      </div>
+      <div class="container-tile u-minor">
+        <div class="m-stage" style="padding:var(--s-3); text-align:left;">
+          <span class="mono m6 ann">CANON ACCESSION RECEIPT</span>
+          <pre class="mono m6" style="margin:var(--s-2) 0; line-height:1.5; color:var(--ink);">┌─┤ FORENSIC ACCESSION ├──────┐
+│ STATUS: PROVABLE SUBMARINE  │
+│ DEPTH: 200M WATERPROOF      │
+│ GATES: 19 / 19 VERIFIED     │
+│ DRIFT: 0 ERRORS · 0 WARNS   │
+│ LAW 01: ZERO CURVATURE (0)  │
+│ LAW 10: SINGLE WEIGHT (400) │
+│ REPO: HAEGGHAEGG/HHG_CORTEX │
+│ TIME: 2026-10-06T21:46:39Z  │
+└─────────────────────────────┘</pre>
+        </div>
+        <figcaption class="spec-rail mono m6">
+          <span class="family">canon docket</span>
+          <span>cryptographic accession · 19 verification gates</span>
+        </figcaption>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 017_SITE · website components — absorbed from Figma Website Components (2026-07-01) ── -->
+  <section id="site" class="epoq-section">
+    <div class="section-mark">
+      <h2 class="serif-page-title">007_site</h2>
+      <p class="sec-tagline serif-8-caps">Website components — the card, the editorial row, the signup, the caption atom, THE CONTENT TILE, THE TUNER. Working specimens, assembled from the register.</p>
+    </div>
+
+    <!-- ── THE CONTENT TILE — specimen-tile / list-tile (promoted from im-site,
+         its first coverage audit, 2026-07-11). Born on intelligencematters.se; the names ride
+         along on promotion, the site-register precedent. ── -->
+    <div class="gridrow">
+      <div class="container-tile u-minor list-tile">
+        <div class="m-stage st-480">
+          <div class="specimen"><img src="circles/sphere-contour.svg" alt="Contour sphere"></div>
+        </div>
+        <div class="med-text">
+          <h3 class="ms-name serif-heading-3">Image</h3>
+          <ul class="method-points"><li>the specimen</li><li>the focal law</li></ul>
+        </div>
+      </div>
+      <div class="container-tile u-minor list-tile">
+        <div class="m-stage st-480">
+          <div class="specimen"><img src="muse/m-head.svg" alt="The muse plate"></div>
+        </div>
+        <div class="med-text">
+          <h3 class="ms-name serif-heading-3">Design</h3>
+          <ul class="method-points"><li>the token spine</li><li>the wound</li></ul>
+        </div>
+      </div>
+      <div class="container-tile u-minor list-tile">
+        <div class="m-stage st-480">
+          <div class="specimen"><img src="circles/sphere-glyphraster.svg" alt="Glyph-raster sphere"></div>
+        </div>
+        <div class="med-text">
+          <h3 class="ms-name serif-heading-3">Code</h3>
+          <ul class="method-points"><li>the press</li><li>the gate chain</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="gridrow">
+      <div class="container-tile u-full">
+        <div class="spec-rail mono m6">
+          <span class="family">the content tile</span>
+          <span>story · specimen · list — the same three primitives (m-stage · specimen · med-text), three shapes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── THE TUNER — .site-tuner (promoted from im-site, its first coverage audit,
+         2026-07-11). Static specimen: the visual instrument only — no audio graph, no station
+         roster, no tuning logic. The consumer wires the behavior; epoq3 defines the grammar. ── -->
+    <div class="gridrow">
+      <div class="container-tile u-full">
+        <div class="m-stage">
+          <div class="site-tuner">
+            <div class="head-top">
+              <span class="ctl-pill wordmark">Site Tuner</span>
+              <button type="button" class="ctl-pill pw" aria-pressed="false">OFF</button>
+            </div>
+            <div class="tuner-band" tabindex="0" role="slider" aria-label="FM tuning" aria-valuemin="88" aria-valuemax="108" aria-valuenow="94.2">
+              <div class="band-axis"></div>
+              <span class="band-tick major" style="left:10%"></span>
+              <span class="band-tick minor" style="left:20%"></span>
+              <span class="band-tick minor" style="left:30%"></span>
+              <span class="band-tick major" style="left:40%"></span>
+              <span class="band-tick minor" style="left:50%"></span>
+              <span class="band-tick minor" style="left:60%"></span>
+              <span class="band-tick major" style="left:70%"></span>
+              <span class="band-num mono m6" style="left:10%">90</span>
+              <span class="band-num mono m6" style="left:40%">96</span>
+              <span class="band-num mono m6" style="left:70%">102</span>
+              <div class="band-station" style="left:30%"><span class="st-title ctl-pill">STANDBY</span><span class="st-dot"></span><span class="st-stem"></span></div>
+              <div class="band-station tuned" style="left:60%"><span class="st-title ctl-pill">TUNED IN</span><span class="st-dot"></span><span class="st-stem"></span></div>
+              <div class="band-needle" style="left:60%"><span class="caret-top"></span><span class="caret-foot"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rail mono m6">
+          <span class="family">the tuner</span>
+          <span>print register, not glass · a station reveals only once tuned</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── THE PULL — .site-pull (promoted from im-site, its first coverage audit,
+         2026-07-11) — a full-width pull-bar CTA for an external link-out. ── -->
+    <div class="gridrow">
+      <div class="container-tile u-full">
+        <div class="m-stage">
+          <a class="site-pull" href="system.html">
+            <span class="label">Open the floor</span>
+            <span class="meta mono m6">THE FLOOR / LIVE</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+        <div class="spec-rail mono m6">
+          <span class="family">the pull</span>
+          <span>a full-width CTA for an external link-out — label · meta · arrow, folds to two rows under 919</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gridrow">
+      <div class="container-tile u-full">
+        <div class="m-stage">
+          <h3 class="serif-heading-3">Sign up to Intelligent Feed</h3>
+          <form class="site-signup" action="#">
+            <div class="field">
+              <label for="site-mail">e-mail</label>
+              <input id="site-mail" type="email" placeholder="ENTER YOUR E-MAIL" autocomplete="email" required>
+            </div>
+            <button type="submit" class="ctl-btn primary">submit</button>
+          </form>
+          <p class="mono m6 ann" data-signup-note aria-live="polite"></p>
+        </div>
+        <div class="spec-rail mono m6"><span class="family">signup</span><span>real form · native validation · no backend — the note tells the truth</span></div>
+      </div>
+    </div>
+
+    <div class="gridrow">
+      <div class="container-tile u-minor">
+        <div class="m-stage st-240">
+          <div class="cap-atom">
+            <span class="cap-box mono m6">end to end protocol</span>
+            <span class="cap-box mono m6">end to end protocol</span>
+            <span class="cap-box mono m6">end to end protocol</span>
+          </div>
+        </div>
+        <div class="spec-rail mono m6"><span class="family">caption atom</span><span>160 × 20 · hairline · the info strip</span></div>
+      </div>
+    </div>
+  
+    <!-- ── THE SITE REGISTER — the canon site footer (ruled G on the IM site, 2026-07-08),
+         shown here as a LIVE specimen: static in the flow (live use is position:fixed), but
+         genuinely wired — the six links target THIS page's own sections, the ring tracks the
+         real viewport centre, the reading-line is each section's own tagline transliterated
+         to braille (measured, never typed), the position is the real scroll. One hand-drawn
+         oval path reused six times — the organic curve is the point. site-register.js. ── -->
+    <div class="gridrow">
+      <div class="container-tile u-full">
+        <div class="m-stage">
+          <nav class="site-register site-register--specimen" aria-label="what you're reading, six sections, and the page position">
+            <span class="site-reg-caption" aria-hidden="true" data-reg-caption data-reg-seed="The vision leads. The medium follows. Taste is the constant.">⠞⠓⠑⠀⠧⠊⠎⠊⠕⠝⠀⠇⠑⠁⠙⠎⠲</span>
+            <ul class="site-reg-row">
+          <li><a class="site-reg-code" href="#system" data-inst-target="system" aria-label="System"><span class="site-reg-numwrap"><svg class="site-reg-ring" viewBox="0 0 36 30" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M18.4 4.6 C27.9 3.8 32.9 8.2 32.6 14.6 C32.3 21.3 26.1 25.7 17.6 25.4 C9.3 25.1 3.3 21.1 3.6 14.4 C3.9 7.7 10.4 4.9 21.2 4.5"/></svg><span class="site-reg-num">System</span></span></a></li>
+          <li><a class="site-reg-code" href="#tokens" data-inst-target="tokens" aria-label="Tokens"><span class="site-reg-numwrap"><svg class="site-reg-ring" viewBox="0 0 36 30" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M18.4 4.6 C27.9 3.8 32.9 8.2 32.6 14.6 C32.3 21.3 26.1 25.7 17.6 25.4 C9.3 25.1 3.3 21.1 3.6 14.4 C3.9 7.7 10.4 4.9 21.2 4.5"/></svg><span class="site-reg-num">Tokens</span></span></a></li>
+          <li><a class="site-reg-code" href="#type" data-inst-target="type" aria-label="Type"><span class="site-reg-numwrap"><svg class="site-reg-ring" viewBox="0 0 36 30" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M18.4 4.6 C27.9 3.8 32.9 8.2 32.6 14.6 C32.3 21.3 26.1 25.7 17.6 25.4 C9.3 25.1 3.3 21.1 3.6 14.4 C3.9 7.7 10.4 4.9 21.2 4.5"/></svg><span class="site-reg-num">Type</span></span></a></li>
+          <li><a class="site-reg-code" href="#hub" data-inst-target="hub" aria-label="Hub"><span class="site-reg-numwrap"><svg class="site-reg-ring" viewBox="0 0 36 30" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M18.4 4.6 C27.9 3.8 32.9 8.2 32.6 14.6 C32.3 21.3 26.1 25.7 17.6 25.4 C9.3 25.1 3.3 21.1 3.6 14.4 C3.9 7.7 10.4 4.9 21.2 4.5"/></svg><span class="site-reg-num">Hub</span></span></a></li>
+          <li><a class="site-reg-code" href="#theatre" data-inst-target="theatre" aria-label="Theatre"><span class="site-reg-numwrap"><svg class="site-reg-ring" viewBox="0 0 36 30" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M18.4 4.6 C27.9 3.8 32.9 8.2 32.6 14.6 C32.3 21.3 26.1 25.7 17.6 25.4 C9.3 25.1 3.3 21.1 3.6 14.4 C3.9 7.7 10.4 4.9 21.2 4.5"/></svg><span class="site-reg-num">Theatre</span></span></a></li>
+          <li><a class="site-reg-code" href="#apparatus" data-inst-target="apparatus" aria-label="Writing"><span class="site-reg-numwrap"><svg class="site-reg-ring" viewBox="0 0 36 30" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M18.4 4.6 C27.9 3.8 32.9 8.2 32.6 14.6 C32.3 21.3 26.1 25.7 17.6 25.4 C9.3 25.1 3.3 21.1 3.6 14.4 C3.9 7.7 10.4 4.9 21.2 4.5"/></svg><span class="site-reg-num">Writing</span></span></a></li>
+            </ul>
+            <span class="site-reg-pos" aria-hidden="true" data-reg-pos>00%</span>
+          </nav>
+        </div>
+        <div class="spec-rail mono m6"><span class="family">the site register</span><span>the canon site footer — braille reading-line (aria-hidden · 2× mono · lh 1 · 3-word cap) · the grease-pencil ring on the live section (ONE drawn oval, JS-drawn stroke — E6-lawful motion) · live position · dormant marks ink-12 → ink live · fixed in use, in-flow here · baselines measured per element, never transferred</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
        INTERACTIVE HUD MODALS (REAL FUNCTIONAL TELEMETRY INSTRUMENTS)
        ═══════════════════════════════════════════════════════════════════ -->
 
@@ -2307,6 +3596,7 @@ body {
         <a href="#" class="hub-cmdk-row" onclick="runCmdk('browser'); return false;"><span class="ty">NAV [B]</span><span class="ti">Switch to Corpus Browser (Mesh &amp; 2,884 Seeds)</span></a>
         <a href="#" class="hub-cmdk-row" onclick="runCmdk('reading'); return false;"><span class="ty">NAV [L]</span><span class="ti">Switch to Reading Room &amp; Lens (Codex 011 Tripartite)</span></a>
         <a href="#" class="hub-cmdk-row" onclick="runCmdk('rotunda'); return false;"><span class="ty">NAV [R]</span><span class="ti">Switch to Rotunda (The Law &amp; 3.2s Stamp Ritual)</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('components'); return false;"><span class="ty">NAV [C]</span><span class="ti">Switch to Components (EPOQ IIII Sovereign Register)</span></a>
         <a href="#" class="hub-cmdk-row" onclick="runCmdk('seed'); return false;"><span class="ty">ACTION</span><span class="ti">Open Quick Seed capture bar [S]</span></a>
         <a href="#" class="hub-cmdk-row" onclick="runCmdk('tests'); return false;"><span class="ty">TESTS</span><span class="ti">Inspect 134 passing test suites (exit 0)</span></a>
         <a href="#" class="hub-cmdk-row" onclick="runCmdk('git'); return false;"><span class="ty">GIT</span><span class="ti">View Git branch, commit sha, and working tree</span></a>
@@ -2396,6 +3686,7 @@ body {
       if (k === 'B') switchRoom('room-browser', document.getElementById('tabBrowser'));
       if (k === 'L') switchRoom('room-reading', document.getElementById('tabReading'));
       if (k === 'R') switchRoom('room-rotunda', document.getElementById('tabRotunda'));
+      if (k === 'C') switchRoom('room-components', document.getElementById('tabComponents'));
       if (k === 'S') {
         e.preventDefault();
         toggleSeedDrawer();
@@ -2409,7 +3700,8 @@ body {
       'room-feed': 'subbar-feed',
       'room-browser': 'subbar-browser',
       'room-reading': 'subbar-reading',
-      'room-rotunda': 'subbar-rotunda'
+      'room-rotunda': 'subbar-rotunda',
+      'room-components': 'subbar-components'
     };
 
     const ROOM_TAB_MAP = {
@@ -2418,7 +3710,8 @@ body {
       'room-feed': 'tabFeed',
       'room-browser': 'tabBrowser',
       'room-reading': 'tabReading',
-      'room-rotunda': 'tabRotunda'
+      'room-rotunda': 'tabRotunda',
+      'room-components': 'tabComponents'
     };
 
     function switchRoom(roomId, btn) {
@@ -2456,7 +3749,8 @@ body {
         'feed': 'room-feed',
         'browser': 'room-browser',
         'reading': 'room-reading',
-        'rotunda': 'room-rotunda'
+        'rotunda': 'room-rotunda',
+      'components': 'room-components'
       };
       if (map[hash]) {
         switchRoom(map[hash]);
@@ -2588,6 +3882,7 @@ body {
       else if (cmd === 'browser') switchRoom('room-browser');
       else if (cmd === 'reading') switchRoom('room-reading');
       else if (cmd === 'rotunda') switchRoom('room-rotunda');
+      else if (cmd === 'components') switchRoom('room-components');
       else if (cmd === 'seed') toggleSeedDrawer();
       else if (cmd === 'sync') triggerLiveSync();
       else if (cmd === 'tests') openTestModal();
@@ -2631,5 +3926,54 @@ body {
       seal.addEventListener('pointercancel', disarm);
     })();
   </script>
+
+  <script src="hub-glyphs.js" defer></script>
+  <script src="hub-motion.js" defer></script>
+  <script src="cli-terminal.js" defer></script>
+  <script>
+  /* 007 — COLOR · the palette is a measured OKLCH SPECIMEN. Each ink is converted from its
+     own value to OKLCH at render; the column is sized by its lightness (L), the family laid
+     out as a ramp running light to dark, and each ink's coordinates (L · C · H) printed in
+     the legend. The width is drawn FROM the colour — never a claim about page usage. */
+  (function () {
+    var cards = [].slice.call(document.querySelectorAll('#color .pal-cell'));
+    if (!cards.length) return;
+
+    function lin(c) { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); }
+    function oklch(rgb) {
+      var r = lin(rgb[0]), g = lin(rgb[1]), b = lin(rgb[2]);
+      var l = 0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b;
+      var m = 0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b;
+      var s = 0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b;
+      var l_ = Math.cbrt(l), m_ = Math.cbrt(m), s_ = Math.cbrt(s);
+      var L = 0.2104542553 * l_ + 0.7936177850 * m_ - 0.0040720468 * s_;
+      var A = 1.9779984951 * l_ - 2.4285922050 * m_ + 0.4505937099 * s_;
+      var B = 0.0259040371 * l_ + 0.7827717662 * m_ - 0.8086757660 * s_;
+      var C = Math.sqrt(A * A + B * B);
+      var H = Math.atan2(B, A) * 180 / Math.PI; if (H < 0) H += 360;
+      return { L: L * 100, C: C, H: H };
+    }
+    cards.forEach(function (c) {
+      var rgb = c.getAttribute('data-rgb').split(',').map(Number);
+      var o = oklch(rgb);
+      var leg = c.querySelector('.pal-oklch');
+      if (leg) leg.textContent = 'L ' + Math.round(o.L) + (o.C < 0.01 ? ' · neutral' : ' · C ' + o.C.toFixed(2) + ' · H ' + Math.round(o.H));
+    });
+  })();
+
+  /* 008 — SITE · the signup specimen is a REAL form with no backend: submission is
+     caught and the truth is announced. No fake "received" state — nothing is sent,
+     and the note says so (measured, not performed). */
+  (function () {
+    var form = document.querySelector('#site form.site-signup');
+    var note = document.querySelector('#site [data-signup-note]');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (note) note.textContent = 'specimen · no backend — nothing was sent';
+    });
+  })();
+  </script>
+
 </body>
 </html>
