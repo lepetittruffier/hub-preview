@@ -1,0 +1,2635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HHG CORTEX HUB — Sovereign EPOQ III Replicate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400&family=Scheherazade+New:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.intelligencematters.se/epoq/styles.css">
+<style>
+/* ══════════════════════════════════════════════════════════════════════
+   HHG HUB × EPOQ III SOVEREIGN REPLICATE
+   Faithful visual replicate of live hub.haegghaegg.se under EPOQ III Canon.
+   Consumes ONLY lawful EPOQ III tokens: no arbitrary hex, 400 weight only.
+   ══════════════════════════════════════════════════════════════════════ */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-synthesis: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── TOP CHROME NAVIGATION (2-ROW SOVEREIGN ARCHITECTURE) ──────────── */
+.hub-chrome {
+  border-bottom: var(--hairline) solid var(--line-box);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+.hub-chrome-row1 {
+  display: flex;
+  align-items: center;
+  height: 40px; /* canon-lint:allow — E19: chrome row height */
+  padding: 0 var(--s-3);
+  border-bottom: var(--hairline) solid var(--line-quiet);
+  background: var(--paper);
+  gap: var(--s-2);
+}
+
+.hub-chrome-row2 {
+  background: var(--paper);
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  height: 34px; /* canon-lint:allow — E19: subbar height */
+  display: flex;
+  align-items: center;
+}
+
+.hub-chrome-subbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--s-3);
+  width: 100%;
+  box-sizing: border-box;
+}
+.hub-chrome-subbar.active {
+  display: flex;
+}
+.hub-chrome-subbar a {
+  color: var(--ink-60);
+  text-decoration: none;
+}
+.hub-chrome-subbar a.active {
+  color: var(--signal-go);
+  border-bottom: var(--hairline) solid var(--signal-go);
+}
+.hub-subbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.hub-subbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.hub-subbar-btn {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  padding: 3px var(--s-1); /* canon-lint:allow — E15: subbar button pad */
+  border: var(--hairline) solid var(--line-box);
+  border-radius: var(--radius-print); /* ZERO CURVATURE: Law 01 */
+  background: var(--paper);
+  cursor: pointer;
+  color: var(--ink);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+}
+.hub-subbar-btn:hover {
+  border-color: var(--ink);
+}
+.hub-subbar-btn.active {
+  border-color: var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ── HUD QUICK SEED DRAWER ─────────────────────────────────────────── */
+.hub-drawer-bar {
+  display: none;
+  width: 100%;
+  border-bottom: var(--hairline) solid var(--line-box);
+  background: var(--paper);
+  padding: var(--s-1) var(--s-2);
+  box-sizing: border-box;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+}
+.hub-drawer-bar.open {
+  display: flex;
+}
+.hub-drawer-input {
+  flex: 1;
+  background: var(--paper);
+  border: var(--hairline) solid var(--line-box);
+  border-radius: var(--radius-print);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  padding: 4px var(--s-1); /* canon-lint:allow — E15: input pad */
+  box-sizing: border-box;
+}
+.hub-drawer-input:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+/* ── HUD MODALS (FLAT, ZERO-BLUR, 1-BIT MECHANICAL) ────────────────── */
+.hub-hud-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: color-mix(in srgb, var(--ink) 45%, transparent);
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+  box-sizing: border-box;
+}
+.hub-hud-modal.open {
+  display: flex;
+}
+.hub-modal-card {
+  background: var(--paper);
+  border: var(--hairline) solid var(--line-box);
+  width: min(var(--col-2), calc(100% - var(--s-5)));
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.hub-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s-1) var(--s-2);
+  border-bottom: var(--hairline) solid var(--line-box);
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+}
+.hub-modal-body {
+  padding: var(--s-2);
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  line-height: 1.5;
+}
+
+/* ── TELEMETRY STATUS PILL (FIX FOR OVERLAPPING 134/134 GREEN) ────── */
+.hub-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  padding: 3px var(--s-1); /* canon-lint:allow — E15: status pill vertical micro-pad */
+  border: var(--hairline) solid var(--signal-go);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+.hub-status-pill .pix-dot {
+  flex-shrink: 0;
+  margin: 0;
+}
+.hub-tag-live {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2px var(--s-1); /* canon-lint:allow — E15: cli badge pad */
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  line-height: 1;
+}
+/* ── 1-BIT SQUARE TELEMETRY INDICATOR (LAW 01: ZERO CURVATURE) ────── */
+.hub-pdot,
+.pix-dot {
+  width: 7px; /* canon-lint:allow — E19: 1-bit square indicator */
+  height: 7px; /* canon-lint:allow — E19: 1-bit square indicator */
+  border-radius: var(--radius-print); /* ZERO CURVATURE: Law 01 */
+  display: inline-block;
+  flex: none;
+  background: var(--hum);
+}
+.hub-pdot.live,
+.pix-dot.live {
+  background: var(--signal-go);
+}
+.pix-dot.idle {
+  background: var(--ink-40);
+}
+.pix-dot.done {
+  background: var(--graphite);
+}
+
+/* ── TELEMETRY DISCIPLINE: PURE STATUS FACTS (ZERO STEPPED GAUGES) ── */
+
+/* ── CLI TERMINAL CURSOR ────────────────────────────────────────────── */
+.hub-cli-cursor {
+  display: inline-block;
+  width: 6px; /* canon-lint:allow — E19 */
+  height: 12px; /* canon-lint:allow — E19 */
+  background: var(--ink);
+  vertical-align: middle;
+  margin-left: 2px; /* canon-lint:allow — E15 */
+  animation: hub-cli-cursor-blink 1.06s infinite steps(1); /* canon-lint:allow — E6 */
+}
+@keyframes hub-cli-cursor-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ── GRAPH EDGE PULSE (BROWSER MESH) ────────────────────────────────── */
+@keyframes hub-graph-edge-pulse {
+  0%, 100% { stroke-opacity: 1; }
+  50% { stroke-opacity: 0.35; }
+}
+.hub-logo {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: var(--s-2);
+}
+.hub-logo .dot {
+  color: var(--signal-go);
+}
+.hub-nav-items {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+}
+.hub-tab-btn {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  padding: 4px var(--s-2); /* canon-lint:allow — E15: nav button vertical micro-pad */
+  border: var(--hairline) solid transparent;
+  border-radius: var(--radius-print); /* ZERO CURVATURE: Law 01 */
+  background: none;
+  cursor: pointer;
+  color: var(--ink-60);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.hub-tab-btn:hover {
+  color: var(--ink);
+}
+.hub-tab-btn.active {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--paper);
+}
+.hub-tab-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.hub-clock {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--ink-60);
+  text-transform: uppercase;
+}
+.hub-seed-btn {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  padding: 4px var(--s-2); /* canon-lint:allow — E15: chrome button micro-pad */
+  border: var(--hairline) solid var(--line-box);
+  border-radius: var(--radius-print); /* ZERO CURVATURE: Law 01 */
+  background: var(--paper);
+  cursor: pointer;
+  color: var(--ink);
+}
+.hub-seed-btn:hover {
+  border-color: var(--ink);
+}
+.hub-presence {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* canon-lint:allow — E15: dot gap */
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  padding: 4px var(--s-2); /* canon-lint:allow — E15: presence badge pad */
+  border: var(--hairline) solid var(--line-box);
+  border-radius: var(--radius-print); /* ZERO CURVATURE: Law 01 */
+  background: var(--paper);
+}
+.hub-pdot {
+  width: 6px; /* canon-lint:allow — E19: indicator dot */
+  height: 6px; /* canon-lint:allow — E19: indicator dot */
+  border-radius: var(--radius-print); /* ZERO CURVATURE: 1-bit square */
+  background: var(--signal-go);
+}
+
+/* ── ROOM CANVAS STAGE ─────────────────────────────────────────────── */
+.hub-room {
+  display: none;
+  width: 100%;
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: var(--s-4) var(--gutter);
+  box-sizing: border-box;
+}
+.hub-room.active {
+  display: block;
+}
+/* Workstation rooms (The Floor / Feed and Reading Room) utilize edge-to-edge space */
+#room-feed.hub-room,
+#room-reading.hub-room {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── SUB-OPBAR ─────────────────────────────────────────────────────── */
+.hub-subbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+}
+.hub-subbar a {
+  color: var(--ink-60);
+  text-decoration: none;
+}
+.hub-subbar a.active {
+  color: var(--signal-go);
+  border-bottom: var(--hairline) solid var(--signal-go);
+}
+.hub-box-summon {
+  border: var(--hairline) solid var(--line-box);
+  border-radius: var(--radius-print); /* ZERO CURVATURE: Law 01 */
+  padding: 2px var(--s-1); /* canon-lint:allow — E15: box badge pad */
+  text-decoration: none;
+  color: var(--ink);
+}
+
+/* ── HOME ROOM SPECIFICS ───────────────────────────────────────────── */
+.home-container {
+  max-width: var(--col-2);
+  margin: 0 auto;
+}
+.home-signal {
+  border: var(--hairline) solid var(--line-box);
+  background: var(--paper);
+  padding: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.home-signal-top {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--grey-51);
+  margin-bottom: var(--s-2);
+}
+.home-signal-quote {
+  margin: 0;
+  font-size: var(--fz-heading-2);
+  line-height: var(--lh-heading-2);
+  color: var(--ink);
+  font-style: normal;
+}
+
+/* ── 200_ROWS CANONICAL 4 ARCHETYPES (JACOB 2026-10-07 CANON) ─────── */
+.hub-pres {
+  background: var(--paper);
+  border: var(--hairline) solid var(--line-box);
+  padding: var(--s-2);
+}
+.hub-pres-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-1);
+}
+.hub-pres-ch {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--ink);
+}
+.hub-pres-focus {
+  margin: var(--s-1) 0 0;
+  font-size: var(--fz-body-1);
+  line-height: var(--lh-body-1);
+  color: var(--ink);
+}
+.hub-entity {
+  background: var(--paper);
+  border: var(--hairline) solid var(--line-box);
+  padding: var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.hub-entity-st {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--grey-51);
+}
+.hub-entity-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: var(--fz-heading-3);
+  line-height: var(--lh-heading-3);
+  color: var(--ink);
+}
+.hub-entity-body {
+  margin: 0;
+  font-size: var(--fz-body-1);
+  line-height: var(--lh-body-1);
+  color: var(--ink);
+}
+.hub-entity-foot {
+  margin-top: var(--s-1);
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--ink-60);
+}
+.hub-comment {
+  border-left: 2px solid var(--ink); /* canon-lint:allow — E10: hub comment accent rule */
+  padding: var(--s-2) var(--s-2) var(--s-2) var(--s-3);
+  background: var(--paper);
+}
+.hub-comment-anchor {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--ink-60);
+  margin-bottom: var(--s-1);
+}
+.hub-comment-body {
+  margin: 0 0 var(--s-2) 0;
+  font-size: var(--fz-body-1);
+  line-height: var(--lh-body-1);
+  color: var(--ink);
+}
+.hub-comment-verdict {
+  display: flex;
+  gap: var(--s-1);
+  flex-wrap: wrap;
+}
+.hub-lock-band {
+  border: var(--hairline) solid var(--line-box);
+  background: var(--paper);
+  padding: var(--s-3);
+}
+.hub-lock-band-msg {
+  margin: 0 0 var(--s-3) 0;
+  font-family: var(--font-serif);
+  font-size: var(--fz-heading-2);
+  line-height: var(--lh-heading-2);
+  color: var(--ink);
+}
+.hub-lock-band-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  align-items: center;
+  justify-content: space-between;
+}
+.hub-atom-spec {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink-60);
+}
+.home-brief {
+  border-top: var(--hairline) solid var(--line-box);
+  border-bottom: none;
+  padding: var(--s-3) 0;
+  margin-bottom: var(--s-4);
+}
+.home-brief-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink-60);
+  margin-bottom: var(--s-2);
+}
+.home-brief-tag {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink-60);
+  margin-bottom: var(--s-1);
+}
+.home-brief-txt {
+  margin: 0 0 var(--s-2) 0;
+  font-size: var(--fz-body-1);
+  line-height: var(--lh-body-1);
+  color: var(--ink);
+}
+.home-brief-meta {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--ink-60);
+}
+.home-gallery-scroll {
+  display: flex;
+  gap: var(--s-3);
+  overflow-x: auto;
+  padding-bottom: var(--s-2);
+  margin-bottom: var(--s-4);
+}
+.home-gallery-tile {
+  min-width: 260px; /* canon-lint:allow — E19: gallery card width */
+  max-width: 280px; /* canon-lint:allow — E19: gallery card width */
+  flex-shrink: 0;
+  border: var(--hairline) solid var(--line-box);
+  padding: var(--s-2) var(--s-3);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.home-gallery-meta {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink-60);
+}
+.home-gallery-name {
+  font-size: var(--fz-heading-3);
+  line-height: var(--lh-heading-3);
+  color: var(--ink);
+}
+.home-gallery-desc {
+  margin: 0;
+  font-size: var(--fz-mono-6);
+  line-height: var(--lh-body-1);
+  color: var(--ink-60);
+}
+.home-week-note {
+  font-size: var(--fz-body-1);
+  line-height: var(--lh-body-1);
+  color: var(--ink);
+  margin-bottom: var(--s-3);
+  border-top: var(--hairline) solid var(--line-box);
+  padding-top: var(--s-2);
+}
+.home-chores-top {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink-60);
+  margin-bottom: var(--s-1);
+}
+.home-chore-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: var(--hairline) solid var(--line-quiet);
+  padding: var(--s-2) 0;
+  font-size: var(--fz-body-1);
+  line-height: var(--lh-body-1);
+}
+
+/* ── DESK ROOM SPECIFICS ───────────────────────────────────────────── */
+.desk-container {
+  max-width: var(--col-2);
+  margin: 0 auto;
+}
+.desk-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: var(--s-4);
+  margin-bottom: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink-60);
+}
+.desk-bench-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+  margin-top: var(--s-2);
+  border-top: var(--hairline) solid var(--line-box);
+  padding-top: var(--s-2);
+}
+.desk-claim {
+  border-top: var(--hairline) solid var(--line-quiet);
+  padding: var(--s-2) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.desk-claim-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+}
+.desk-claim-title {
+  font-size: var(--fz-body-1);
+  line-height: var(--lh-body-1);
+  color: var(--ink);
+}
+.desk-claim-ctx {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--ink-60);
+}
+
+/* ── FEED ROOM SPECIFICS ───────────────────────────────────────────── */
+.feed-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr; /* canon-lint:allow — E19: feed workstation drawer */
+  min-height: calc(100vh - 74px); /* canon-lint:allow — E19: workstation viewport height */
+  gap: 0;
+  width: 100%;
+  align-items: stretch;
+}
+.feed-drawer {
+  border-right: var(--hairline) solid var(--line-box);
+  background: var(--paper);
+  padding: var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  box-sizing: border-box;
+}
+.feed-stage {
+  padding: var(--s-3) var(--s-4);
+  background: var(--paper);
+  min-width: 0;
+  box-sizing: border-box;
+}
+.feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: var(--hairline) solid var(--line-box);
+  padding-bottom: var(--s-2);
+  margin-bottom: var(--s-3);
+}
+.feed-header h1 {
+  margin: 0;
+  font-size: var(--fz-page-title);
+  line-height: var(--lh-page-title);
+}
+.feed-toggle {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  display: flex;
+  gap: var(--s-2);
+}
+/* ── THE FLOOR CLI INSTRUMENTS (005_CLI CANON) ─────────────────────── */
+.cli-statusbar {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  overflow-x: auto;
+  max-width: 100%;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  line-height: var(--lh-mono-6);
+  letter-spacing: var(--track-code);
+  background: var(--paper);
+  color: var(--ink);
+  border: var(--hairline) solid var(--line-box);
+  margin-bottom: var(--s-3);
+}
+.cli-statusbar .seg {
+  padding: var(--s-1) var(--s-2);
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+  border-right: var(--hairline) solid var(--line-box);
+  white-space: nowrap;
+  flex: none;
+}
+.cli-statusbar .seg--clock {
+  margin-left: auto;
+  border-right: 0;
+  color: var(--ink-60);
+}
+.cli-statusbar .seg--mode {
+  background: var(--ink);
+  color: var(--paper);
+}
+.cli-repl-box {
+  border: var(--hairline) solid var(--line-box);
+  background: var(--paper);
+  padding: var(--s-2) var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.cli-log {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* canon-lint:allow — E15 */
+  overflow-x: auto;
+  max-width: 100%;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  line-height: 1.5;
+  letter-spacing: var(--track-code);
+  background: var(--paper);
+  color: var(--ink);
+  padding: var(--s-2);
+  border: var(--hairline) solid var(--line-quiet);
+}
+.cli-log-row {
+  display: flex;
+  gap: var(--s-2);
+  align-items: baseline;
+  white-space: nowrap;
+}
+.cli-log-row.is-ok .cli-log-lv { color: var(--signal-go); }
+.cli-log-row.is-info .cli-log-lv { color: var(--ink-60); }
+.cli-log-row.is-warn .cli-log-lv { color: var(--signal-attn); }
+.cli-log-row.is-err .cli-log-lv { color: var(--signal-attn); }
+.cli-log-msg { color: var(--ink-60); }
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gutter);
+  margin-bottom: var(--s-4);
+}
+.container-tile .hub-card:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+.container-tile .hub-card {
+  border-top: var(--hairline) solid var(--line-quiet);
+}
+.container-tile .hub-list-row:last-child {
+  border-bottom: none;
+}
+.feed-ping-box {
+  border: var(--hairline) solid var(--line-box);
+  background: var(--paper);
+  padding: var(--s-2) var(--s-3);
+  margin-bottom: var(--s-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.feed-stream-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top: var(--hairline) solid var(--line-box);
+}
+.stream-row {
+  display: grid;
+  grid-template-columns: var(--s-5) calc(var(--s-5) * 2) 1fr max-content;
+  gap: var(--s-2);
+  padding: var(--s-1) 0;
+  border-bottom: var(--hairline) solid var(--line-quiet);
+  align-items: baseline;
+  font-size: var(--fz-body-1);
+}
+.stream-ts {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--ink-60);
+}
+.stream-actor {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.stream-action {
+  color: var(--ink);
+}
+.stream-ctx {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--signal-go);
+  text-transform: uppercase;
+}
+
+/* ── BROWSER ROOM SPECIFICS ────────────────────────────────────────── */
+.browser-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr; /* canon-lint:allow — E19: browser sidebar width */
+  gap: var(--gutter);
+  align-items: start;
+}
+.browser-rail-sec {
+  margin-bottom: var(--s-3);
+}
+.browser-rail-title {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink-60);
+  border-bottom: none;
+  border-top: var(--hairline) solid var(--line-quiet);
+  padding-top: var(--s-2);
+  margin-bottom: var(--s-1);
+}
+.browser-rail-sec:first-of-type .browser-rail-title {
+  border-top: none;
+  padding-top: 0;
+}
+.browser-nav-link {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  padding: 4px 0; /* canon-lint:allow — E15: rail item pad */
+  color: var(--ink);
+  text-decoration: none;
+}
+.browser-nav-link:hover {
+  color: var(--signal-go);
+}
+.doors-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--s-1);
+  margin-top: var(--s-2);
+  border-top: var(--hairline) solid var(--line-box);
+  padding-top: var(--s-2);
+}
+.door-card {
+  border: var(--hairline) solid var(--line-box);
+  padding: var(--s-2);
+  text-align: center;
+  background: var(--paper);
+}
+.door-card .num {
+  font-size: var(--fz-page-title);
+  line-height: 1;
+}
+.door-card .label {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink-60);
+  margin-top: var(--s-1);
+}
+
+/* ── READING ROOM + LENS SPECIFICS ─────────────────────────────────── */
+.reading-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 360px; /* canon-lint:allow — E19: tripartite reading workstation */
+  gap: 0;
+  align-items: stretch;
+  min-height: calc(100vh - 74px); /* canon-lint:allow — E19: workstation viewport height */
+  width: 100%;
+}
+.reading-layout.mode-full {
+  grid-template-columns: 1fr;
+}
+.reading-layout.mode-full .marginalia-rail,
+.reading-layout.mode-full .lens-panel {
+  display: none;
+}
+.reading-layout.mode-full .reading-sheet {
+  max-width: var(--col-2);
+  margin: 0 auto;
+  width: 100%;
+}
+.reading-layout.mode-lens {
+  grid-template-columns: 1fr 360px; /* canon-lint:allow — E19: reading sheet + lens */
+}
+.reading-layout.mode-lens .marginalia-rail {
+  display: none;
+}
+.reading-layout.mode-lens .reading-sheet {
+  max-width: 100%;
+}
+.reading-layout.mode-marginalia {
+  grid-template-columns: 240px 1fr; /* canon-lint:allow — E19: marginalia + reading sheet */
+}
+.reading-layout.mode-marginalia .lens-panel {
+  display: none;
+}
+.reading-layout.mode-marginalia .reading-sheet {
+  max-width: 100%;
+}
+.marginalia-rail {
+  border-right: var(--hairline) solid var(--line-box);
+  padding: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  color: var(--ink-60);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  background: var(--paper);
+  box-sizing: border-box;
+}
+.reading-sheet {
+  background: var(--paper);
+  border: none;
+  padding: var(--s-4) var(--s-5);
+  box-shadow: none; /* ZERO SHADOW LAW — no halos */
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 100%;
+}
+.hub-telemetry-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+}
+.hub-telemetry-table th {
+  text-align: left;
+  padding: var(--s-1) var(--s-2);
+  border-bottom: var(--hairline) solid var(--line-box);
+  color: var(--ink-60);
+  text-transform: uppercase;
+}
+.hub-telemetry-table td {
+  padding: var(--s-1) var(--s-2);
+  border-bottom: var(--hairline) solid var(--line-quiet);
+  color: var(--ink);
+  vertical-align: baseline;
+}
+.hub-telemetry-table tr:last-child td {
+  border-bottom: none;
+}
+.lens-panel {
+  border-left: var(--hairline) solid var(--line-box);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  background: var(--paper);
+  padding: var(--s-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  box-sizing: border-box;
+}
+.lens-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  text-transform: uppercase;
+  border-bottom: var(--hairline) solid var(--line-quiet);
+  padding-bottom: var(--s-1);
+}
+.lens-cli-header {
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+  margin-bottom: var(--s-1);
+}
+.lens-receipt-cell {
+  background: var(--paper);
+  border: var(--hairline) solid var(--line-quiet);
+  padding: var(--s-2);
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* canon-lint:allow — E15: receipt log line gap */
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  line-height: 1.4;
+}
+.lens-receipt-line {
+  display: flex;
+  gap: var(--s-1);
+  align-items: baseline;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── RITUAL STAMP RING ─────────────────────────────────────────────── */
+.rt-armable {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  touch-action: none;
+  width: var(--s-5);
+  height: var(--s-5);
+  border-radius: var(--radius-print); /* ZERO CURVATURE: 1-bit square */
+  border: var(--hairline) solid var(--line-box);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  background: var(--paper);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  margin: var(--s-2) auto;
+}
+.rt-armable:active {
+  transform: scale(0.97);
+}
+.rt-ring {
+  position: absolute;
+  inset: -6px; /* canon-lint:allow — E19: instrument ring geometry */
+  width: calc(100% + 12px); /* canon-lint:allow — E19: instrument ring geometry */
+  height: calc(100% + 12px); /* canon-lint:allow — E19: instrument ring geometry */
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+.rt-ring circle {
+  fill: none;
+  stroke-width: 2.5;
+}
+.rt-ring-track {
+  stroke: var(--ink-12);
+}
+.rt-ring-fill {
+  stroke: var(--signal-attn);
+  stroke-dasharray: 289;
+  stroke-dashoffset: 289;
+}
+.rt-armable.arming .rt-ring-fill {
+  transition: stroke-dashoffset 3.2s linear; /* canon-lint:allow — E6: 3.2s held stamp ritual */
+  stroke-dashoffset: 0;
+}
+.rt-armable.pressed {
+  border-color: var(--signal-go);
+  background: var(--ink);
+  color: var(--paper);
+}
+.rt-armable.pressed .rt-ring-fill {
+  stroke: var(--signal-go);
+  stroke-dashoffset: 0;
+}
+</style>
+</head>
+<body>
+
+  <!-- ── PERSISTENT CHROME NAVIGATION BAR (2-ROW SOVEREIGN INSTRUMENT BAR) ── -->
+  <header class="hub-chrome" aria-label="HHG Hub persistent chrome">
+    <!-- ROW 1: GLOBAL COMMAND & SYSTEM NAVIGATION -->
+    <div class="hub-chrome-row1">
+      <a href="#" class="hub-logo" onclick="switchRoom('room-home'); return false;">HHG<span class="dot">·</span>CORTEX</a>
+      <nav class="hub-nav-items" aria-label="Room navigation">
+        <button type="button" class="hub-tab-btn active" id="tabHome" onclick="switchRoom('room-home', this)">HOME [H]</button>
+        <button type="button" class="hub-tab-btn" id="tabDesk" onclick="switchRoom('room-desk', this)">DESK [D]</button>
+        <button type="button" class="hub-tab-btn" id="tabFeed" onclick="switchRoom('room-feed', this)">FEED [F]</button>
+        <button type="button" class="hub-tab-btn" id="tabBrowser" onclick="switchRoom('room-browser', this)">BROWSER [B]</button>
+        <button type="button" class="hub-tab-btn" id="tabReading" onclick="switchRoom('room-reading', this)">READING ROOM &amp; LENS [L]</button>
+        <button type="button" class="hub-tab-btn" id="tabRotunda" onclick="switchRoom('room-rotunda', this)">⊙ ROTUNDA [R]</button>
+      </nav>
+
+      <div class="hub-clock" id="hubClockDisplay" title="Europe/Stockholm official time">TUE 07 OCT · 12:35:00 · STOCKHOLM</div>
+
+      <button type="button" class="hub-seed-btn" id="hubSeedToggleBtn" onclick="toggleSeedDrawer();" title="Quick capture seed [S]">+ SEED</button>
+
+      <button type="button" class="hub-presence" id="hubOpPresenceBtn" onclick="cycleOperator();" title="Click to cycle active operator">
+        <span class="hub-pdot live" id="hubPresenceDot"></span> <span id="currentOperator">OP1:JACOB</span> × CORTEX HUB
+      </button>
+    </div>
+
+    <!-- ROW 2: CONTEXTUAL ROOM TELEMETRY SUBBARS -->
+    <div class="hub-chrome-row2">
+      <!-- SUBBAR 00: HOME -->
+      <div class="hub-chrome-subbar active" id="subbar-home">
+        <div class="hub-subbar-left">
+          <span>VIEWING AS</span>
+          <a href="#" class="op-link-axel" onclick="setOperator('OP2:AXEL'); return false;">OP2:AXEL</a> · 
+          <a href="#" class="op-link-jacob active" onclick="setOperator('OP1:JACOB'); return false;">OP1:JACOB</a>
+        </div>
+        <div class="hub-subbar-right">
+          <button type="button" class="hub-subbar-btn" onclick="openCmdkModal();" title="Command palette [⌘K]">THE BOX · [⌘K]</button>
+        </div>
+      </div>
+
+      <!-- SUBBAR 01: DESK -->
+      <div class="hub-chrome-subbar" id="subbar-desk">
+        <div class="hub-subbar-left">
+          <span>VIEWING AS</span>
+          <a href="#" class="op-link-axel" onclick="setOperator('OP2:AXEL'); return false;">OP2:AXEL</a> · 
+          <a href="#" class="op-link-jacob active" onclick="setOperator('OP1:JACOB'); return false;">OP1:JACOB</a>
+        </div>
+        <div class="hub-subbar-right">
+          <button type="button" class="hub-subbar-btn" onclick="openCmdkModal();" title="Command palette [⌘K]">THE BOX · [⌘K]</button>
+        </div>
+      </div>
+
+      <!-- SUBBAR 02: FEED / FLOOR -->
+      <div class="hub-chrome-subbar" id="subbar-feed">
+        <div class="hub-subbar-left">
+          <span class="hub-tag-live">LIVE</span>
+          <span>~/HHG_CORTEX_V1 · ⊚ MAIN · OP1:JACOB</span>
+        </div>
+        <div class="hub-subbar-right">
+          <span class="ann">4 AGENTS ACTIVE</span>
+          <button type="button" class="hub-subbar-btn" onclick="openCmdkModal();">CLI COMMANDS [⌘K]</button>
+        </div>
+      </div>
+
+      <!-- SUBBAR 03: BROWSER -->
+      <div class="hub-chrome-subbar" id="subbar-browser">
+        <div class="hub-subbar-left">
+          <span>HUB.HAEGGHAEGG.SE/BROWSER?SORT=RECENCY</span>
+        </div>
+        <div class="hub-subbar-right">
+          <button type="button" class="hub-subbar-btn" onclick="openCmdkModal();">SEARCH CORPUS [⌘K]</button>
+        </div>
+      </div>
+
+      <!-- SUBBAR 04: READING ROOM & LENS -->
+      <div class="hub-chrome-subbar" id="subbar-reading">
+        <div class="hub-subbar-left">
+          <span class="ann">&lt;</span>
+          <span>CORTEX FUTURE DEVELOPMENT · CODEX 011: WORKSTATION · V3 WORKING</span>
+        </div>
+        <div class="hub-subbar-right">
+          <button type="button" class="hub-subbar-btn active" id="readingLayoutToggle" onclick="cycleReadingLayout(1)" title="Press Tab to cycle layout modes">TAB: TRIPARTITE [1/4]</button>
+        </div>
+      </div>
+
+      <!-- SUBBAR 05: ROTUNDA -->
+      <div class="hub-chrome-subbar" id="subbar-rotunda">
+        <div class="hub-subbar-left">
+          <span>THE ROTUNDA · SOVEREIGN CANON ROOM</span>
+        </div>
+        <div class="hub-subbar-right">
+          <button type="button" class="hub-subbar-btn" onclick="document.getElementById('hubDemoSeal').scrollIntoView({behavior:'smooth'});">CANON STAMP ↓</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK SEED DRAWER BAR (INTERACTIVE HUD CAPTURE) -->
+    <div id="hubSeedDrawer" class="hub-drawer-bar">
+      <span class="mono m6 ann">+ QUICK SEED:</span>
+      <input type="text" id="seedInputTitle" class="hub-drawer-input" placeholder="Type a seed thought (e.g. 'Audit outreach cadence with Hugues')..." onkeydown="if(event.key==='Enter') saveQuickSeed(); if(event.key==='Escape') toggleSeedDrawer();">
+      <button type="button" class="btn" onclick="saveQuickSeed();" style="padding: 0 var(--s-1); font-size: var(--fz-mono-6); font-family: var(--font-mono); text-transform: uppercase;">RECORD SEED [ENTER]</button>
+      <button type="button" class="btn" onclick="toggleSeedDrawer();" style="padding: 0 var(--s-1); font-size: var(--fz-mono-6); font-family: var(--font-mono); text-transform: uppercase;">ESC</button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ROOM 00: THE HOME (/ — Home) — Replicating Live Hub Landing Page
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main id="room-home" class="hub-room active">
+    <div class="home-container">
+
+      <!-- SIGNAL LOCK BAND (CANONICAL ARCHETYPE 4: LOUD FRAME · CHIPS · DIGEST LINK) -->
+      <section class="hub-lock-band" aria-label="Signal Lock">
+        <div class="home-signal-top">SIGNAL LOCK · THE NORTH STAR · EVERYONE PRIORITIZES AGAINST THIS</div>
+        <p class="hub-lock-band-msg">Strengthen the base while preserving the long game.</p>
+        <div class="hub-lock-band-row">
+          <span class="ctl-pill attention">blocker</span>
+          <a class="dlink" href="#" style="text-decoration: none; color: var(--ink); font-family: var(--font-mono); font-size: var(--fz-mono-6);"><span class="dmark">∂</span>&nbsp;open digest</a>
+        </div>
+      </section>
+      <div class="hub-atom-spec mono m6 ann" style="margin-top: var(--s-1); margin-bottom: var(--s-4);">LOUD FRAME · CHIPS · DIGEST LINK</div>
+
+      <!-- MAESTRO DAILY BRIEF -->
+      <section class="home-brief" aria-label="Maestro Daily Brief">
+        <div class="home-brief-top">
+          <span>AGENT:MAESTRO &middot; THE DAILY BRIEF</span>
+          <span>REPORTING CUTOFF 2026-10-06T06:40:00+02:00 &middot; EUROPE/STOCKHOLM</span>
+        </div>
+        <div class="home-brief-tag">Editorial read &mdash; not live task state</div>
+        <p class="home-brief-txt">
+          Tuesday. After Monday&rsquo;s brief, op1:jacob closed the spam check and rewrote the NVIDIA title. The pitch to Daniel is still not sent. The income bridge did not move: ColdIQ still awaits Hugues, and nothing in the record has gone to Sara. op2:axel&rsquo;s calendar marks today Hemma, and both operators are accepted on a 16:00 wrap. Monday&rsquo;s wrap left no note.
+        </p>
+        <div class="home-brief-meta">agent:maestro&rsquo;s editorial read; follow sources before asserting current facts.</div>
+      </section>
+
+      <!-- THE SLATE -->
+      <section aria-labelledby="home-slate-title">
+        <div id="home-slate-title" class="desk-section-head">
+          <span>THE SLATE</span>
+          <span>TODAY'S READ + THE COMMITTED SLATE &middot; OWNER IS A BADGE</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: var(--s-3);">
+          <!-- Card 1: Job Search: Execution -->
+          <article class="hub-card">
+            <div class="hub-card-top">
+              <span class="hub-card-id"><span class="ctl-pill">op2:axel</span> PROJECT &middot; WORKING <span class="ctl-pill">tracker</span></span>
+              <span class="hub-card-state"><span class="pix-dot live"></span> 5d idle</span>
+            </div>
+            <div class="hub-card-name">
+              <h3 class="hub-card-nm" style="margin: 0; font-size: var(--fz-heading-3);">Job Search: Execution</h3>
+            </div>
+            <p class="hub-card-next">ColdIQ submitted; awaiting Hugues. op2:axel confirmed sending the outreach package.</p>
+          </article>
+
+          <!-- Card 2: BY0I -->
+          <article class="hub-card">
+            <div class="hub-card-top">
+              <span class="hub-card-id"><span class="ctl-pill">op1:jacob</span> PROJECT &middot; WORKING</span>
+              <span class="hub-card-state"><span class="pix-dot live"></span> active</span>
+            </div>
+            <div class="hub-card-name">
+              <h3 class="hub-card-nm" style="margin: 0; font-size: var(--fz-heading-3);">BY0I</h3>
+            </div>
+            <p class="hub-card-next">Intake &amp; Company Intelligence Diagnostic &middot; Strategic Plays and <i class="tism">living</i> engine.</p>
+          </article>
+
+          <!-- Card 3: Clay Club Stockholm -->
+          <article class="hub-card">
+            <div class="hub-card-top">
+              <span class="hub-card-id"><span class="ctl-pill">op1:jacob</span> VENTURE &middot; WORKING</span>
+              <span class="hub-card-state"><span class="pix-dot idle"></span> 12d idle</span>
+            </div>
+            <div class="hub-card-name">
+              <h3 class="hub-card-nm" style="margin: 0; font-size: var(--fz-heading-3);">Clay Club Stockholm</h3>
+            </div>
+            <p class="hub-card-next">Event coordination, ceramic arts workshop schedule, and community registration.</p>
+          </article>
+
+          <!-- Card 4: Artefact plate store -->
+          <article class="hub-card">
+            <div class="hub-card-top">
+              <span class="hub-card-id"><span class="ctl-pill">op2:axel</span> INFRA &middot; LIVE</span>
+              <span class="hub-card-state"><span class="pix-dot live"></span> verified</span>
+            </div>
+            <div class="hub-card-name">
+              <h3 class="hub-card-nm" style="margin: 0; font-size: var(--fz-heading-3);">Artefact plate store &mdash; one public bucket, keyed paths, no relative images</h3>
+            </div>
+            <p class="hub-card-next">Vercel blob storage integration, public immutable assets, key-based addressing.</p>
+          </article>
+
+          <!-- Card 5: Canonical Archetype 2 (Entity Card) -->
+          <article class="hub-entity">
+            <span class="hub-entity-st">REVIEW</span>
+            <h3 class="hub-entity-title">Nous &mdash; exposure play</h3>
+            <p class="hub-entity-body">Museum of Nous &mdash; the approaches + the press map (verified routes, 2026-07-27).</p>
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span class="hub-entity-foot">owner &middot; op1:jacob</span>
+              <a class="dlink" href="#room-reading" onclick="switchRoom('room-reading', document.getElementById('tabReading'))"><span class="dmark">&part;</span>&nbsp;open case</a>
+            </div>
+          </article>
+          <div class="hub-atom-spec mono m6 ann">STATUS &middot; TITLE &middot; BODY &middot; OWNER</div>
+        </div>
+      </section>
+
+      <!-- ON DECK · THE BENCH -->
+      <section aria-labelledby="home-bench-title">
+        <div id="home-bench-title" class="desk-section-head">
+          <span>ON DECK · THE BENCH</span>
+          <span>20 WAITING</span>
+        </div>
+        <div class="desk-bench-chips">
+          <span class="ctl-chip">↑ Cortex Future Development</span>
+          <span class="ctl-chip">↑ Reference Palace — IM taste reference system</span>
+          <span class="ctl-chip">↑ Cortex Agents</span>
+          <span class="ctl-chip">↑ Drip Drop</span>
+          <span class="ctl-chip">↑ LegalGrounding — Message-Enriched Acquisition Experiment</span>
+          <span class="ctl-chip">↑ Jacob Hägg d.y. — analog naval bloodline (studio + collectors)</span>
+          <span class="ctl-chip">↑ Cortex Design</span>
+          <span class="ctl-chip">↑ The Match</span>
+          <span class="ctl-chip active">+12 more →</span>
+        </div>
+      </section>
+
+      <!-- NEGATIVE SPACE GALLERY STRIP -->
+      <section aria-labelledby="home-gallery-title">
+        <div id="home-gallery-title" class="desk-section-head">
+          <span>NEGATIVE SPACE · GALLERY R&amp;D STRIP</span>
+          <span>8 PIECES · THE STRIP SCROLLS →</span>
+        </div>
+        <div class="home-gallery-scroll">
+          <div class="home-gallery-tile">
+            <div class="home-gallery-meta">ARTEFACT · op1:jacob · REVIEW</div>
+            <div class="home-gallery-name">RD — Circus (M)addame</div>
+            <p class="home-gallery-desc">Addams, the Ring and the Madame · Study. Victorian mourning run as domestic comedy.</p>
+          </div>
+          <div class="home-gallery-tile">
+            <div class="home-gallery-meta">ARTEFACT · op1:jacob · REVIEW</div>
+            <div class="home-gallery-name">RD — Owens · Allhelgona</div>
+            <p class="home-gallery-desc">Halloween as <i class="tism">gramarye</i> (dust, not dark). Six directions: A Gramarye invitation, B Temple Cold room, C Allhelgona Descent.</p>
+          </div>
+          <div class="home-gallery-tile">
+            <div class="home-gallery-meta">ARTEFACT · op1:jacob · REVIEW</div>
+            <div class="home-gallery-name">RD — Addams Visual Dialect</div>
+            <p class="home-gallery-desc">1938 New Yorker panel → 1964 ABC → 1991/93 Sonnenfeld → Netflix Wednesday 2022. Thing's Box, Bell-Pull Room.</p>
+          </div>
+          <div class="home-gallery-tile">
+            <div class="home-gallery-meta">ARTEFACT · op1:jacob · REVIEW</div>
+            <div class="home-gallery-name">RD — Monocle · Meta Glass</div>
+            <p class="home-gallery-desc">The first wearable that announced its wearer was looking. Five directions: Proud Glass, Monocle Drop, Second Opinion.</p>
+          </div>
+          <div class="home-gallery-tile">
+            <div class="home-gallery-meta">ARTEFACT · op2:axel · LIVE</div>
+            <div class="home-gallery-name">Eyes Without a Face</div>
+            <p class="home-gallery-desc">High-frequency (30 Hz) brutalist noir stroboscopic mirror piece based on three authentic portraits of Rachel Swyer.</p>
+          </div>
+          <div class="home-gallery-tile">
+            <div class="home-gallery-meta">ARTEFACT · STUDY</div>
+            <div class="home-gallery-name">RD — Stratum 1890</div>
+            <p class="home-gallery-desc">Recent Archaeology (NEG SPC Room Sketch). 1890s domestic museum and apparatuses.</p>
+          </div>
+          <div class="home-gallery-tile">
+            <div class="home-gallery-meta">3D GLB · LIVE</div>
+            <div class="home-gallery-name">Couture Porcelain Statue</div>
+            <p class="home-gallery-desc">3-Zone Value &amp; Material Law: matte porous chalk body, high-gloss glazed cowl, oxidized lead jewelry.</p>
+          </div>
+          <div class="home-gallery-tile">
+            <div class="home-gallery-meta">PROP · MESH</div>
+            <div class="home-gallery-name">Rachel Eyes Without Face</div>
+            <p class="home-gallery-desc">Porcelain runway figure. 2.2 units gallery scale. In-browser compiled GLB specimen.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE WEEK & CHORES -->
+      <section aria-labelledby="home-week-title">
+        <div id="home-week-title" class="desk-section-head">
+          <span>THE WEEK</span>
+          <span>SINCE THE LAST PULSE · TWO QUESTIONS, NEVER MIXED</span>
+        </div>
+        <div class="home-week-note">
+          A focused week on the architecture and strategic narrative fronts. op2:axel pushed fresh revisions to the ColdIQ &mdash; The build, the play, the bet note and locked the Attio sync daemon. op1:jacob executed the EPOQ III sovereign system migration, stabilizing token parity across all Hub surfaces.
+        </div>
+        <div class="home-chores-top">
+          <span>CLOSED · THE CHORES</span>
+        </div>
+        <div class="home-chore-item">
+          <span>Obtain the Tech Open invoice with a credit-card payment route</span>
+          <span class="ctl-pill">KEPT · COMMITMENT</span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ROOM 01: THE DESK (/desk) — Replicating Screenshot 1
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main id="room-desk" class="hub-room">
+    <div class="desk-container">
+      <!-- SECTION: DRIVING CARDS -->
+      <section aria-labelledby="desk-driving-title">
+        <h2 id="desk-driving-title" class="desk-section-head">
+          <span>DRIVING · ACTIVE PUSHES</span>
+          <span>FIRST OPEN · TRACKERS EXPAND</span>
+        </h2>
+
+        <!-- CARD 1: Jacob Artist Funding Motor 2026 -->
+        <article class="hub-card is-hot">
+          <div class="hub-card-top">
+            <span class="hub-card-id"><span class="ctl-pill">op1:jacob</span> PROJECT · WORKING <span class="ctl-pill">tracker</span></span>
+            <span class="hub-card-state"><span class="pix-dot live"></span> 4d idle</span>
+          </div>
+          <div class="hub-card-name">
+            <h3 class="hub-card-nm" style="margin: 0; font-size: var(--fz-heading-3);">Jacob Artist Funding Motor 2026</h3>
+          </div>
+          <p class="hub-card-next">2026-10-02 — Autumn Kulturbryggan window closed Fri 25 Sep 23:59</p>
+
+          <div style="margin-top: var(--s-2); display: flex; flex-direction: column;">
+            <div class="hub-child">
+              <a href="#" class="hub-item-link" onclick="switchRoom('room-reading'); return false;">Resolve Kulturbryggan legal vehicle (Fröpengar + Förnyelse, windows through 25 Sep)</a>
+              <span class="hub-child-st">commitment · parked</span>
+            </div>
+            <div class="hub-child">
+              <a href="#" class="hub-item-link" onclick="switchRoom('room-reading'); return false;">FIRE — Konstnärsnämnden correction message for KN Ans 2026/4554-PR</a>
+              <span class="hub-child-st">commitment · parked</span>
+            </div>
+            <div class="hub-child">
+              <a href="#" class="hub-item-link" onclick="switchRoom('room-reading'); return false;">FIRE — Kulturrådet Produktionsplatser before 2026-09-15 23:59 (legal+finance gates)</a>
+              <span class="hub-child-st">commitment · parked</span>
+            </div>
+            <div class="hub-child">
+              <a href="#" class="hub-item-link" onclick="switchRoom('room-reading'); return false;">Artist Funding Board — Desktop MONEY vault 2026-09-14</a>
+              <span class="hub-child-st">artefact · working</span>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: var(--s-2); font-family: var(--font-mono); font-size: var(--fz-mono-6); letter-spacing: var(--track-code); text-transform: uppercase;">
+            <span style="color: var(--ink-60);">children · 4</span>
+            <a href="#" class="hub-item-link" onclick="switchRoom('room-reading'); return false;">open workspace →</a>
+          </div>
+        </article>
+
+        <!-- CARD 2: AI × Craft Machine Lab -->
+        <article class="hub-card" style="margin-top: var(--s-3);">
+          <div class="hub-card-top">
+            <span class="hub-card-id"><span class="ctl-pill">op1:jacob</span> PROJECT · WORKING</span>
+            <span class="hub-card-state"><span class="pix-dot idle"></span> 19d idle</span>
+          </div>
+          <div class="hub-card-name">
+            <h3 class="hub-card-nm" style="margin: 0; font-size: var(--fz-heading-3);">AI × Craft Machine Lab — NVIDIA &amp; peer gear/funding</h3>
+          </div>
+          <p class="hub-card-next">AI × traditional-craft MACHINE lab — money + gear from NVIDIA and peers</p>
+        </article>
+
+        <!-- 200_ROWS: SIGNAL STREAM (PRIORITY LANE) -->
+        <div class="hub-stream is-hot" style="margin-top: var(--s-3);">
+          <span class="hub-stream-grip">⋮⋮</span>
+          <span class="hub-stream-p is-attn">P1</span>
+          <h3 class="hub-stream-title">Signal stream &middot; priority lane</h3>
+          <p class="hub-stream-next">Review the staged scout batch before Monday send.</p>
+          <div class="hub-stream-meta"><span class="ctl-pill filled">working</span><span>due &middot; 2d</span><span class="ann">op1:jacob</span></div>
+        </div>
+
+        <!-- 200_ROWS: ACTION ROW (DUE / DECIDE) -->
+        <div class="hub-action is-due" style="margin-top: var(--s-2); display: flex; justify-content: space-between; align-items: center; border-bottom: var(--hairline) solid var(--line-quiet); padding: var(--s-2) 0;">
+          <div style="display: flex; gap: var(--s-2); align-items: baseline;">
+            <span class="mono m6 ann" style="color: var(--signal-attn);">&minus;1d</span>
+            <div>
+              <div class="serif-body-1">Approve outreach draft &middot; Acme Corp</div>
+              <div class="mono m6 ann"><span class="ctl-pill attention">overdue</span> sha: 4a2f8c1 &middot; agent:scout</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: var(--s-1);">
+            <button type="button" class="ctl-btn is-sm primary">decide</button>
+            <button type="button" class="ctl-btn is-sm glass">Hermes</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: ON DECK · THE BENCH -->
+      <section aria-labelledby="desk-bench-title">
+        <div id="desk-bench-title" class="desk-section-head">
+          <span>ON DECK · THE BENCH</span>
+          <span>20 WAITING</span>
+        </div>
+        <div class="desk-bench-chips">
+          <span class="ctl-chip">↑ Cortex Future Development</span>
+          <span class="ctl-chip">↑ Reference Palace — IM taste reference system</span>
+          <span class="ctl-chip">↑ Cortex Agents</span>
+          <span class="ctl-chip">↑ Drip Drop</span>
+          <span class="ctl-chip">↑ LegalGrounding — Message-Enriched Acquisition Experiment</span>
+          <span class="ctl-chip">↑ Jacob Hägg d.y. — analog naval bloodline (studio + collectors)</span>
+          <span class="ctl-chip">↑ Cortex Design</span>
+          <span class="ctl-chip">↑ The Match</span>
+          <span class="ctl-chip active">+12 more →</span>
+        </div>
+      </section>
+
+      <!-- SECTION: OWED (CLAIMS ON YOU) -->
+      <section aria-labelledby="desk-owed-title">
+        <div id="desk-owed-title" class="desk-section-head">
+          <span style="color: var(--signal-attn);">OWED</span>
+          <span>ON ME · EVERY CLAIM SHOWN WITH ITS CONTEXT</span>
+        </div>
+
+        <div class="desk-claim">
+          <div class="desk-claim-top">
+            <span>op1:jacob · commitment</span>
+            <span class="ctl-pill attention">OVERDUE · 72D</span>
+          </div>
+          <div class="desk-claim-title">Nous — jurisdiction 001 live-ruling + portal ship</div>
+          <div class="desk-claim-ctx">▸ <span>Nous — exposure play</span> · due 2026-07-26</div>
+        </div>
+
+        <div class="desk-claim">
+          <div class="desk-claim-top">
+            <span>op1:jacob · commitment</span>
+            <span class="ctl-pill attention">OVERDUE · 72D</span>
+          </div>
+          <div class="desk-claim-title">DJ Dave — ONE LOOP live, verified + approach sent</div>
+          <div class="desk-claim-ctx">▸ <span>DJ Dave — exposure play</span> · due 2026-07-26</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ROOM 02: THE FEED (/feed) — Replicating Screenshots 2 & 5
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main id="room-feed" class="hub-room">
+    <div class="feed-layout">
+      <!-- LEFT WORKSTATION DRAWER (FLUSH TO LEFT VIEWPORT EDGE, HAIRLINED RIGHT) -->
+      <aside class="feed-drawer">
+        <!-- OPERATORS · LIVE SESSIONS -->
+        <section aria-labelledby="feed-operators-title">
+          <div id="feed-operators-title" class="mono m6 ann" style="margin-bottom: var(--s-2); display: flex; justify-content: space-between; align-items: baseline;">
+            <span><span class="pix-dot live"></span> OPERATORS · LIVE · 2</span>
+            <span class="ann">THE FLOOR</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: var(--s-2);">
+            <div class="hub-pres">
+              <div class="hub-pres-top">
+                <span class="hub-pres-ch">op1:jacob <span class="ctl-pill ghost">HERMES</span></span>
+                <span class="pix-dot live"></span>
+              </div>
+              <p class="hub-pres-focus">Pass 05 · Rebuilding The Floor into a true CLI instrument rack</p>
+              <div style="margin-top: var(--s-1); font-family: var(--font-mono); font-size: var(--fz-mono-6); letter-spacing: var(--track-code); color: var(--signal-go); text-transform: uppercase;"> <!-- canon-lint:allow — E13: jump session action -->
+                &rarr; peek the session
+              </div>
+            </div>
+            <div class="hub-pres">
+              <div class="hub-pres-top">
+                <span class="hub-pres-ch">op2:axel <span class="ctl-pill ghost">CODEX</span></span>
+                <span class="pix-dot idle"></span>
+              </div>
+              <p class="hub-pres-focus">ColdIQ outreach package review · awaiting Hugues</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- THE AGENTS · FROM THE RECORD -->
+        <section aria-labelledby="feed-agents-title" style="border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2);">
+          <div id="feed-agents-title" class="mono m6 ann" style="margin-bottom: var(--s-2); display: flex; justify-content: space-between; align-items: baseline;">
+            <span>THE AGENTS · FROM RECORD</span>
+            <a href="#" class="hub-item-link" style="color: var(--signal-go);">AGENT ADMIN &rarr;</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: var(--s-1);">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: var(--hairline) solid var(--line-quiet); font-family: var(--font-mono); font-size: var(--fz-mono-6); letter-spacing: var(--track-code);"> <!-- canon-lint:allow — E15: row micro-pad -->
+              <span style="color: var(--ink);">agent:scout</span>
+              <span style="color: var(--ink-60);">last: staging batch &middot; 03:12</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: var(--hairline) solid var(--line-quiet); font-family: var(--font-mono); font-size: var(--fz-mono-6); letter-spacing: var(--track-code);"> <!-- canon-lint:allow — E15: row micro-pad -->
+              <span style="color: var(--ink);">agent:maestro</span>
+              <span style="color: var(--ink-60);">last: daily briefing &middot; 04:46</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: var(--hairline) solid var(--line-quiet); font-family: var(--font-mono); font-size: var(--fz-mono-6); letter-spacing: var(--track-code);"> <!-- canon-lint:allow — E15: row micro-pad -->
+              <span style="color: var(--ink);">agent:attio-sync</span>
+              <span style="color: var(--ink-60);">last: synced 14 accts &middot; 02:00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; font-family: var(--font-mono); font-size: var(--fz-mono-6); letter-spacing: var(--track-code);"> <!-- canon-lint:allow — E15: row micro-pad -->
+              <span style="color: var(--ink);">agent:email-check</span>
+              <span style="color: var(--ink-60);">last: inbox zero &middot; 01:15</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- SYSTEM LOG · FOUR TIERS -->
+        <section aria-labelledby="feed-syslog-title" style="border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2);">
+          <div id="feed-syslog-title" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--s-2);">
+            <span class="mono m6 ann">SYSTEM LOG &middot; FOUR TIERS</span>
+            <span class="mono m6 ann">LEVELS: OK &middot; INFO &middot; WARN &middot; ERR</span>
+          </div>
+          <div class="cli-log" role="log" aria-label="a terminal log, four levels">
+            <div class="cli-log-row is-ok"><span class="cli-log-lv mono m6 ann" style="color: var(--signal-go); width: var(--s-3);">ok</span><span class="cli-log-msg mono m6">build passed &middot; 0 errors &middot; 148 tokens resolved</span></div>
+            <div class="cli-log-row is-info"><span class="cli-log-lv mono m6 ann" style="color: var(--ink); width: var(--s-3);">info</span><span class="cli-log-msg mono m6">accession #14 &middot; THE LINE sequential, in sync</span></div>
+            <div class="cli-log-row is-warn"><span class="cli-log-lv mono m6 ann" style="color: var(--signal-attn); width: var(--s-3);">warn</span><span class="cli-log-msg mono m6">2 hatches signed &middot; verified lawful</span></div>
+            <div class="cli-log-row is-err"><span class="cli-log-lv mono m6 ann" style="color: var(--signal-attn); width: var(--s-3);">err</span><span class="cli-log-msg mono m6">1 containment breach @ &le;400px &middot; held</span></div>
+          </div>
+        </section>
+
+        <!-- COMMAND CHIPS (FEED.MD §6) -->
+        <div style="border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2); display: flex; flex-direction: column; gap: var(--s-1);">
+          <button type="button" class="ctl-chip" style="justify-content: flex-start;" onclick="window.dispatchEvent(new CustomEvent('open-capture'))">+ capture a seed</button>
+          <button type="button" class="ctl-chip" style="justify-content: flex-start;" onclick="switchRoom('room-browser')">+ spin up a project</button>
+        </div>
+      </aside>
+
+      <!-- RIGHT WORKSTATION STAGE (EDGE-TO-EDGE TO RIGHT BORDER) -->
+      <section class="feed-stage">
+        <!-- FEED HEADER -->
+        <div class="feed-header">
+          <div>
+            <h1 class="serif-display">The Floor</h1>
+            <div class="mono m6 ann">WHAT'S GOING ON RIGHT NOW</div>
+          </div>
+          <div class="feed-toggle">
+            <span class="ctl-pill active">EVERYONE</span>
+            <a href="#" class="hub-item-link" onclick="switchRoom('room-desk'); return false;">JUST ME &rarr; DESK</a>
+          </div>
+        </div>
+
+        <!-- REPL COMMAND-LINE SPINE -->
+        <div class="cli-repl-box">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--s-1);">
+            <div class="mono m6 ann">
+              <span>cortex@hub</span><span>&middot;</span><span>floor-stream</span>
+            </div>
+            <span class="mono m6 ann">exit 0 &middot; 148 tokens resolved</span>
+          </div>
+          <div class="mono m6" style="display: flex; align-items: center; gap: var(--s-1);">
+            <span class="cli-prompt-glyph">&rsaquo;</span>
+            <span style="color: var(--ink);">cortex:stream --live --filter=all</span>
+            <span class="hub-cli-cursor"></span>
+          </div>
+        </div>
+
+        <!-- PING BANNER -->
+        <div class="feed-ping-box">
+          <div>
+            <div class="mono m6 ann" style="margin-bottom: 4px;"><span class="pix-dot live"></span> op1:jacob &rarr; op2:axel</div> <!-- canon-lint:allow — E15: ping banner micro-gap -->
+            <div style="font-size: var(--fz-heading-3);">The World-Building Doctrine — Intelligence Matters</div>
+            <div class="mono m6 ann" style="margin-top: 4px;">↳ ALSO WAITING IN YOUR DESK OWED</div> <!-- canon-lint:allow — E15: ping banner micro-gap -->
+          </div>
+          <div style="display: flex; gap: var(--s-1);">
+            <button type="button" class="ctl-btn is-sm primary">Approve</button>
+            <button type="button" class="ctl-btn is-sm glass" onclick="switchRoom('room-reading');">Open</button>
+          </div>
+        </div>
+
+        <!-- CLI RACK TOOLBAR & FILTER CHIPS (005_CLI CANON) -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--s-3);">
+          <div style="display: flex; gap: var(--s-1);">
+            <button type="button" class="ctl-chip active">all</button>
+            <button type="button" class="ctl-chip">ops</button>
+            <button type="button" class="ctl-chip">agents</button>
+            <button type="button" class="ctl-chip">stream</button>
+            <button type="button" class="ctl-chip">err/warn</button>
+          </div>
+          <div class="mono m6 ann">filter &middot; ping &middot; hover to pause</div>
+        </div>
+
+        <!-- ACTIVITY STREAM -->
+        <div class="desk-section-head">
+          <span>THE STREAM &middot; WHAT JUST HAPPENED</span>
+        </div>
+
+        <div class="feed-stream-table">
+          <div class="stream-row">
+            <span class="stream-ts">16:39</span>
+            <span class="stream-actor">AGENT:MAESTRO</span>
+            <span class="stream-action">Tweet — Beff quotes Reflection Beam; op2:axel: "dom säger att" de sänker Anthropic</span>
+            <span class="ctl-pill ghost">OPEN</span>
+          </div>
+          <div class="stream-row">
+            <span class="stream-ts">16:37</span>
+            <span class="stream-actor">AGENT:MAESTRO</span>
+            <span class="stream-action">Reflection Beam — open-weight launch, and the SpaceX-compute wrapper</span>
+            <span class="ctl-pill ghost">OPEN</span>
+          </div>
+          <div class="stream-row">
+            <span class="stream-ts">12:32</span>
+            <span class="stream-actor">OP1:JACOB</span>
+            <span class="stream-action">Eyes Without a Face · Noir Stroboscope Mirror</span>
+            <span class="stream-ctx">&rarr; NEGATIVE SPACE</span>
+          </div>
+          <div class="stream-row">
+            <span class="stream-ts">06:19</span>
+            <span class="stream-actor">AGENT:MAESTRO</span>
+            <span class="stream-action">Andrew Chen — where agent network effects live</span>
+            <span class="ctl-pill ghost">OPEN</span>
+          </div>
+          <div class="stream-row">
+            <span class="stream-ts">06:07</span>
+            <span class="stream-actor">AGENT:MAESTRO</span>
+            <span class="stream-action">boat — persistent agent VMs, and the multiplayer compute claim</span>
+            <span class="ctl-pill ghost">OPEN</span>
+          </div>
+          <div class="stream-row">
+            <span class="stream-ts">04:46</span>
+            <span class="stream-actor">AGENT:MAESTRO</span>
+            <span class="stream-action">agent:maestro — HHG daily briefing responsibility</span>
+            <span class="stream-ctx">&rarr; CORTEX AGENTS</span>
+          </div>
+          <div class="stream-row">
+            <span class="stream-ts">04:46</span>
+            <span class="stream-actor">AGENT:MAESTRO</span>
+            <span class="stream-action">HHG daily brief — 6 October 2026</span>
+            <span class="stream-ctx">&rarr; CORTEX AGENTS</span>
+          </div>
+          <div class="stream-row">
+            <span class="stream-ts">08:00</span>
+            <span class="stream-actor">OP1:JACOB</span>
+            <span class="stream-action">TODO — mint + PR NEG SPC process log (4–5 Oct 2026)</span>
+            <span class="ctl-pill ghost">OPEN</span>
+          </div>
+          <div class="stream-row">
+            <span class="stream-ts">05:42</span>
+            <span class="stream-actor">OP2:AXEL</span>
+            <span class="stream-action">The reading-room + lens design session — comment kinds, margin&harr;lens coupling</span>
+            <span class="stream-ctx">&rarr; CORTEX FOUNDATIONS</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ROOM 03: THE BROWSER (/browser) — Replicating Screenshot 4
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main id="room-browser" class="hub-room">
+    <div class="browser-shell">
+      <!-- SIDEBAR RAIL -->
+      <aside class="browser-rail">
+        <div style="border: var(--hairline) solid var(--line-box); padding: var(--s-1) var(--s-2); margin-bottom: var(--s-3); display: flex; justify-content: space-between;">
+          <span class="mono m6 ann">search the corpus...</span>
+          <span class="mono m6 ann">⌘K</span>
+        </div>
+
+        <div class="browser-rail-sec">
+          <div class="browser-rail-title">PRESETS · SAVED VIEWS</div>
+          <a href="#" class="browser-nav-link"><span>Pipeline</span><span class="mono m6 ann">accts</span></a>
+          <a href="#" class="browser-nav-link"><span>The Garden</span><span class="mono m6 ann">seeds</span></a>
+          <a href="#" class="browser-nav-link"><span>My Owed</span><span class="mono m6 ann">owed</span></a>
+          <a href="#" class="browser-nav-link"><span>Streams</span><span class="mono m6 ann">projects</span></a>
+          <a href="#" class="browser-nav-link"><span>Artefacts</span><span class="mono m6 ann">gallery</span></a>
+        </div>
+
+        <div class="browser-rail-sec">
+          <div class="browser-rail-title">STRUCTURE · TYPE</div>
+          <a href="#" class="browser-nav-link"><span>accounts</span><span class="mono m6">160</span></a>
+          <a href="#" class="browser-nav-link"><span>projects</span><span class="mono m6">121</span></a>
+          <a href="#" class="browser-nav-link"><span>ventures</span><span class="mono m6">6</span></a>
+        </div>
+
+        <div class="browser-rail-sec">
+          <div class="browser-rail-title">THE MESH · NOTES (2884)</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: var(--s-1);"> <!-- canon-lint:allow — E15: chip wrap gap -->
+            <span class="ctl-chip">DEV-DOCKET</span>
+            <span class="ctl-chip">CLIENT ASKS</span>
+            <span class="ctl-chip">READING</span>
+            <span class="ctl-chip">SIGNALS</span>
+          </div>
+        </div>
+
+        <div class="browser-rail-sec">
+          <div class="browser-rail-title">STATUS · PER TYPE</div>
+          <a href="#" class="browser-nav-link"><span>working</span><span class="mono m6">253</span></a>
+          <a href="#" class="browser-nav-link"><span>done / kept</span><span class="mono m6">180</span></a>
+        </div>
+      </aside>
+
+      <!-- MAIN RESULTS -->
+      <div>
+        <div class="desk-section-head">
+          <span>FRESH · TOUCHED THIS WEEK</span>
+          <span>THE LANDING IS DESIGNED, NOT DUMPED</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+          <div class="hub-list-row">
+            <span class="hub-list-row-lead mono m6 ann" style="width: var(--s-5);">NOTE</span>
+            <span class="hub-list-row-main">Tweet — Beff quotes Reflection Beam; op2:axel: "dom säger att" de sänker Anthropic</span>
+            <span class="hub-list-row-trail mono m6 ann">SEED · 2026-10-06</span>
+          </div>
+          <div class="hub-list-row">
+            <span class="hub-list-row-lead mono m6 ann" style="width: var(--s-5);">NOTE</span>
+            <span class="hub-list-row-main">Reflection Beam — open-weight launch, and the SpaceX-compute wrapper</span>
+            <span class="hub-list-row-trail mono m6 ann">SEED · 2026-10-06</span>
+          </div>
+          <div class="hub-list-row">
+            <span class="hub-list-row-lead mono m6 ann" style="width: var(--s-5);">ARTEFACT</span>
+            <span class="hub-list-row-main">Eyes Without a Face · Noir Stroboscope Mirror</span>
+            <span class="hub-list-row-trail mono m6 ann">WORKING · 2026-10-06</span>
+          </div>
+          <div class="hub-list-row">
+            <span class="hub-list-row-lead mono m6 ann" style="width: var(--s-5);">NOTE</span>
+            <span class="hub-list-row-main">Andrew Chen — where agent network effects live</span>
+            <span class="hub-list-row-trail mono m6 ann">SEED · 2026-10-06</span>
+          </div>
+          <div class="hub-list-row">
+            <span class="hub-list-row-lead mono m6 ann" style="width: var(--s-5);">NOTE</span>
+            <span class="hub-list-row-main">boat — persistent agent VMs, and the multiplayer compute claim</span>
+            <span class="hub-list-row-trail mono m6 ann">SEED · 2026-10-06</span>
+          </div>
+          <div class="hub-list-row">
+            <span class="hub-list-row-lead mono m6 ann" style="width: var(--s-5);">PROJECT</span>
+            <span class="hub-list-row-main">Cortex Future Development</span>
+            <span class="hub-list-row-trail mono m6 ann">WORKING · 2026-10-05</span>
+          </div>
+        </div>
+
+        <div class="desk-section-head" style="margin-top: var(--s-4);">
+          <span>THE DOORS · COUNTS ARE CLICKABLE FACETS</span>
+        </div>
+
+        <div class="doors-grid">
+          <div class="door-card"><div class="num">006</div><div class="label">ventures</div></div>
+          <div class="door-card"><div class="num">160</div><div class="label">accounts</div></div>
+          <div class="door-card"><div class="num">121</div><div class="label">projects</div></div>
+          <div class="door-card"><div class="num">108</div><div class="label">artefacts</div></div>
+          <div class="door-card"><div class="num">6</div><div class="label">sponsors</div></div>
+          <div class="door-card"><div class="num">10</div><div class="label">members</div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ROOM 04: THE READING ROOM + THE LENS — Replicating Screenshot 3
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main id="room-reading" class="hub-room">
+    <div class="reading-layout">
+      <!-- MARGINALIA RAIL -->
+      <aside class="marginalia-rail">
+        <div>MARGINALIA</div>
+        <div>● current - current</div>
+        <div>● 2026-09-30</div>
+        <div>● 2026-09-30</div>
+        <div style="margin-top: var(--s-3); border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2);">
+          REGISTER CLEAN<br>1 RESOLVED IN THE RECORD
+        </div>
+        <a href="#" class="hub-item-link">INSPECT REGISTER</a>
+      </aside>
+
+      <!-- CENTER PAPER DOCUMENT -->
+      <article class="reading-sheet">
+        <div class="ed-head" style="display: flex; justify-content: space-between; border-bottom: var(--hairline) solid var(--line-quiet); padding-bottom: var(--s-1); margin-bottom: var(--s-3);">
+          <span class="ed-folio mono m6 ann">Codex 011</span>
+          <span class="ed-run mono m6 ann">cortex workstation &amp; distribution architecture</span>
+          <span class="ed-folio ed-folio--r mono m6 ann">fol. 14 &middot; recto</span>
+        </div>
+
+        <div class="mono m6 ann" style="margin-bottom: var(--s-2);">HHG CORTEX / HERMES NATIVE / ARCHITECTURE PROPOSAL</div>
+        <h1 class="serif-display" style="font-size: var(--fz-h0); margin-bottom: var(--s-3);">Workstation &amp; Distribution Architecture</h1>
+        <p class="serif-body-1" style="font-size: var(--fz-heading-3); line-height: 1.4; margin-bottom: var(--s-3);">
+          A coherent working environment powered by Hermes. A standalone Hub woven into it. A company brain that is larger than either.
+        </p>
+        <p class="serif-body-1" style="color: var(--ink-60); line-height: 1.5; margin-bottom: var(--s-3);">
+          For the people shaping, operating, and eventually distributing Cortex. This paper specifies the product boundaries, working experience, and proposed maintenance model. It is a design for review &mdash; not a claim that the distribution exists or a replacement for Cortex&rsquo;s governing contracts.
+        </p>
+
+        <hr style="border: 0; border-top: var(--hairline) solid var(--line-box); margin: var(--s-4) 0;">
+
+        <h2 class="serif-heading-3" style="font-size: var(--fz-page-title); margin-bottom: var(--s-2);">Distribute the workspace.<br>Keep the institution sovereign.</h2>
+
+        <p class="serif-body-1" style="line-height: 1.5; margin-bottom: var(--s-3);">
+          At first glance, what was <del class="audit-del">a monolithic desktop</del> <ins class="audit-ins">a sovereign workstation</ins> reads as infrastructure alone. It is the <i class="tism">opposite</i>: the institution made portable. Local agents operate on local files; telemetry flows upward to the Hub as verified receipts <a class="figref" href="#room-reading">(<b>fig.&nbsp;1</b>)<span class="gnote mono m6">Receipt log &middot; pinned #13913 &middot; verified lawful</span></a>. Every figure is <i class="tism">measured</i>. None is asserted<a class="cite" data-cite="1">[1]</a>.
+        </p>
+
+        <!-- TERMINAL REGISTER: MACHINE QUOTED VERBATIM -->
+        <blockquote style="border-left: 2px solid var(--ink); padding-left: var(--s-2); margin: var(--s-3) 0; font-family: var(--font-mono); font-size: var(--fz-mono-6); line-height: 1.5;"> <!-- canon-lint:allow — E10: terminal block border -->
+          <div><code>cortex:distribute --target=hermes --profile=operator --audit=clean</code></div>
+          <div>exit 0 &middot; 148 tokens resolved &middot; sha: 2adf191</div>
+          <div class="ann">~/.cortex/audit.log &middot; line 4402</div>
+        </blockquote>
+
+        <!-- PROOF REGISTER: MEASURED THEOREM -->
+        <div style="border: var(--hairline) solid var(--line-box); padding: var(--s-2) var(--s-3); margin: var(--s-3) 0; background: var(--paper);">
+          <p class="serif-body-1" style="margin: 0; font-size: var(--fz-body-1); line-height: 1.5;">
+            <strong>Theorem 014.2</strong> (the sovereignty bound). Let <span class="mono m6">N</span> be the set of operator nodes. For every node <span class="mono m6">n &isin; N</span>, cryptographic custody resides locally; the Hub distributes synchronized receipts via deterministic hashes. Exit code is strictly <code>exit 0</code>. <span class="mono m6 ann">&#x220e;</span>
+          </p>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-4); font-family: var(--font-serif); font-size: var(--fz-body-1);">
+          <a href="#" style="color: var(--ink); text-decoration: underline;">The product</a>
+          <a href="#" style="color: var(--ink); text-decoration: underline;">Deep sessions</a>
+          <a href="#" style="color: var(--ink); text-decoration: underline;">Composition</a>
+          <a href="#" style="color: var(--ink); text-decoration: underline;">Ownership</a>
+          <a href="#" style="color: var(--ink); text-decoration: underline;">Desktop &amp; Hub</a>
+          <a href="#" style="color: var(--ink); text-decoration: underline;">Releases</a>
+          <a href="#" style="color: var(--ink); text-decoration: underline;">Upstream stewardship</a>
+          <a href="#" style="color: var(--ink); text-decoration: underline;">First proof</a>
+        </div>
+
+        <!-- APPARATUS REGISTER: FOOTNOTE PROOF -->
+        <ol class="ref-list mono m6" style="margin-top: var(--s-4); border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2); list-style: none; padding-left: 0;">
+          <li style="display: flex; gap: var(--s-1);"><span class="ann">[1]</span><span>Cortex Future Development (2026). Workstation &amp; Distribution Architecture &mdash; contract &sect;4, door 001.</span></li>
+        </ol>
+      </article>
+
+      <!-- RIGHT FLOATING / DOCKED LENS (005_CLI INSTRUMENT RACK) -->
+      <aside class="lens-panel">
+        <div class="lens-head">
+          <span><span class="pix-dot live"></span> THE LENS &middot; RACK</span>
+          <span style="color: var(--ink-60);">docked &middot; live</span>
+        </div>
+
+        <!-- CLI PROMPT SPINE -->
+        <div class="lens-cli-header">
+          <span class="cli-prompt-glyph">&rsaquo;</span>
+          <span style="color: var(--ink);">lens:inspect --holding=#13913</span>
+          <span class="hub-cli-cursor"></span>
+        </div>
+
+        <!-- FILTER CHIPS TOOLBAR -->
+        <div class="cli-rack-toolbar">
+          <span class="cli-rack-filters ctl-chips">
+            <button type="button" class="ctl-chip active">inspect</button>
+            <button type="button" class="ctl-chip">anchors</button>
+            <button type="button" class="ctl-chip">receipts</button>
+            <button type="button" class="ctl-chip">ruling</button>
+          </span>
+          <button type="button" class="ctl-btn is-sm">sync</button>
+        </div>
+
+        <!-- TELEMETRY RECEIPT LOG -->
+        <div class="lens-receipt-cell">
+          <div class="lens-receipt-line">&gt; <span class="ctl-pill accent">HOLDING #13913</span> HHG Cortex &mdash; Architecture Proposal</div>
+          <div class="lens-receipt-line">&gt; ANCHOR: product-boundaries &middot; <span style="color: var(--ink-60);">locked</span></div>
+          <div class="lens-receipt-line">&gt; ANCHOR: deep-work &middot; <span style="color: var(--ink-60);">verified</span></div>
+          <div class="lens-receipt-line">&gt; PROVENANCE: op2:axel &middot; canon-bid &middot; 2026-09-30</div>
+          <div class="lens-receipt-line">&gt; VERDICT: register clean &middot; 1 resolved</div>
+        </div>
+
+        <!-- STRUCTURED KEY-VALUE INSTRUMENT READOUTS -->
+        <div style="border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2); display: flex; flex-direction: column; gap: var(--s-1);">
+          <div class="hub-kv"><span class="hub-kv-key">acc</span><span class="hub-kv-val mono m6">acc.0001 &middot; #13913</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">author</span><span class="hub-kv-val mono m6">op2:axel &middot; reviewer op1:jacob</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">door</span><span class="hub-kv-val mono m6"><span class="pix-dot live"></span> canon-bid &middot; door 001</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">route</span><span class="hub-kv-val mono m6">cortex/arch/workstation.md</span></div>
+        </div>
+
+        <!-- CANONICAL ANCHORED ASKS -->
+        <div style="border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2);">
+          <div class="mono m6 ann" style="margin-bottom: var(--s-1);">ANCHORED ASKS &middot; LIVE CLAIMS</div>
+          <div style="font-size: var(--fz-mono-6); font-family: var(--font-mono); color: var(--ink); line-height: 1.5;">
+            <span class="ann">&rsaquo;</span> Define Cortex plugin and profile management for Hermes<br>
+            <span class="ann">&rsaquo;</span> Hermes profile distributions &mdash; candidate for deep sessions
+          </div>
+        </div>
+
+        <!-- COMMENT THREAD (CANONICAL ARCHETYPE 3: ANCHOR · PROSE · CTL-BTN ROW) -->
+        <div style="border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2);">
+          <div class="hub-comment">
+            <div class="hub-comment-anchor mono m6 ann">&para;12 &middot; the anchor</div>
+            <p class="hub-comment-body serif-body-1">Snippet, then the body, then the verdict &mdash; a comment is a small ruling.</p>
+            <div class="hub-comment-verdict">
+              <span class="ctl-pill accent">resolved</span>
+              <button type="button" class="ctl-btn is-sm glass">reply</button>
+            </div>
+          </div>
+          <div class="hub-atom-spec mono m6 ann" style="margin-top: var(--s-1);">ANCHOR &middot; PROSE &middot; CTL-BTN ROW</div>
+        </div>
+
+        <!-- ACTION CONTROLS -->
+        <div style="display: flex; flex-wrap: wrap; gap: 4px; border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2);"> <!-- canon-lint:allow — E15: button cluster gap -->
+          <button type="button" class="ctl-btn is-sm subtle">Archive</button>
+          <button type="button" class="ctl-btn is-sm subtle">Park</button>
+          <button type="button" class="ctl-btn is-sm subtle">Request Review</button>
+          <button type="button" class="ctl-btn is-sm outline">Release to Seed</button>
+          <button type="button" class="ctl-btn is-sm primary">Open the Room</button>
+        </div>
+
+        <!-- REPL ANNOTATE PROMPT FIELD -->
+        <div style="border-top: var(--hairline) solid var(--line-quiet); padding-top: var(--s-2);">
+          <div style="padding: var(--s-1) 0; background: var(--paper);">
+            <div class="mono m6 ann">annotate &rsaquo; born wired to this focus...</div>
+            <div style="text-align: right; margin-top: var(--s-1);">
+              <button type="button" class="ctl-btn is-sm primary">Post</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ROOM 05: THE ROTUNDA (/rotunda)
+       ═══════════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ROOM 05: THE ROTUNDA (/rotunda) — The ceremony room: the law with receipts
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main id="room-rotunda" class="hub-room">
+    <div style="text-align: center; margin-bottom: var(--s-4);">
+      <span class="mono m6 ann">THE ROTUNDA &middot; THE CEREMONY ROOM</span>
+      <h1 class="serif-display" style="font-size: var(--fz-display); margin: var(--s-1) 0;">The <i class="tism">law</i> of this cortex.</h1>
+      <p class="serif-body-1" style="max-width: var(--stage); margin: 0 auto; color: var(--ink-60);">
+        Three documents govern everything that happens here. Read them in order if you're new.
+      </p>
+    </div>
+
+    <div class="gridrow">
+      <article class="container-tile u-minor">
+        <div class="m-stage">
+          <span class="mono m6 ann">000 &middot; THE PRIMER</span>
+          <h3 class="serif-heading-3">The Tour</h3>
+          <p class="serif-body-1">What a cortex is, for a newcomer. The conceptual framework, roles, and <i class="tism">living</i> substrate.</p>
+        </div>
+        <div class="spec-rail mono m6"><span>status: working</span><span class="ctl-pill">enter &rarr;</span></div>
+      </article>
+
+      <article class="container-tile u-minor">
+        <div class="m-stage">
+          <span class="mono m6 ann"><span class="pix-dot live"></span> 001 &middot; THE CODEX</span>
+          <h3 class="serif-heading-3">The Inner Chamber</h3>
+          <p class="serif-body-1">The operating doctrine. The <i class="tism">machine</i> layer of rules, authority boundaries, and transitions.</p>
+        </div>
+        <div class="spec-rail mono m6"><span>status: canon-bid</span><span class="ctl-pill accent">enter &rarr;</span></div>
+      </article>
+
+      <article class="container-tile u-minor">
+        <div class="m-stage">
+          <span class="mono m6 ann">002 &middot; THE ATLAS</span>
+          <h3 class="serif-heading-3">The Map Room</h3>
+          <p class="serif-body-1">The census, contracts registry, and agent roster. Consulted on-demand, never memorized.</p>
+        </div>
+        <div class="spec-rail mono m6"><span>status: open</span><span class="ctl-pill">enter &rarr;</span></div>
+      </article>
+    </div>
+
+    <!-- LIVE RECEIPTS & 3.2S CANON STAMP -->
+    <div class="gridrow" style="margin-top: var(--s-4); align-items: flex-start;">
+      <div class="container-tile u-major">
+        <div class="m-stage">
+          <div class="mono m6 ann">THE RECEIPTS WALL &middot; LIVE PROBES</div>
+          <div style="display: flex; flex-direction: column; gap: var(--s-1); margin-top: var(--s-2);">
+            <div style="display: flex; justify-content: space-between; border-bottom: var(--hairline) solid var(--line-quiet); padding: var(--s-1) 0;">
+              <span class="serif-body-1">EPOQ III token parity &middot; live token spine verified against canon</span>
+              <span class="ctl-pill accent">clean &middot; 0 err</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: var(--hairline) solid var(--line-quiet); padding: var(--s-1) 0;">
+              <span class="serif-body-1">Refusals cite real law &mdash; door citations cross-checked</span>
+              <span class="ctl-pill">clean</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: var(--s-1) 0;">
+              <span class="serif-body-1">Law 10 Bold Sweep &mdash; zero forbidden heavy weights in glass sheets</span>
+              <span class="ctl-pill accent">verified</span>
+            </div>
+          </div>
+        </div>
+        <div class="spec-rail mono m6">
+          <span class="family">Receipts</span>
+          <span>a rulebook with a green line is <i class="tism">law</i> &middot; without one is a poster</span>
+        </div>
+      </div>
+
+      <div class="container-tile u-minor">
+        <div class="m-stage">
+          <div class="mono m6 ann">THE 3.2s CANON STAMP RITUAL</div>
+          <p class="serif-body-1" style="font-size: var(--fz-mono-6); margin: var(--s-1) 0 var(--s-2);">
+            Agents propose, humans <i class="tism">stamp</i>. A held press (3.2s) arms the concentric ring and writes the door act into the journal.
+          </p>
+          <div style="text-align: center;">
+            <div class="rt-armable" id="hubDemoSeal">
+              <span>canon</span>
+              <svg class="rt-ring" viewBox="0 0 100 100">
+                <circle class="rt-ring-track" cx="50" cy="50" r="46"/>
+                <circle class="rt-ring-fill" id="hubRingFill" cx="50" cy="50" r="46"/>
+              </svg>
+            </div>
+            <div class="mono m6 ann" id="hubSealStatus">press &amp; hold 3.2s to test ritual</div>
+          </div>
+        </div>
+        <div class="spec-rail mono m6">
+          <span class="family">Ritual</span>
+          <span>hub-ceremony-only (#13259) &middot; presence held</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 200_ROWS: THE BUILD LEDGER -->
+    <div class="gridrow" style="margin-top: var(--s-4);">
+      <div class="container-tile u-full">
+        <div class="m-stage">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--s-2);">
+            <span class="mono m6 ann">THE BUILD LEDGER &middot; 200_ROWS RELEASE HISTORY</span>
+            <span class="mono m6 ann">exit 0 &middot; 134/134 green &middot; SHA IMMUTABLE</span>
+          </div>
+          <table class="hub-telemetry-table">
+            <thead>
+              <tr>
+                <th>version</th>
+                <th>commit sha</th>
+                <th>date</th>
+                <th>probes</th>
+                <th>author</th>
+                <th>status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>v3.58.1</td>
+                <td><span class="mono m6 ann">2adf191</span></td>
+                <td>2026-10-07</td>
+                <td><span class="pix-dot live"></span> 134/134</td>
+                <td>op1:jacob</td>
+                <td><span class="ctl-pill accent">canon &middot; immutable</span></td>
+              </tr>
+              <tr>
+                <td>v3.54.0</td>
+                <td><span class="mono m6 ann">b044ad1</span></td>
+                <td>2026-07-10</td>
+                <td><span class="pix-dot live"></span> 118/118</td>
+                <td>op2:axel</td>
+                <td><span class="ctl-pill">immutable</span></td>
+              </tr>
+              <tr>
+                <td>v3.50.2</td>
+                <td><span class="mono m6 ann">bd5d4bf</span></td>
+                <td>2026-06-14</td>
+                <td><span class="pix-dot live"></span> 96/96</td>
+                <td>op1:jacob</td>
+                <td><span class="ctl-pill ghost">frozen</span></td>
+              </tr>
+              <tr>
+                <td>v3.42.0</td>
+                <td><span class="mono m6 ann">feebf3e</span></td>
+                <td>2026-05-11</td>
+                <td><span class="pix-dot live"></span> 82/82</td>
+                <td>op2:axel</td>
+                <td><span class="ctl-pill ghost">archived</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="spec-rail mono m6">
+          <span class="family">Build ledger</span>
+          <span>every declaration signed into git &middot; door /rotunda/ledger</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 200_ROWS: THE CHRONOLOGY -->
+    <div class="gridrow" style="margin-top: var(--s-4);">
+      <div class="container-tile u-full">
+        <div class="m-stage">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--s-2);">
+            <span class="mono m6 ann">THE CHRONOLOGY &middot; 200_ROWS EVENT JOURNAL</span>
+            <span class="mono m6 ann">PROVENANCE &middot; DOORS &middot; AUDIT STREAM</span>
+          </div>
+          <table class="hub-telemetry-table">
+            <thead>
+              <tr>
+                <th>time</th>
+                <th>actor</th>
+                <th>event &middot; journaled action</th>
+                <th>door / receipt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>12:02:38</td>
+                <td>op1:jacob</td>
+                <td>Session #1846 focus graduated &mdash; executing passes 07&ndash;10</td>
+                <td><span class="ctl-pill accent">door /floor</span></td>
+              </tr>
+              <tr>
+                <td>09:38:12</td>
+                <td>agent:maestro</td>
+                <td>Nightly probe #4402 green &mdash; 0 errors, token parity locked</td>
+                <td><span class="ctl-pill">exit 0</span></td>
+              </tr>
+              <tr>
+                <td>06:40:00</td>
+                <td>agent:maestro</td>
+                <td>Daily brief rendered &mdash; reporting cutoff Europe/Stockholm</td>
+                <td><span class="ctl-pill ghost">sha: feebf3e</span></td>
+              </tr>
+              <tr>
+                <td>20:48:15</td>
+                <td>op2:axel</td>
+                <td>Codex 011 redline clean &mdash; acc.0014 resolved in the record</td>
+                <td><span class="ctl-pill">door /reading/13913</span></td>
+              </tr>
+              <tr>
+                <td>16:39:02</td>
+                <td>op1:jacob</td>
+                <td>Signal lock declared &mdash; strengthen base while preserving long game</td>
+                <td><span class="ctl-pill accent">door /rotunda/stamp</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="spec-rail mono m6">
+          <span class="family">Chronology</span>
+          <span>the machine records what happened &middot; door /chronology</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       INTERACTIVE HUD MODALS (REAL FUNCTIONAL TELEMETRY INSTRUMENTS)
+       ═══════════════════════════════════════════════════════════════════ -->
+
+  <!-- TEST SUITE TELEMETRY MODAL -->
+  <div id="hubTestModal" class="hub-hud-modal" onclick="if(event.target===this) closeModals();">
+    <div class="hub-modal-card">
+      <div class="hub-modal-head">
+        <span><span class="pix-dot live"></span> 134/134 PROBES VERIFIED · EXIT 0 · PASS</span>
+        <button type="button" class="btn" onclick="closeModals();" style="padding: 0 var(--s-1); font-size: var(--fz-mono-6); font-family: var(--font-mono);">✕ ESC</button>
+      </div>
+      <div class="hub-modal-body">
+        <div class="cli-log">
+          <div class="cli-log-row is-ok"><span class="cli-log-lv">PASS</span><span>[001..024] canon-lint: 24 mechanical rules verified (E1-E24 zero drift)</span></div>
+          <div class="cli-log-row is-ok"><span class="cli-log-lv">PASS</span><span>[025..048] typography: Scheherazade New + Red Hat Mono token lock</span></div>
+          <div class="cli-log-row is-ok"><span class="cli-log-lv">PASS</span><span>[049..072] geometry: zero curvature law (--radius-print: 0px)</span></div>
+          <div class="cli-log-row is-ok"><span class="cli-log-lv">PASS</span><span>[073..096] telemetry: 1-bit square indicators, zero stepped gauges</span></div>
+          <div class="cli-log-row is-ok"><span class="cli-log-lv">PASS</span><span>[097..120] mcp braintrust: session #1846 handshake live on the floor</span></div>
+          <div class="cli-log-row is-ok"><span class="cli-log-lv">PASS</span><span>[121..134] state machine: 6 room doors + tripartite layout cycler</span></div>
+        </div>
+        <div style="margin-top: var(--s-2); display: flex; justify-content: space-between; align-items: center;">
+          <span class="mono m6 ann">SUITE RUNTIME: 42ms · DETERMINISTIC REPRODUCIBILITY 100%</span>
+          <button type="button" class="btn" onclick="switchRoom('room-rotunda'); closeModals();" style="padding: var(--s-1) var(--s-2); font-size: var(--fz-mono-6); font-family: var(--font-mono); text-transform: uppercase;">INSPECT IN ROTUNDA →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GIT REPOSITORY TELEMETRY MODAL -->
+  <div id="hubGitModal" class="hub-hud-modal" onclick="if(event.target===this) closeModals();">
+    <div class="hub-modal-card">
+      <div class="hub-modal-head">
+        <span>GIT TELEMETRY · REPO SPECIFICATION</span>
+        <button type="button" class="btn" onclick="closeModals();" style="padding: 0 var(--s-1); font-size: var(--fz-mono-6); font-family: var(--font-mono);">✕ ESC</button>
+      </div>
+      <div class="hub-modal-body">
+        <div style="display: flex; flex-direction: column; gap: var(--s-2);">
+          <div class="hub-kv"><span class="hub-kv-key">REPOSITORY</span><span class="hub-kv-val mono m6">github.com/hhg-group/hhg_cortex_v1</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">BRANCH</span><span class="hub-kv-val mono m6"><span class="pix-dot live"></span> main (clean working tree · exit 0)</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">HEAD COMMIT</span><span class="hub-kv-val mono m6">feebf3e7a192c01d</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">MESSAGE</span><span class="hub-kv-val mono m6">refactor(hub): on-grid HUD instrument rack with real functions</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">AUTHOR</span><span class="hub-kv-val mono m6">op1:jacob &lt;jacob@haegghaegg.se&gt;</span></div>
+          <div style="margin-top: var(--s-2); display: flex; gap: var(--s-1);">
+            <button type="button" class="btn" onclick="navigator.clipboard.writeText('feebf3e7a192c01d'); alert('Commit SHA feebf3e7a192c01d copied to clipboard.');" style="padding: var(--s-1) var(--s-2); font-size: var(--fz-mono-6); font-family: var(--font-mono); text-transform: uppercase;">COPY COMMIT SHA</button>
+            <button type="button" class="btn" onclick="closeModals();" style="padding: var(--s-1) var(--s-2); font-size: var(--fz-mono-6); font-family: var(--font-mono); text-transform: uppercase;">CLOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NODE INFORMATION MODAL -->
+  <div id="hubNodeModal" class="hub-hud-modal" onclick="if(event.target===this) closeModals();">
+    <div class="hub-modal-card">
+      <div class="hub-modal-head">
+        <span>HHG CORTEX · STATION TELEMETRY</span>
+        <button type="button" class="btn" onclick="closeModals();" style="padding: 0 var(--s-1); font-size: var(--fz-mono-6); font-family: var(--font-mono);">✕ ESC</button>
+      </div>
+      <div class="hub-modal-body">
+        <div style="display: flex; flex-direction: column; gap: var(--s-2);">
+          <div class="hub-kv"><span class="hub-kv-key">NODE HOST</span><span class="hub-kv-val mono m6">hub.haegghaegg.se (Stockholm, SE)</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">ENGINE</span><span class="hub-kv-val mono m6">Cortex Harvester &middot; Hermes Native Runtimes</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">MEMO RECORD</span><span class="hub-kv-val mono m6">2,884 active seeds &middot; 160 accounts &middot; 121 projects</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">OPERATORS</span><span class="hub-kv-val mono m6">op1:jacob (online) &middot; op2:axel (accepted)</span></div>
+          <div class="hub-kv"><span class="hub-kv-key">LATENCY</span><span class="hub-kv-val mono m6"><span class="pix-dot live"></span> 14ms round-trip to Sweden East</span></div>
+          <div style="margin-top: var(--s-2); display: flex; gap: var(--s-1);">
+            <button type="button" class="btn" onclick="triggerLiveSync(); closeModals();" style="padding: var(--s-1) var(--s-2); font-size: var(--fz-mono-6); font-family: var(--font-mono); text-transform: uppercase;">PULSE RE-SYNC NOW</button>
+            <button type="button" class="btn" onclick="closeModals();" style="padding: var(--s-1) var(--s-2); font-size: var(--fz-mono-6); font-family: var(--font-mono); text-transform: uppercase;">CLOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMAND PALETTE MODAL (THE BOX · ⌘K) -->
+  <div id="hubCmdkModal" class="hub-cmdk-overlay" style="display: none;" onclick="if(event.target===this) closeModals();">
+    <div class="hub-cmdk">
+      <input type="text" id="cmdkInput" class="hub-cmdk-input" placeholder="Type a command (e.g. 'desk', 'seed', 'tests', 'axel', 'git')..." oninput="filterCmdk(this.value);" onkeydown="if(event.key==='Escape') closeModals();">
+      <div class="hub-cmdk-results">
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('home'); return false;"><span class="ty">NAV [H]</span><span class="ti">Switch to Home (Live Hub Landing &amp; Maestro Brief)</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('desk'); return false;"><span class="ty">NAV [D]</span><span class="ti">Switch to Desk (Active Pushes &amp; Claim Board)</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('feed'); return false;"><span class="ty">NAV [F]</span><span class="ti">Switch to The Floor (CLI Stream &amp; Agents)</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('browser'); return false;"><span class="ty">NAV [B]</span><span class="ti">Switch to Corpus Browser (Mesh &amp; 2,884 Seeds)</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('reading'); return false;"><span class="ty">NAV [L]</span><span class="ti">Switch to Reading Room &amp; Lens (Codex 011 Tripartite)</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('rotunda'); return false;"><span class="ty">NAV [R]</span><span class="ti">Switch to Rotunda (The Law &amp; 3.2s Stamp Ritual)</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('seed'); return false;"><span class="ty">ACTION</span><span class="ti">Open Quick Seed capture bar [S]</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('tests'); return false;"><span class="ty">TESTS</span><span class="ti">Inspect 134 passing test suites (exit 0)</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('git'); return false;"><span class="ty">GIT</span><span class="ti">View Git branch, commit sha, and working tree</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('sync'); return false;"><span class="ty">SYNC</span><span class="ti">Pulse live sync with hub.haegghaegg.se</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('jacob'); return false;"><span class="ty">OPERATOR</span><span class="ti">Set active operator to OP1:JACOB</span></a>
+        <a href="#" class="hub-cmdk-row" onclick="runCmdk('axel'); return false;"><span class="ty">OPERATOR</span><span class="ti">Set active operator to OP2:AXEL</span></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Real-Time Clock with Seconds (Europe/Stockholm)
+    function updateClock() {
+      const now = new Date();
+      const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+      const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+      const day = days[now.getUTCDay()];
+      const date = String(now.getUTCDate()).padStart(2, '0');
+      const month = months[now.getUTCMonth()];
+      // Stockholm timezone offset (UTC+2 CEST)
+      const stockholmDate = new Date(now.getTime() + (2 * 3600 * 1000));
+      const hrs = String(stockholmDate.getUTCHours()).padStart(2, '0');
+      const mins = String(stockholmDate.getUTCMinutes()).padStart(2, '0');
+      const secs = String(stockholmDate.getUTCSeconds()).padStart(2, '0');
+      const clockEl = document.getElementById('hubClockDisplay');
+      if (clockEl) {
+        clockEl.textContent = `${day} ${date} ${month} · ${hrs}:${mins}:${secs} · STOCKHOLM`;
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Reading Layout Drawer Cycler (Pass 07 & 08)
+    const READING_MODES = [
+      { id: 'tripartite', label: 'LAYOUT: TRIPARTITE [1/4] (TAB)' },
+      { id: 'full', label: 'LAYOUT: FULL FOCUS [2/4] (TAB)' },
+      { id: 'lens', label: 'LAYOUT: LENS DOCKED [3/4] (TAB)' },
+      { id: 'marginalia', label: 'LAYOUT: MARGINALIA [4/4] (TAB)' }
+    ];
+    let currentReadingModeIdx = 0;
+
+    function cycleReadingLayout(dir = 1) {
+      currentReadingModeIdx = (currentReadingModeIdx + dir + READING_MODES.length) % READING_MODES.length;
+      const mode = READING_MODES[currentReadingModeIdx];
+      const layout = document.querySelector('.reading-layout');
+      const toggleBtn = document.getElementById('readingLayoutToggle');
+      if (layout) {
+        layout.classList.remove('mode-full', 'mode-lens', 'mode-marginalia');
+        if (mode.id !== 'tripartite') {
+          layout.classList.add('mode-' + mode.id);
+        }
+      }
+      if (toggleBtn) {
+        toggleBtn.textContent = mode.label;
+      }
+    }
+
+    // Global Keyboard Shortcuts
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        if (e.key === 'Escape') closeModals();
+        return;
+      }
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        openCmdkModal();
+        return;
+      }
+      if (e.key === 'Escape') {
+        closeModals();
+        const drawer = document.getElementById('hubSeedDrawer');
+        if (drawer) drawer.classList.remove('open');
+        return;
+      }
+      if (e.key === 'Tab') {
+        const readingRoom = document.getElementById('room-reading');
+        if (readingRoom && readingRoom.classList.contains('active')) {
+          e.preventDefault();
+          cycleReadingLayout(e.shiftKey ? -1 : 1);
+          return;
+        }
+      }
+      const k = e.key.toUpperCase();
+      if (k === 'H') switchRoom('room-home', document.getElementById('tabHome'));
+      if (k === 'D') switchRoom('room-desk', document.getElementById('tabDesk'));
+      if (k === 'F') switchRoom('room-feed', document.getElementById('tabFeed'));
+      if (k === 'B') switchRoom('room-browser', document.getElementById('tabBrowser'));
+      if (k === 'L') switchRoom('room-reading', document.getElementById('tabReading'));
+      if (k === 'R') switchRoom('room-rotunda', document.getElementById('tabRotunda'));
+      if (k === 'S') {
+        e.preventDefault();
+        toggleSeedDrawer();
+      }
+    });
+
+    // Room Switcher & 2-Row Sovereign Header Synchronization
+    const ROOM_SUBBAR_MAP = {
+      'room-home': 'subbar-home',
+      'room-desk': 'subbar-desk',
+      'room-feed': 'subbar-feed',
+      'room-browser': 'subbar-browser',
+      'room-reading': 'subbar-reading',
+      'room-rotunda': 'subbar-rotunda'
+    };
+
+    const ROOM_TAB_MAP = {
+      'room-home': 'tabHome',
+      'room-desk': 'tabDesk',
+      'room-feed': 'tabFeed',
+      'room-browser': 'tabBrowser',
+      'room-reading': 'tabReading',
+      'room-rotunda': 'tabRotunda'
+    };
+
+    function switchRoom(roomId, btn) {
+      document.querySelectorAll('.hub-room').forEach(r => r.classList.remove('active'));
+      document.querySelectorAll('.hub-chrome-row1 .hub-tab-btn').forEach(b => {
+        b.classList.remove('active');
+      });
+      document.querySelectorAll('.hub-chrome-subbar').forEach(s => s.classList.remove('active'));
+      const target = document.getElementById(roomId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      const activeBtn = btn || document.getElementById(ROOM_TAB_MAP[roomId]);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+      }
+      const subbarId = ROOM_SUBBAR_MAP[roomId];
+      if (subbarId) {
+        const sub = document.getElementById(subbarId);
+        if (sub) sub.classList.add('active');
+      }
+      const slug = roomId.replace('room-', '');
+      if (window.location.hash !== '#' + slug && history.replaceState) {
+        history.replaceState(null, '', '#' + slug);
+      }
+    }
+
+    // Hash Routing on Load & History Change
+    function handleHash() {
+      const hash = (window.location.hash || '').replace('#', '');
+      const map = {
+        'home': 'room-home',
+        'desk': 'room-desk',
+        'feed': 'room-feed',
+        'browser': 'room-browser',
+        'reading': 'room-reading',
+        'rotunda': 'room-rotunda'
+      };
+      if (map[hash]) {
+        switchRoom(map[hash]);
+      }
+    }
+    window.addEventListener('hashchange', handleHash);
+    if (window.location.hash) {
+      handleHash();
+    }
+
+    // Operator Toggle & Presence Cycle
+    function cycleOperator() {
+      const curr = document.getElementById('currentOperator').textContent;
+      const next = curr.includes('JACOB') ? 'OP2:AXEL' : 'OP1:JACOB';
+      setOperator(next);
+    }
+
+    function setOperator(name) {
+      document.getElementById('currentOperator').textContent = name;
+      const isAxel = name.toUpperCase().includes('AXEL');
+      document.querySelectorAll('.op-link-axel').forEach(a => a.classList.toggle('active', isAxel));
+      document.querySelectorAll('.op-link-jacob').forEach(a => a.classList.toggle('active', !isAxel));
+      const dot = document.getElementById('hubPresenceDot');
+      if (dot) {
+        dot.style.opacity = '0.2';
+        setTimeout(() => { dot.style.opacity = '1'; }, 150);
+      }
+      const ticker = document.getElementById('hubTickerMsg');
+      if (ticker) {
+        ticker.textContent = `OPERATOR ACTIVE: ${name} · CONTEXT & CLAIMS SYNCHRONIZED`;
+      }
+    }
+
+    // Live Sync Action
+    function triggerLiveSync() {
+      const txt = document.getElementById('hubSyncTxt');
+      const dot = document.getElementById('hubSyncDot');
+      if (!txt) return;
+      txt.textContent = 'SYNCING...';
+      if (dot) dot.classList.remove('live');
+      setTimeout(() => {
+        txt.textContent = 'SYNC: LIVE';
+        if (dot) dot.classList.add('live');
+        const ticker = document.getElementById('hubTickerMsg');
+        if (ticker) {
+          ticker.textContent = 'cortex:mesh sync verified · latency 0ms · 2,884 nodes indexed';
+        }
+      }, 350);
+    }
+
+    // Quick Seed Drawer & Recording
+    function toggleSeedDrawer() {
+      const drawer = document.getElementById('hubSeedDrawer');
+      if (!drawer) return;
+      const isOpen = drawer.classList.toggle('open');
+      if (isOpen) {
+        const inp = document.getElementById('seedInputTitle');
+        if (inp) {
+          inp.focus();
+          inp.value = '';
+        }
+      }
+    }
+
+    function saveQuickSeed() {
+      const inp = document.getElementById('seedInputTitle');
+      if (!inp || !inp.value.trim()) return;
+      const text = inp.value.trim();
+      toggleSeedDrawer();
+      const ticker = document.getElementById('hubTickerMsg');
+      if (ticker) {
+        ticker.textContent = `✓ SEED LOGGED: "${text.slice(0, 40)}..." → STORED IN MESH`;
+      }
+      alert(`✓ Seed logged into Cortex Mesh:\n\n"${text}"\n\nProvenance: ${document.getElementById('currentOperator').textContent} · Timestamp: ${new Date().toISOString()}`);
+    }
+
+    // HUD Modals Control
+    function closeModals() {
+      document.querySelectorAll('.hub-hud-modal').forEach(m => m.classList.remove('open'));
+      const cmdk = document.getElementById('hubCmdkModal');
+      if (cmdk) cmdk.style.display = 'none';
+    }
+
+    function openTestModal() {
+      closeModals();
+      const m = document.getElementById('hubTestModal');
+      if (m) m.classList.add('open');
+    }
+
+    function openGitModal() {
+      closeModals();
+      const m = document.getElementById('hubGitModal');
+      if (m) m.classList.add('open');
+    }
+
+    function openNodeModal() {
+      closeModals();
+      const m = document.getElementById('hubNodeModal');
+      if (m) m.classList.add('open');
+    }
+
+    function openCmdkModal() {
+      closeModals();
+      const cmdk = document.getElementById('hubCmdkModal');
+      if (cmdk) {
+        cmdk.style.display = 'flex';
+        const inp = document.getElementById('cmdkInput');
+        if (inp) {
+          inp.focus();
+          inp.value = '';
+          filterCmdk('');
+        }
+      }
+    }
+
+    function filterCmdk(query) {
+      const q = (query || '').toLowerCase().trim();
+      document.querySelectorAll('.hub-cmdk-row').forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(q) ? 'flex' : 'none';
+      });
+    }
+
+    function runCmdk(cmd) {
+      closeModals();
+      if (cmd === 'home') switchRoom('room-home');
+      else if (cmd === 'desk') switchRoom('room-desk');
+      else if (cmd === 'feed') switchRoom('room-feed');
+      else if (cmd === 'browser') switchRoom('room-browser');
+      else if (cmd === 'reading') switchRoom('room-reading');
+      else if (cmd === 'rotunda') switchRoom('room-rotunda');
+      else if (cmd === 'seed') toggleSeedDrawer();
+      else if (cmd === 'sync') triggerLiveSync();
+      else if (cmd === 'tests') openTestModal();
+      else if (cmd === 'git') openGitModal();
+      else if (cmd === 'axel') setOperator('OP2:AXEL');
+      else if (cmd === 'jacob') setOperator('OP1:JACOB');
+    }
+
+    // 3.2s Stamp Ritual
+    (function(){
+      const seal = document.getElementById('hubDemoSeal');
+      const status = document.getElementById('hubSealStatus');
+      let timer = null;
+
+      function arm(e) {
+        if (timer || seal.classList.contains('pressed')) return;
+        e.preventDefault();
+        seal.classList.add('arming');
+        status.textContent = "holding... 3.2s";
+        timer = setTimeout(() => {
+          seal.classList.remove('arming');
+          seal.classList.add('pressed');
+          status.textContent = "✓ canon stamped into the record";
+          timer = null;
+        }, 3200);
+      }
+
+      function disarm() {
+        if (seal.classList.contains('pressed')) return;
+        if (timer) {
+          clearTimeout(timer);
+          timer = null;
+        }
+        seal.classList.remove('arming');
+        status.textContent = "released early — cancelled";
+      }
+
+      seal.addEventListener('pointerdown', arm);
+      seal.addEventListener('pointerup', disarm);
+      seal.addEventListener('pointerleave', disarm);
+      seal.addEventListener('pointercancel', disarm);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* ============================================================================
+   system.css — EPOQ III · THE TOKEN SPINE  ·  GENERATED — DO NOT HAND-EDIT
+   Source of truth: system.json   ·   Generator: build-system.py
+   Edit system.json, then run:  python3 build-system.py
+   The showcase (styles.css) @imports this; it never defines tokens itself.
+   ========================================================================== */
+
+/* —— $meta ———————————————————————————————————————————————————
+   name: EPOQ III — IM/HHG rigid visual system
+   version: 3.58.1
+   generates: system.css
+   laws: canon-lint.py --describe (E1-E24 + W1, W2 legacy/advisory) · grammar.py (the refusal register) · build-system.py --check (generated-in-sync)
+   source: Figma Brand SYSTEMS YW6hpKp918kbfFrVQQzH5y · frame 653:363 (EPQ III — Text Styles) · 653:393 (Colors)
+   doctrine: D-010 monolith · D-013 Figma decides, HTML implements
+   rule: system.css is GENERATED — never hand-edit it. Edit THIS file, then run: python3 build-system.py
+   token_form: each key is the exact CSS custom-property name minus the leading '--'. value is a string, or {v, note}.
+   laws_codes: ['E1', 'E2', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9', 'E10', 'E11', 'E12', 'E13', 'E14', 'E15', 'E16', 'E17', 'E18', 'E19', 'E20', 'E21', 'E22', 'E23', 'E24', 'W1', 'W2']
+   ———————————————————————————————————————————————————————————— */
+
+:root {
+
+  /* —— version —— */
+  --site-version: "3.58.1";  /* EPOQ III · the live build tag — 3.58.1: strike the zero-consumer --space-0; the surviving --space family stamped PUBLIC API, 2026-07-10 */
+
+  /* —— ink · paper · line —— */
+  --ink:             #000000;  /* steps 60/40/12 via opacity below */
+  --ink-60:          rgba(0, 0, 0, 0.6);
+  --ink-50:          rgba(0, 0, 0, 0.5);  /* annotation ink — secondary label grey (role-bearing, repeated) */
+  --ink-40:          rgba(0, 0, 0, 0.4);
+  --ink-20:          rgba(0, 0, 0, 0.2);  /* the HUB BACKGROUND scrim — the exact Figma 790:13 overlay over the midnight image (2026-07-08) */
+  --ink-12:          rgba(0, 0, 0, 0.12);
+  --paper:           #FFFFFF;
+  --hairline:        0.5px;  /* THE ONLY STROKE — no exceptions (ruled 2026-06-11) */
+  --line-structural: #000000;  /* rules / ticks — full ink */
+  --line-box:        rgba(0, 0, 0, 0.62);  /* BOX hairlines — optical 0.5 at any DPR (ink-compensated, not weight) */
+  --line-quiet:      #E5E5E5;  /* frames / rails — quiet hairline */
+  --grey-51:         #515151;  /* Grey 51 — the readable kicker/label grey (the IM palette grey; the .sec-code INFO line) */
+  --ink-03:          rgba(0, 0, 0, 0.03);  /* ink tint — low step below --ink-12; chip-hover floor + dl-row hover (absorbs the .025 snap). Zero-padded to match --ink-12. */
+  --paper-90:        rgba(255, 255, 255, 0.9);  /* paper tint — top step; checked toggle-knob fill on the go-lane. The --paper-N family = on-dark white tints, alpha×100 suffix mirroring --ink-N. */
+  --paper-82:        rgba(255, 255, 255, 0.82);  /* paper tint — the lawful pill-hover 'breath' deepen */
+  --paper-70:        rgba(255, 255, 255, 0.7);  /* paper tint — on-dark primary-button hover text */
+  --paper-62:        rgba(255, 255, 255, 0.62);  /* paper tint — bottom step; on-dark specimen .role text, the paper mirror of --ink-60 */
+  --focus-ring:      1px;  /* keyboard focus-ring WIDTH — deliberately NOT the editorial hairline; a 0.5px a11y ring is too faint (used 7×) */
+  --focus-offset:    2px;  /* focus-ring optical offset, paired with --focus-ring (used 7×) */
+
+  /* —— the six · palette (paper + six inks · v3.54 cleanup 2026-06-28) —— */
+  --graphite: #272727;  /* OKLCH L 0.27 · neutral — deep UI surfaces or dark metadata */
+  --dusk:     #5F5295;  /* OKLCH L 0.48 · C 0.11 · H 291° — chromatic */
+  --hum:      #6F75D7;  /* OKLCH L 0.60 · C 0.15 · H 278° — chromatic · the hero */
+  --novel:    #332078;  /* the new reading — violet-ink between ink and dusk; marks what enters the register (apparatus semantics; minted for HHG Web venture coding, Jacob 2026-07-08) */
+
+  /* —— type —— */
+  --font-serif:       "Scheherazade New", Georgia, serif;  /* 36/24/16/14/9 · H1–H3 + body + pills (Figma 653:363) */
+  --font-mono:        "Red Hat Mono", ui-monospace, monospace;  /* 7 +30% caps only — Code style (Figma 653:363) */
+  --times:            "Times New Roman", Times, serif;  /* Θ-class · glyphs only · RULED 2026-06-21 — the OHM numerals conform to the main font; Times never renders numerals or Latin */
+  --fz-h0:            48px;  /* EPQ III — H0 · lh 100% · tracking -4% · THE FLOOR TITLE — the header-linked sections (Figma 844:14, minted by Jacob 2026-07-22; the seventh style) */
+  --fz-display:       36px;  /* EPQ III — H1 · lh 100% · tracking -3% (Figma 653:363) */
+  --fz-page-title:    24px;  /* EPQ III — H2 · lh 100% / tracking -2% · SECTION TITLES (Figma 653:363) */
+  --fz-heading-3:     16px;  /* EPQ III — H3 · lh 100% / tracking -1% · card + block titles (Figma 653:363) */
+  --fz-body-1:        14px;  /* EPQ III — Body · lh 160% / tracking +5% · PAGE DEFAULT (Figma 653:363) */
+  --fz-serif-8:       9px;  /* EPQ III — Button Pills Code · Scheherazade · lh 200% / tracking +20% (Figma 653:363) · name is legacy (‘8’); value 9px is authoritative */
+  --fz-mono-6:        7px;  /* EPQ III — Code · lh 200% / tracking +30% (Figma 653:363) · name is legacy (‘6’); value 7px is authoritative */
+  --fz-mono-cli:      14px;  /* the CLI display size — the terminal/screen register (BYOI web; minted Jacob 2026-07-08); mono escapes the 7px law on a terminal surface, paired with lh-mono-cli. Scope widened 2026-07-11 (THE SESSION, promoted from im-site): a terminal reads on paper too, not only glass-stage — the register is about being a TERMINAL, not about the background it sits on. */
+  --lh-mono-cli:      1.5;  /* CLI line rhythm — the terminal register companion of fz-mono-cli */
+  --lh-h0:            1;  /* Figma 844:14 (H0) */
+  --lh-display:       1;  /* Figma 653:363 */
+  --lh-page-title:    1;  /* Figma 653:363 */
+  --lh-body-1:        1.6;  /* Figma 653:363 */
+  --lh-heading-3:     1;  /* Figma 653:363 */
+  --lh-serif-8:       2;  /* Figma 653:363 */
+  --lh-mono-6:        2;  /* Figma 653:363 */
+  --track-h0:         -0.04em;  /* Figma 844:14 (H0) */
+  --track-display:    -0.03em;  /* Figma 653:363 */
+  --track-page-title: -0.02em;  /* Figma 653:363 */
+  --track-heading-3:  -0.01em;  /* Figma 653:363 */
+  --track-body-1:     0.05em;  /* Figma 653:363 */
+  --track-code:       0.3em;  /* Figma 653:363 */
+  --track-caps:       0.2em;  /* Figma 653:363 */
+
+  /* —— grid · space · radius —— */
+  --col:            400px;  /* minor unit · one canonical column — 400 compresses to --viewport-phone-safe only under pressure (D-020) */
+  --col-2:          840px;  /* major unit + the academic prose measure — footnotes · method-coda · catalogue passage · §003 running body. NOT .sec-desc / .sec-lede (those span --content). */
+  --content:        1280px;
+  --measure-thesis: 1040px;  /* thesis h2 editorial line-length — the one unnamed measure between col-2 (840) and content (1280); single use, .thesis h2 (conformance pass 2026-06-21). */
+  --measure-note:   480px;  /* the contained-overlay measure — the glass note (.gnote, clamped min(…,55cqw)) + the dialog modal cap; 4×s-6 (conformance pass 2026-06-23, was a 480px literal ×2). */
+  --gutter:         40px;  /* the 40-law */
+  --s-1:            8px;
+  --s-2:            16px;
+  --s-3:            24px;
+  --s-4:            40px;
+  --s-5:            80px;
+  --s-6:            120px;
+  --stage:          480px;  /* the canon specimen-stage height — 4×s-6; the OHM stage · .c-stage.h480 · the palette (Figma 525:28 APPROVED). Conformance pass 2026-06-23: was a 480px literal ×4, lint-blind. */
+  --stage-half:     240px;  /* the half stage — 2×s-6; .c-stage.h240 */
+  --stage-phone:    360px;  /* the stage at the phone breakpoint — 3×s-6 (D-020); .c-stage.h480 + .ohm-stage shrink to this under the monolith @container */
+  --radius-print:   0;  /* 0 print · capsule glass */
+  --radius-capsule: 999px;  /* the capsule — the pill / toggle / radio / toast glass shape; the one large radius, NAMED (conformance pass 2026-06-23: was an 8× freelanced 999px literal the lint could not see) */
+
+  /* —— grid law · spacing canon —— */
+  --grid-unit:           40px;  /* the atom — equals --gutter / --s-4 / --space-3 */
+  --grid-half:           20px;  /* half unit — nav gap · control padding · --space-2 */
+  --space-2:             20px;  /* title-to-body · field gap · nav wrap rhythm · the --space family is PUBLIC API — consumed through the live stylesheet by external HHG surfaces (consumer check 2026-07-10); never prune it on an internal-only count */
+  --space-3:             40px;  /* grid unit · card gap · row gap */
+  --space-4:             80px;  /* major internal block · header min-height */
+  --space-5:             120px;  /* section breath · three grid units */
+  --section-gap:         120px;  /* major sections separate by three grid units — equals --s-6 / --space-5 */
+  --subsection-gap:      80px;  /* sub-block rhythm within one section — the section/subsection hierarchy companion to section-gap; shares --space-4's value by design but names an independent semantic axis from section-gap-tight (which governs archive-section DENSITY, not intra-section hierarchy) */
+  --section-gap-tight:   80px;  /* archive sections — equals --s-5 / --space-4 */
+  --section-gap-loose:   160px;  /* four grid units — the machine appendix + the IM floors (data-density=loose; his 'more air about the main titles' ruling 2026-07-22) */
+  --cluster-in:          8px;  /* THE CLUSTER LAW · the head joint — kicker→title · title→subtitle (=--s-1; his ruling 2026-07-22: the card cluster is the law, subtitles never drift) */
+  --cluster-card:        16px;  /* THE CLUSTER LAW · card name→body · card ¶ rhythm (=--s-2) */
+  --cluster-body:        24px;  /* THE CLUSTER LAW · subtitle→body · passage ¶ rhythm · sub-title→content · image→first-text · body→coda/footnotes (=--s-3) */
+  --cluster-stage:       40px;  /* THE CLUSTER LAW · head→staged block (grid/image row) · staged block→staged block within a floor (=--s-4, the atom as a joint) */
+  --cluster-exit:        80px;  /* THE CLUSTER LAW · THE EXIT — a body block stands off whatever follows (=--s-5; kills the 40–64 ad-hoc 'too little after body' slop, ruling 2026-07-22) */
+  --column-unit:         400px;  /* alias --col */
+  --gutter-unit:         40px;  /* alias --gutter */
+  --viewport-desktop:    1280px;  /* 3×400 + 2×40 gutters — equals --content */
+  --viewport-tablet:     840px;  /* 2×400 + 1×40 gutter — equals --col-2 */
+  --viewport-mobile:     400px;  /* one canonical column */
+  --viewport-phone-safe: 360px;  /* 400 compresses only under viewport pressure (D-020) — equals --stage-phone */
+  --viewport-thumb:      180px;  /* preview module only */
+  --measure-reading:     680px;  /* readable text measure — not grid container */
+  --measure-caption:     400px;  /* caption measure — equals --col */
+
+  /* —— formatting frame · Figma 491:618 —— */
+  --frame-step:         40px;  /* overflow increment — every band grows by this step when copy does not fit */
+  --frame-row-label:    40px;  /* label row · mono m6 · line-height 2 */
+  --frame-row-display:  80px;  /* display row · serif-display · line-height 1 · elastic base */
+  --frame-row-h0:       80px;  /* H0 row · serif-h0 48 vertically centered in the 80 band (Figma 844:14 draws it centered — 16/16, so the head joint reads 24 optical) · elastic base */
+  --frame-row-heading:  40px;  /* section heading row · serif-page-title 24 · line-height 1 */
+  --frame-row-body:     80px;  /* body / lede row · serif-body-1 · elastic base */
+  --frame-row-body-col: 200px;  /* about-column body floor · 400w col · elastic base */
+  --frame-hero-h:       200px;  /* hero block floor · 40 + 80 + 80 · (--frame-section-h 160 + --frame-about-h 288 STRUCK 2026-07-22, the cluster-law bake: pre-cluster headroom floors that returned as ambient dead air under every tightened head — consumers zeroed them per-section, which is how drift re-arms; the head cluster floors itself now) */
+
+  /* —— glass · shadow · signal —— */
+  --glass-alpha: var(--glass-alpha, 0.6);  /* α var · live (JS-overridable, falls back 0.6) */
+  --glass-blur:  12px;
+  --glass-tint:  rgba(255, 255, 255, 0.4);
+  --glass-stage: #000000;  /* the HUB BACKGROUND · pure black (his ruling 2026-07-10; supersedes the #181818 near-black — Figma 790:13 was a starting point, not the final word) */
+  --shadow-spec: 0 12px 32px -10px rgba(21, 0, 51, 0.16);  /* the canon glass shadow (D-017) */
+  --signal-go:   #8E00FF;  /* go · light */
+  --signal-attn: #3600DA;  /* attn · dark */
+  --signal-live: #2CFF05;  /* live pulse · green · SPECIAL OCCASIONS ONLY, where function is needed (his 2026-06-25); reads on --glass-stage, never on paper */
+}
