@@ -1,0 +1,81 @@
+/* ============================================================================
+   print.css — EPOQ IIII · THE PRINT REGISTER · SUBMARINE SPECIFICATION
+   The paged-media application of the token spine: A4 ink-on-paper, the six
+   styles at pt scale (px × 0.75 — the same ladder in the print unit).
+   Print is the record; glass is the live layer.
+   ========================================================================== */
+
+@page {
+  size: A4;             /* 210 × 297 mm — the record's sheet */
+  margin: 16mm 14mm;    /* outer margin rail */
+}
+
+@media print {
+  :root {
+    --fz-h0:         36pt;  /* 48px × 0.75 */
+    --fz-display:    27pt;  /* 36px × 0.75 */
+    --fz-page-title: 18pt;  /* 24px × 0.75 */
+    --fz-heading-3:  12pt;  /* 16px × 0.75 */
+    --fz-body-1:     10.5pt;  /* 14px × 0.75 */
+    --fz-serif-8:    6.75pt;  /* 9px × 0.75 */
+    --fz-mono-6:     5.25pt;  /* 7px × 0.75 */
+    --fz-mono-cli:   10.5pt;  /* 14px × 0.75 */
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── HIDE SCREEN-ONLY INTERACTION CHROME ── */
+  header.epoq-header,
+  footer.canon-footer,
+  .status-bar,
+  .deck-chrome,
+  .deck-footer,
+  .web-nav,
+  .f-rail,
+  nav,
+  button,
+  .btn,
+  .cursor,
+  .top,
+  .top-row2,
+  .cmdk-overlay {
+    display: none !important;
+  }
+
+  /* ── PAGINATION & ATOM PRESERVATION ── */
+  .container-tile,
+  .svg-plate,
+  .contract-section,
+  .sign-docket,
+  .letter-signoff {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .slide-canvas {
+    display: flex !important;
+    page-break-after: always;
+    width: 100% !important;
+    height: auto !important;
+    border: none !important;
+  }
+
+  /* Expand stage containers to full printable width */
+  .stage, .canvas, .frame, .epoq-container, .letter-sheet, .contract-sheet {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+}

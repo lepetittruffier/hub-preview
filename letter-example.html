@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formal Correspondence Letter — EPOQ IIII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400&family=Scheherazade+New:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" media="print" href="./print.css">
+<style>
+/* ── FORMAL CORRESPONDENCE STYLESHEET (A4 BOUND) ── */
+.letter-stage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: var(--s-5) var(--gutter);
+  background: var(--paper);
+}
+
+.letter-sheet {
+  width: 100%;
+  max-width: var(--col-2); /* 800px nominal two-column spine */
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Formal Header Block */
+.letter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: var(--s-4);
+  border-bottom: var(--hairline) solid var(--line-box);
+  margin-bottom: var(--s-5);
+}
+
+.letter-brand {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.letter-brand .org-name {
+  font-size: var(--fz-heading-3);
+  font-family: var(--font-serif);
+  display: block;
+  margin-bottom: var(--s-1);
+  letter-spacing: normal;
+}
+
+.letter-meta {
+  text-align: right;
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--ink-60);
+  line-height: 1.6;
+}
+
+/* Recipient and Reference */
+.letter-recipient-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+  margin-bottom: var(--s-5);
+}
+
+.recipient-block {
+  font-size: var(--fz-body-1);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.recipient-block .attn {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  color: var(--ink-40);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--s-1);
+}
+
+.docket-block {
+  border: var(--hairline) solid var(--line-quiet);
+  padding: var(--s-2) var(--s-3);
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  line-height: 1.6;
+  color: var(--ink-60);
+}
+
+.docket-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.docket-row span:last-child {
+  color: var(--ink);
+}
+
+/* Subject line */
+.letter-subject {
+  margin-bottom: var(--s-4);
+  padding-bottom: var(--s-2);
+  border-bottom: var(--hairline) solid var(--line-quiet);
+}
+
+.letter-subject h1 {
+  font-size: var(--fz-page-title);
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Body Copy */
+.letter-body {
+  font-size: var(--fz-body-1);
+  line-height: 1.6;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  margin-bottom: var(--s-6);
+}
+
+.letter-body p {
+  margin: 0;
+}
+
+/* Formal Sign-off & Seal */
+.letter-signoff {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: var(--hairline) solid var(--line-quiet);
+  padding-top: var(--s-4);
+  margin-top: auto;
+}
+
+.signoff-text {
+  font-size: var(--fz-body-1);
+  line-height: 1.4;
+}
+
+.signoff-signature {
+  font-family: var(--font-serif);
+  font-size: var(--fz-heading-3);
+  margin: var(--s-2) 0 var(--s-1) 0;
+}
+
+.signoff-title {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-60);
+}
+
+.signoff-seal {
+  width: var(--s-5); /* 80px nominal seal */
+  height: var(--s-5);
+  border: var(--hairline) solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  padding: var(--s-1);
+  box-sizing: border-box;
+}
+
+.signoff-seal .seal-glyph {
+  font-size: var(--fz-page-title);
+  line-height: 1;
+  margin-bottom: var(--s-1);
+  color: var(--signal-go);
+}
+</style>
+</head>
+<body>
+
+<div class="letter-stage">
+  <article class="letter-sheet">
+
+    <!-- ── FORMAL LETTERHEAD ── -->
+    <header class="letter-header">
+      <div class="letter-brand">
+        <span class="org-name">Hægg &amp; Hægg Group // Intelligence Matters</span>
+        <span>SOVEREIGN ARCHITECTURE &amp; APPLIED DESIGN ARM</span><br>
+        <span>STOCKHOLM · SVERIGE</span>
+      </div>
+      <div class="letter-meta">
+        <div>DATUM: 2026-10-08</div>
+        <div>STOCKHOLM LOCAL TIME</div>
+        <div>SPEC: EPOQ-IIII-CANON</div>
+      </div>
+    </header>
+
+    <!-- ── RECIPIENT & DOCKET ── -->
+    <section class="letter-recipient-grid">
+      <div class="recipient-block">
+        <span class="attn">DELIVERED TO // PRINCIPAL</span>
+        <span>Client Executive Directorate</span><br>
+        Global Brand Operations<br>
+        Stockholm / International
+      </div>
+      <div class="docket-block">
+        <div class="docket-row">
+          <span>RECORD REF:</span>
+          <span>DOC-2026-LET-001</span>
+        </div>
+        <div class="docket-row">
+          <span>CLASSIFICATION:</span>
+          <span>SOVEREIGN EXECUTIVE MEMORANDUM</span>
+        </div>
+        <div class="docket-row">
+          <span>AUTHENTICITY:</span>
+          <span>VERIFIED BY HARVEST</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SUBJECT LINE ── -->
+    <section class="letter-subject">
+      <span class="mono m6 ann" style="color:var(--signal-go); display:block; margin-bottom:var(--s-1);">MEMORANDUM REGARDING THE SYSTEM</span>
+      <h1>Formal Accession of the EPOQ IIII Design System Substrate</h1>
+    </section>
+
+    <!-- ── BODY CORRESPONDENCE ── -->
+    <section class="letter-body">
+      <p>Dear Partners,</p>
+
+      <p>We submit herewith the formal accession record for the EPOQ IIII design system architecture. This substrate replaces legacy interface frameworks with a rigid, mathematical standard governed by deterministic CI verification.</p>
+
+      <p>Modern design implementations carry unacceptable decorative debt: arbitrary pill-shaped corner radii, uncalibrated variable font weights, and GPU-intensive shadow simulations that fail on high-precision display media. Under the EPOQ IIII canon, all corner radii evaluate strictly to zero degrees, typography is restricted to single-weight 400 purity, and structural hierarchy is driven purely by the spatial grid.</p>
+
+      <p>This living document is authored in plain, standard HTML. It requires no proprietary document readers, no compilation to PDF runtimes, and guarantees 200-meter submarine-grade fidelity when rendered on physical A4 sheets or 4K workstations.</p>
+
+      <p>Should your technical team require integration endpoints for the Hub workstation or procedural presentation decks, the repository is accessible via the sovereign read door.</p>
+    </section>
+
+    <!-- ── SIGN-OFF & FORENSIC SEAL ── -->
+    <footer class="letter-signoff">
+      <div class="signoff-text">
+        <span>Respectfully transmitted,</span>
+        <div class="signoff-signature">Jacob Hägg</div>
+        <div class="signoff-title">Principal Art Director · Hægg &amp; Hægg Group</div>
+        <div class="mono m6" style="color:var(--ink-40); margin-top:var(--s-1);">KEY ID: 0x4E91C780 · VERIFIED HARVEST LEDGER</div>
+      </div>
+      <div class="signoff-seal">
+        <span class="seal-glyph">Θ</span>
+        <span>SOVEREIGN<br>VERIFIED<br>2026</span>
+      </div>
+    </footer>
+
+  </article>
+</div>
+
+</body>
+</html>

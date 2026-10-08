@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intelligence Matters — Sovereign Design Substrate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400&family=Scheherazade+New:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" media="print" href="./print.css">
+<style>
+/* ══════════════════════════════════════════════════════════════════════
+   EPOQ IIII · SOVEREIGN COMPANY WEBSITE ARCHETYPE
+   Sovereign 2-row chrome, capabilities pillars, case studies, telemetry.
+   ══════════════════════════════════════════════════════════════════════ */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-synthesis: none;
+}
+
+/* ── 2-ROW SOVEREIGN SITE CHROME ── */
+.site-chrome {
+  background: var(--paper);
+  border-bottom: var(--hairline) solid var(--line-box);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-chrome-row1 {
+  display: flex;
+  align-items: center;
+  height: 40px; /* canon-lint:allow — E19: chrome row height (40 grid) */
+  padding: 0 var(--s-3);
+  border-bottom: var(--hairline) solid var(--line-quiet);
+  gap: var(--s-2);
+}
+
+.site-chrome-row2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px; /* canon-lint:allow — E19: subbar row height (40 grid: 40+40=80px total) */
+  padding: 0 var(--s-3);
+  background: var(--paper);
+}
+
+.site-brand {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+}
+
+.site-brand .dot {
+  color: var(--signal-go);
+}
+
+.site-nav {
+  margin-left: var(--s-4);
+  display: flex;
+  gap: var(--s-3);
+}
+
+.site-nav-link {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-60);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.site-nav-link:hover {
+  color: var(--ink);
+}
+
+.site-btn-intake {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink);
+  border: var(--hairline) solid var(--line-quiet);
+  padding: var(--s-1) var(--s-2);
+  cursor: pointer;
+  border-radius: var(--radius-print);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.site-btn-intake:hover {
+  border-color: var(--ink);
+  background: var(--line-quiet);
+}
+
+/* ── CONTAINER WRAPPER ── */
+.site-frame {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ── HERO STAGE ── */
+.site-hero {
+  padding-block: var(--s-6) var(--s-5);
+  border-bottom: var(--hairline) solid var(--line-box);
+}
+
+.site-hero-kicker {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--signal-go);
+  margin-bottom: var(--s-3);
+}
+
+.site-hero-title {
+  font-size: var(--fz-h0);
+  line-height: 1.1;
+  margin: 0 0 var(--s-3) 0;
+  font-weight: 400;
+  max-width: var(--col-2);
+}
+
+.site-hero-lead {
+  font-size: var(--fz-page-title);
+  line-height: 1.4;
+  color: var(--ink-60);
+  max-width: var(--col-2);
+  margin: 0 0 var(--s-4) 0;
+}
+
+/* ── SECTION MARK HEADINGS ── */
+.site-section {
+  padding-block: var(--s-6);
+  border-bottom: var(--hairline) solid var(--line-box);
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--s-4);
+  border-bottom: var(--hairline) solid var(--line-quiet);
+  padding-bottom: var(--s-2);
+}
+
+.section-code {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--signal-go);
+}
+
+.section-title {
+  font-size: var(--fz-heading-3);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ── 3-COLUMN CAPABILITIES GRID ── */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+}
+
+.pillar-card {
+  border: var(--hairline) solid var(--line-box);
+  padding: var(--s-4);
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-card-title {
+  font-size: var(--fz-heading-3);
+  margin: var(--s-2) 0 var(--s-2) 0;
+  font-weight: 400;
+}
+
+.pillar-card-text {
+  font-size: var(--fz-body-1);
+  line-height: 1.5;
+  color: var(--ink-60);
+  margin: 0 0 var(--s-3) 0;
+  flex: 1;
+}
+
+/* ── SELECTED CASES GRID ── */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+}
+
+.case-card {
+  border: var(--hairline) solid var(--line-box);
+  display: flex;
+  flex-direction: column;
+}
+
+.case-media {
+  height: var(--stage-half);
+  border-bottom: var(--hairline) solid var(--line-quiet);
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.case-media img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.case-content {
+  padding: var(--s-3);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.case-title {
+  font-size: var(--fz-heading-3);
+  margin: 0 0 var(--s-1) 0;
+  font-weight: 400;
+}
+
+.case-summary {
+  font-size: var(--fz-body-1);
+  line-height: 1.4;
+  color: var(--ink-60);
+  margin: 0 0 var(--s-3) 0;
+}
+
+/* ── THE PLAIN DOOR (INTAKE FORM) ── */
+.intake-box {
+  border: var(--hairline) solid var(--line-box);
+  padding: var(--s-4);
+  max-width: var(--col-2);
+  margin: 0 auto;
+}
+
+.intake-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--s-3);
+}
+
+.intake-label {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-40);
+  margin-bottom: var(--s-1);
+}
+
+.intake-input, .intake-textarea {
+  font-family: var(--mono);
+  font-size: var(--fz-body-1);
+  color: var(--ink);
+  background: var(--paper);
+  border: var(--hairline) solid var(--line-quiet);
+  padding: var(--s-2);
+  outline: none;
+  border-radius: var(--radius-print);
+}
+
+.intake-input:focus, .intake-textarea:focus {
+  border-color: var(--ink);
+}
+
+.intake-submit {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  padding: var(--s-2) var(--s-4);
+  cursor: pointer;
+  border-radius: var(--radius-print);
+}
+
+/* ── SITE FOOTER (80PX ON 40 GRID) ── */
+.site-footer {
+  height: 80px; /* canon-lint:allow — E19: footer height (40 grid: 2x40) */
+  border-top: var(--hairline) solid var(--line-box);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+
+<!-- ── 2-ROW SOVEREIGN HEADER ── -->
+<header class="site-chrome">
+  <div class="site-chrome-row1">
+    <a href="./" class="site-brand">
+      <span>INTELLIGENCE MATTERS</span>
+      <span class="dot">·</span>
+      <span class="mono m6 ann">SOVEREIGN DESIGN ARM</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#capabilities" class="site-nav-link">Capabilities</a>
+      <a href="#cases" class="site-nav-link">Cases</a>
+      <a href="#telemetry" class="site-nav-link">Telemetry</a>
+      <a href="#intake" class="site-nav-link">Intake</a>
+    </nav>
+    <a href="#intake" class="site-btn-intake">+ Plain Door</a>
+  </div>
+  <div class="site-chrome-row2">
+    <span class="mono m6 ann">STOCKHOLM // RUNNING UNDER EPOQ IIII RIGID CANON</span>
+    <span class="mono m6 ann">200M SUBMARINE WATERPROOF GRADE</span>
+  </div>
+</header>
+
+<div class="site-frame">
+
+  <!-- ── HERO STAGE ── -->
+  <section class="site-hero">
+    <div class="site-hero-kicker">EPOQ IIII // THE SYSTEM AS PRODUCT</div>
+    <h1 class="site-hero-title">Rigid mathematical design systems for high-stakes intelligence.</h1>
+    <p class="site-hero-lead">We engineer sovereign visual substrates: zero corner radius, single-weight 400 typographic purity, and automated 19-gate verification. Plain HTML. Zero runtime debt.</p>
+    <a href="#intake" class="intake-submit" style="display:inline-block; text-decoration:none;">Engage the Applied Arm ›</a>
+  </section>
+
+  <!-- ── SECTION 01: CAPABILITIES ── -->
+  <section class="site-section" id="capabilities">
+    <div class="section-head">
+      <span class="section-code">001_CAPABILITIES</span>
+      <h2 class="section-title">The Three Production Pillars</h2>
+    </div>
+    <div class="pillars-grid">
+      <article class="pillar-card">
+        <span class="mono m6 ann" style="color:var(--signal-go);">PILLAR 01 // INTERFACE</span>
+        <h3 class="pillar-card-title">Sovereign Workstations</h3>
+        <p class="pillar-card-text">Custom multi-agent cockpits, real-time telemetry streams, and REPL control surfaces compiled into sub-50KB static HTML payloads.</p>
+        <div class="spec-rail mono m6">
+          <span class="family">format</span>
+          <span>Hub Cockpit · Port 3002</span>
+        </div>
+      </article>
+
+      <article class="pillar-card">
+        <span class="mono m6 ann" style="color:var(--signal-go);">PILLAR 02 // FORMATS</span>
+        <h3 class="pillar-card-title">Procedural Formats</h3>
+        <p class="pillar-card-text">Aspect-ratio locked 16:9 keynote presentations, formal executive correspondence, and bilateral legal contracts calibrated for A4 sheet printing.</p>
+        <div class="spec-rail mono m6">
+          <span class="family">format</span>
+          <span>16:9 Decks · A4 Print Register</span>
+        </div>
+      </article>
+
+      <article class="pillar-card">
+        <span class="mono m6 ann" style="color:var(--signal-go);">PILLAR 03 // RIGOR</span>
+        <h3 class="pillar-card-title">Deterministic Gates</h3>
+        <p class="pillar-card-text">CI turnstile pipelines enforcing 19 AST grammar rules, figma design token parity, and single-weight font purity before code can ship.</p>
+        <div class="spec-rail mono m6">
+          <span class="family">format</span>
+          <span>canon-lint · Zero Drift</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── SECTION 02: SELECTED CASES ── -->
+  <section class="site-section" id="cases">
+    <div class="section-head">
+      <span class="section-code">002_PORTFOLIO</span>
+      <h2 class="section-title">Selected Applied Commissions</h2>
+    </div>
+    <div class="cases-grid">
+      <article class="case-card">
+        <div class="case-media">
+          <img src="identity/theta-construction.svg" alt="Oakley Case Study">
+        </div>
+        <div class="case-content">
+          <span class="mono m6 ann" style="color:var(--signal-go); margin-bottom:var(--s-1);">CASE 001 // FOOTWEAR</span>
+          <h3 class="case-title">Oakley Advanced Concepts</h3>
+          <p class="case-summary">Full 3D specimen workbench, unified case file, and forensic motion engine for prototype footwear exploration.</p>
+          <div class="spec-rail mono m6">
+            <span class="family">status</span>
+            <span>Acceded · Deliverable #623</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-media">
+          <img src="circles/sphere-contour.svg" alt="Negative Space Case Study">
+        </div>
+        <div class="case-content">
+          <span class="mono m6 ann" style="color:var(--signal-go); margin-bottom:var(--s-1);">CASE 002 // ART VENUE</span>
+          <h3 class="case-title">Negative Space Gallery</h3>
+          <p class="case-summary">Autonomous 3D GLB minting pipeline, enterprise digital art installations, and spatial venue orchestration.</p>
+          <div class="spec-rail mono m6">
+            <span class="family">status</span>
+            <span>Live Exhibition · Studio Pipeline</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <div class="case-media">
+          <img src="circles/sphere-glyphraster.svg" alt="Calleoke Case Study">
+        </div>
+        <div class="case-content">
+          <span class="mono m6 ann" style="color:var(--signal-go); margin-bottom:var(--s-1);">CASE 003 // AUDIO OS</span>
+          <h3 class="case-title">Calleoke Roadmap</h3>
+          <p class="case-summary">Interactive sprint task board, priority tiers, and audio telemetry backdrop calibration under EPOQ 3.58.1.</p>
+          <div class="spec-rail mono m6">
+            <span class="family">status</span>
+            <span>PR #646 Merged · Production</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── SECTION 03: LIVE TELEMETRY ── -->
+  <section class="site-section" id="telemetry">
+    <div class="section-head">
+      <span class="section-code">003_TELEMETRY</span>
+      <h2 class="section-title">Continuous Organism Telemetry</h2>
+    </div>
+    <div class="pillar-card" style="padding:var(--s-3);">
+      <div class="mono m6 ann" style="margin-bottom:var(--s-2); display:flex; justify-content:space-between;">
+        <span>SYSTEM LOG // LIVE REPL SPRAY</span>
+        <span style="color:var(--signal-live);">● 19/19 GATES GREEN</span>
+      </div>
+      <pre class="mono m6" style="margin:0; line-height:1.6; color:var(--ink);">[07:14:02] &lt;SYSTEM&gt;    Sovereign workstation mounted at /components (PR #648 verified)
+[07:14:18] &lt;ATELIER&gt;   Pressing hub atoms: 39 components matched against system.json token spine
+[07:14:35] &lt;TURNSTILE&gt; Running canon-lint: 0 errors · 0 warnings · single weight verified
+[07:14:50] &lt;HARVEST&gt;   Continuous organism active — zero lingering debt</pre>
+    </div>
+  </section>
+
+  <!-- ── SECTION 04: THE PLAIN DOOR (INTAKE) ── -->
+  <section class="site-section" id="intake" style="border-bottom:none;">
+    <div class="section-head">
+      <span class="section-code">004_INTAKE</span>
+      <h2 class="section-title">The Plain Door // Direct Inquiry</h2>
+    </div>
+    <div class="intake-box">
+      <div class="intake-field">
+        <label class="intake-label">ORGANIZATION // PRINCIPAL</label>
+        <input type="text" class="intake-input" placeholder="e.g. Acme Advanced Concepts">
+      </div>
+      <div class="intake-field">
+        <label class="intake-label">CORRESPONDENCE CONTACT</label>
+        <input type="email" class="intake-input" placeholder="principal@organization.com">
+      </div>
+      <div class="intake-field">
+        <label class="intake-label">COMMISSION SCOPE // BRIEF CONTEXT</label>
+        <textarea rows="4" class="intake-textarea" placeholder="Describe the design system requirement, workstation need, or procedural deck commission..."></textarea>
+      </div>
+      <button type="button" class="intake-submit">Transmit to the Door ›</button>
+    </div>
+  </section>
+
+  <!-- ── SOVEREIGN FOOTER ── -->
+  <footer class="site-footer">
+    <div class="mono m6 ann">
+      <span>INTELLIGENCE MATTERS // HÆGG &amp; HÆGG GROUP</span><br>
+      <span>STOCKHOLM, SWEDEN · 2026 CANON</span>
+    </div>
+    <div class="mono m6 ann" style="text-align:right;">
+      <a href="https://www.intelligencematters.se/epoq/" style="color:var(--signal-go); text-decoration:none;">VOCABULARY &amp; TOKEN SPECIFICATION ↗</a><br>
+      <span>RECORD HASH: 4e91c780 · HARVEST ACTIVE</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

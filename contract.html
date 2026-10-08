@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statement of Work & Master Agreement — EPOQ IIII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400&family=Scheherazade+New:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" media="print" href="./print.css">
+<style>
+/* ── LEGAL AGREEMENT & SOW STYLESHEET (A4 BOUND) ── */
+.contract-stage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: var(--s-5) var(--gutter);
+  background: var(--paper);
+}
+
+.contract-sheet {
+  width: 100%;
+  max-width: var(--col-2); /* 800px nominal two-column spine */
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Formal Contract Header */
+.contract-header {
+  border-bottom: var(--hairline) solid var(--line-box);
+  padding-bottom: var(--s-4);
+  margin-bottom: var(--s-4);
+}
+
+.contract-kicker {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--signal-go);
+  margin-bottom: var(--s-1);
+}
+
+.contract-title {
+  font-size: var(--fz-page-title);
+  line-height: 1.15;
+  margin: 0 0 var(--s-2) 0;
+  font-weight: 400;
+}
+
+.contract-parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+  margin-top: var(--s-3);
+  padding-top: var(--s-3);
+  border-top: var(--hairline) solid var(--line-quiet);
+}
+
+.party-box {
+  font-size: var(--fz-body-1);
+  line-height: 1.4;
+}
+
+.party-role {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-caps);
+  color: var(--ink-40);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--s-1);
+}
+
+/* Numbered Clauses */
+.contract-section {
+  margin-bottom: var(--s-4);
+}
+
+.clause-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-2);
+  margin-bottom: var(--s-2);
+  border-bottom: var(--hairline) solid var(--line-quiet);
+  padding-bottom: var(--s-1);
+}
+
+.clause-num {
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--signal-go);
+}
+
+.clause-title {
+  font-size: var(--fz-heading-3);
+  margin: 0;
+  font-weight: 400;
+}
+
+.clause-body {
+  font-size: var(--fz-body-1);
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 var(--s-2) 0;
+}
+
+/* Deliverables Table */
+.deliverables-table {
+  width: 100%;
+  border: var(--hairline) solid var(--line-quiet);
+  margin: var(--s-3) 0;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+}
+
+.deliverables-table th,
+.deliverables-table td {
+  padding: var(--s-2);
+  text-align: left;
+  border-bottom: var(--hairline) solid var(--line-quiet);
+  border-right: var(--hairline) solid var(--line-quiet);
+}
+
+.deliverables-table th:last-child,
+.deliverables-table td:last-child {
+  border-right: none;
+}
+
+.deliverables-table th {
+  background: var(--paper);
+  color: var(--ink-40);
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+}
+
+/* Bilateral Signing Docket */
+.sign-docket {
+  border: var(--hairline) solid var(--line-box);
+  margin-top: var(--s-5);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sign-box {
+  padding: var(--s-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-box + .sign-box {
+  border-left: var(--hairline) solid var(--line-box);
+}
+
+.sign-line {
+  margin-top: var(--s-5);
+  border-bottom: var(--hairline) solid var(--ink);
+  padding-bottom: var(--s-1);
+}
+</style>
+</head>
+<body>
+
+<div class="contract-stage">
+  <article class="contract-sheet">
+
+    <!-- ── CONTRACT IDENTIFICATION ── -->
+    <header class="contract-header">
+      <div class="contract-kicker">DOC-2026-SOW-001 // BINDING COVENANT</div>
+      <h1 class="contract-title">Master Design Services Agreement &amp; Statement of Work</h1>
+      <div class="mono m6 ann">REGIME: EPOQ IIII SOVEREIGN SUBSTRATE // STOCKHOLM GOVERNING JURISDICTION</div>
+
+      <div class="contract-parties">
+        <div class="party-box">
+          <span class="party-role">SERVICE PROVIDER // APPLIED ARM</span>
+          <span>Hægg &amp; Hægg Group AB</span><br>
+          Intelligence Matters Studio<br>
+          Stockholm, Sweden
+        </div>
+        <div class="party-box">
+          <span class="party-role">CLIENT PRINCIPAL // RECIPIENT</span>
+          <span>Oakley Global Product Design</span><br>
+          Footwear &amp; Advanced Concepts<br>
+          Foothill Ranch, California
+        </div>
+      </div>
+    </header>
+
+    <!-- ── SECTION 01: ENGAGEMENT SCOPE ── -->
+    <section class="contract-section">
+      <div class="clause-head">
+        <span class="clause-num">§1.0</span>
+        <h2 class="clause-title">Scope of Engagement &amp; Design Architecture</h2>
+      </div>
+      <p class="clause-body">Provider shall engineer, compile, and accession a sovereign design system customized for Client’s advanced product pipeline. The deliverable encompasses three primary media surfaces: (a) 16:9 Procedural Presentation Decks, (b) Formal Executive Correspondence &amp; Contracts, and (c) Live High-Density Workstation Telemetry Interfaces.</p>
+    </section>
+
+    <!-- ── SECTION 02: DELIVERABLES TABLE ── -->
+    <section class="contract-section">
+      <div class="clause-head">
+        <span class="clause-num">§2.0</span>
+        <h2 class="clause-title">Deliverables Schedule &amp; Specifications</h2>
+      </div>
+      <table class="deliverables-table">
+        <thead>
+          <tr>
+            <th>PHASE</th>
+            <th>DELIVERABLE ITEM</th>
+            <th>SPECIFICATION STANDARD</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PHASE 01</td>
+            <td>Client Token DNA</td>
+            <td>system.json · 107 tokens conforming to E1-E24</td>
+            <td>ACCEPTED</td>
+          </tr>
+          <tr>
+            <td>PHASE 02</td>
+            <td>Keynote Deck (16:9)</td>
+            <td>deck.html · 6 archetypes, aspect-ratio locked</td>
+            <td>STAGED</td>
+          </tr>
+          <tr>
+            <td>PHASE 03</td>
+            <td>Executive Dossier &amp; SOW</td>
+            <td>document.html · A4 print media calibrated</td>
+            <td>ACTIVE</td>
+          </tr>
+          <tr>
+            <td>PHASE 04</td>
+            <td>Workstation Cockpit</td>
+            <td>hub.html · 39 canonical interface atoms</td>
+            <td>SCHEDULED</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── SECTION 03: VERIFICATION GATES ── -->
+    <section class="contract-section">
+      <div class="clause-head">
+        <span class="clause-num">§3.0</span>
+        <h2 class="clause-title">Quality Assurance &amp; Deterministic Gates</h2>
+      </div>
+      <p class="clause-body">All code and visual surfaces shall pass the 19 automated canon-lint inspection gates without warning or error prior to client handoff. The deliverables are strictly devoid of third-party runtime frameworks, CSS-in-JS dependencies, or unauthorized font weights.</p>
+    </section>
+
+    <!-- ── SECTION 04: COMMERCIAL TERMS ── -->
+    <section class="contract-section">
+      <div class="clause-head">
+        <span class="clause-num">§4.0</span>
+        <h2 class="clause-title">Commercial Consideration &amp; Settlement</h2>
+      </div>
+      <p class="clause-body">The fixed fee for the completed accession and software licensing is net 30 days following digital transmission through the Cortex door. All payments shall be made in SEK or USD to the bank account specified in the accession receipt.</p>
+    </section>
+
+    <!-- ── BILATERAL EXECUTION DOCKET ── -->
+    <footer class="sign-docket">
+      <div class="sign-box">
+        <span class="party-role">AUTHORIZED SIGNATURE // PROVIDER</span>
+        <div class="sign-line">
+          <span style="font-family:var(--font-serif); font-size:var(--fz-heading-3);">Jacob Hägg</span>
+        </div>
+        <div class="mono m6 ann" style="margin-top:var(--s-1);">
+          FOR HÆGG &amp; HÆGG GROUP<br>
+          DATE: 2026-10-08 // STOCKHOLM
+        </div>
+      </div>
+      <div class="sign-box">
+        <span class="party-role">AUTHORIZED SIGNATURE // CLIENT</span>
+        <div class="sign-line">
+          <span style="font-family:var(--font-serif); font-size:var(--fz-heading-3);">Client Authorized Officer</span>
+        </div>
+        <div class="mono m6 ann" style="margin-top:var(--s-1);">
+          FOR OAKLEY ADVANCED CONCEPTS<br>
+          DATE: 2026-10-08 // CALIFORNIA
+        </div>
+      </div>
+    </footer>
+
+  </article>
+</div>
+
+</body>
+</html>
