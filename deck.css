@@ -1,7 +1,8 @@
 /* ══════════════════════════════════════════════════════════════════════
    EPOQ IIII · SOVEREIGN PRESENTATION DECK (16:9)
    Strict 40px grid chrome, 1-row header, site register footer,
-   closed box geometry, zero pill radius, surgical monochrome palette.
+   closed box geometry, zero pill radius, zero floating lines,
+   pure typographic buttons (no icons).
    ══════════════════════════════════════════════════════════════════════ */
 
 html, body {
@@ -180,7 +181,7 @@ html, body {
   line-height: var(--lh-serif-8);
   letter-spacing: var(--track-caps);
   text-transform: uppercase;
-  color: var(--ink-60);
+  color: var(--signal-go);
   margin: 0 0 var(--s-3) 0;
 }
 
@@ -201,11 +202,12 @@ html, body {
   margin: 0;
 }
 
-/* ── ARCHETYPE 2: SPLIT 50/50 SPECIMEN (009_WRITING STYLE) ── */
+/* ── ARCHETYPE 2: SPLIT 50/50 SPECIMEN ── */
 .slide-split .slide-body {
-  padding: 0;
+  padding: var(--s-3);
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: var(--s-3);
   height: 100%;
 }
 
@@ -216,11 +218,12 @@ html, body {
   justify-content: center;
   overflow: hidden;
   box-sizing: border-box;
+  border: var(--hairline) solid var(--line-box);
 }
 
 .slide-split-pane:first-child {
-  border-right: var(--hairline) solid var(--line-box);
   align-items: center;
+  background: var(--paper);
 }
 
 .slide-split-img {
@@ -231,9 +234,10 @@ html, body {
 
 /* ── ARCHETYPE 3: THREE PILLARS (CLOSED BOXES) ── */
 .slide-pillars .slide-body {
-  padding: 0;
+  padding: var(--s-3);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-3);
   height: 100%;
 }
 
@@ -242,33 +246,7 @@ html, body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-}
-
-.pillar-box + .pillar-box {
-  border-left: var(--hairline) solid var(--line-box);
-}
-
-.cx-plate {
-  margin: var(--s-2) 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.cx-plate pre {
-  margin: 0;
-  padding: var(--s-2) var(--s-3);
-  background: var(--paper);
   border: var(--hairline) solid var(--line-box);
-  font-family: var(--mono);
-  font-size: var(--fz-mono-6);
-  line-height: 1.5;
-  color: var(--ink);
-  overflow-x: auto;
-}
-
-.cx-plate-cap {
-  text-align: center;
-  margin-top: var(--s-1);
 }
 
 .pillar-kicker {
@@ -277,7 +255,7 @@ html, body {
   line-height: var(--lh-serif-8);
   letter-spacing: var(--track-caps);
   text-transform: uppercase;
-  color: var(--ink-40);
+  color: var(--signal-go);
   margin-bottom: var(--s-2);
 }
 
@@ -296,26 +274,24 @@ html, body {
   flex: 1;
 }
 
-/* ── ARCHETYPE 4: THE REFUSAL MATRIX (NO RANDOM DASHES, CLOSED BOXES) ── */
+/* ── ARCHETYPE 4: THE REFUSAL MATRIX (DISCRETE CLOSED CARDS) ── */
 .slide-matrix .slide-body {
-  padding: 0;
+  padding: var(--s-3);
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: var(--s-3);
   height: 100%;
 }
 
-.matrix-box {
+.matrix-card {
+  border: var(--hairline) solid var(--line-box);
   padding: var(--s-4);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
 
-.matrix-box + .matrix-box {
-  border-left: var(--hairline) solid var(--line-box);
-}
-
-.matrix-kicker {
+.matrix-card-head {
   font-family: var(--font-serif);
   font-size: var(--fz-serif-8);
   line-height: var(--lh-serif-8);
@@ -327,30 +303,31 @@ html, body {
   color: var(--ink);
 }
 
-.matrix-list {
+.matrix-card-body {
   display: flex;
   flex-direction: column;
   gap: var(--s-2);
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  flex: 1;
 }
 
-.matrix-item {
-  font-size: var(--fz-body-1);
-  line-height: 1.4;
+.matrix-card-row {
   display: flex;
-  align-items: baseline;
-  gap: var(--s-2);
+  flex-direction: column;
+  gap: 2px;
 }
 
-.matrix-tag {
+.matrix-card-title {
   font-family: var(--mono);
   font-size: var(--fz-mono-6);
   letter-spacing: var(--track-code);
   text-transform: uppercase;
-  color: var(--ink-40);
-  flex-shrink: 0;
+  color: var(--ink);
+}
+
+.matrix-card-desc {
+  font-size: var(--fz-body-1);
+  line-height: 1.4;
+  color: var(--ink-60);
 }
 
 /* ── ARCHETYPE 5: TELEMETRY SPECIMEN ── */
@@ -359,103 +336,93 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: var(--s-3);
-  box-sizing: border-box;
+  height: 100%;
 }
 
-.telemetry-row {
+.telemetry-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--s-2);
+  gap: var(--s-3);
 }
 
 .telemetry-card {
   border: var(--hairline) solid var(--line-box);
-  padding: var(--s-2);
+  padding: var(--s-3);
   display: flex;
   flex-direction: column;
-  background: var(--paper);
+  gap: var(--s-1);
 }
 
 .telemetry-card-val {
-  font-family: var(--mono);
-  font-size: var(--fz-page-title);
-  color: var(--ink);
+  font-size: var(--fz-h0);
   line-height: 1;
-  margin: var(--s-1) 0;
+  font-family: var(--font-serif);
+  margin: var(--s-2) 0;
 }
 
-.telemetry-terminal {
-  flex: 1;
-  background: var(--paper);
+.telemetry-terminal-card {
   border: var(--hairline) solid var(--line-box);
-  padding: var(--s-2) var(--s-3);
+  padding: var(--s-3);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.telemetry-terminal-card pre {
+  margin: 0;
   font-family: var(--mono);
   font-size: var(--fz-mono-6);
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--ink);
-  overflow-y: auto;
-  box-sizing: border-box;
 }
-
-.telemetry-line {
-  display: flex;
-  gap: var(--s-2);
-}
-
-.telemetry-ts { color: var(--ink-40); }
-.telemetry-tag { color: var(--ink-60); }
-.telemetry-msg { color: var(--ink); }
 
 /* ── ARCHETYPE 6: POSTER CLOSE ── */
 .slide-poster .slide-body {
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
   padding: var(--s-5);
 }
 
 .poster-title {
   font-size: var(--fz-display);
-  line-height: 1.1;
-  margin: 0 0 var(--s-3) 0;
+  line-height: 1;
+  margin: 0 0 var(--s-4) 0;
   font-weight: 400;
   letter-spacing: normal;
 }
 
 .poster-docket {
-  font-family: var(--font-serif);
-  font-size: var(--fz-serif-8);
-  line-height: var(--lh-serif-8);
-  letter-spacing: var(--track-caps);
-  text-transform: uppercase;
-  color: var(--ink-60);
-  border-top: var(--hairline) solid var(--line-box);
-  padding-top: var(--s-3);
   display: flex;
   gap: var(--s-4);
-  justify-content: center;
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
+  color: var(--ink-40);
+  text-transform: uppercase;
 }
 
 /* ── SITE REGISTER FOOTER (EXACTLY 40PX GRID) ── */
 .deck-footer {
-  height: var(--s-4); /* exactly 40px on the 40 grid */
   background: var(--paper);
   border-top: var(--hairline) solid var(--line-box);
+  height: var(--s-4); /* exactly 40px on the 40 grid */
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--gutter);
   flex-shrink: 0;
+  z-index: 100;
   box-sizing: border-box;
 }
 
 .deck-register-line {
-  font-family: var(--font-serif);
-  font-size: var(--fz-serif-8);
-  line-height: var(--lh-serif-8);
-  letter-spacing: var(--track-caps);
+  font-family: var(--mono);
+  font-size: var(--fz-mono-6);
+  letter-spacing: var(--track-code);
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--ink-40);
 }
 
 .deck-register-strip {
@@ -478,22 +445,11 @@ html, body {
 
 .deck-reg-link:hover {
   color: var(--ink);
-  border-color: var(--line-box);
+  border-color: var(--line-quiet);
 }
 
 .deck-reg-link.active {
   color: var(--ink);
-  border-color: var(--ink);
-}
-
-@media print {
-  .deck-chrome, .deck-footer { display: none !important; }
-  .deck-viewport { padding: 0 !important; }
-  .slide-canvas {
-    display: flex !important;
-    page-break-after: always;
-    width: 100vw !important;
-    height: 56.25vw !important;
-    border: none !important;
-  }
+  border-color: var(--line-box);
+  background: var(--line-quiet);
 }
