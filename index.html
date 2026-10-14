@@ -1122,7 +1122,46 @@ body {
   stroke-dashoffset: 0;
 }
 </style>
-</head>
+<!-- stage-ground:begin --><script id="stage-ground-boot">(function(){var r=document.documentElement,g;try{g=localStorage.getItem('epoq.ground')}catch(e){}if(g!=='stage'&&g!=='paper')g=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'stage':'paper';r.setAttribute('data-ground',g)})();</script><style id="stage-ground">
+/* THE STAGE: a dark ground on the Glass Stage v2 reading (github.com/lepetittruffier/glass-stage).
+   Every value is a canon token, mapped by role: the paper becomes the glass stage, the ink the paper's
+   white; field paper-62, ghost and rules grey-51, quiet lines graphite; a faint tint falls to the ground;
+   the flag takes signal-go, the locator hum; what enters, and the caret, take signal-live, the one live
+   thing. Glass turns to black glass at the same strength. The paper values are captured on :root so the
+   stage can read what it replaces; the canon's own dark parts (graphite pills, the CLI stage) keep the
+   paper values they were drawn with. The toggle is the canon's own switch. */
+:root { --stage-paper: var(--paper); --stage-ink: var(--ink); --stage-ink-60: var(--ink-60); --stage-ink-50: var(--ink-50); --stage-ink-40: var(--ink-40); --stage-ink-20: var(--ink-20); --stage-ink-12: var(--ink-12); --stage-ink-03: var(--ink-03); --stage-line-structural: var(--line-structural); --stage-line-box: var(--line-box); --stage-line-quiet: var(--line-quiet); --stage-signal-attn: var(--signal-attn); --stage-novel: var(--novel); --stage-dusk: var(--dusk); --stage-graphite: var(--graphite); --stage-glass-tint: var(--glass-tint); --stage-paper-62: var(--paper-62); --stage-paper-70: var(--paper-70); --stage-paper-82: var(--paper-82); --stage-paper-90: var(--paper-90); }
+html[data-ground="stage"] { background: var(--glass-stage); color-scheme: dark; }
+html[data-ground="stage"] body {
+  --paper: var(--glass-stage);
+  --ink: var(--stage-paper);
+  --ink-60: var(--stage-paper-62);
+  --ink-50: var(--stage-paper-62);
+  --ink-40: var(--grey-51);
+  --ink-20: var(--stage-graphite);
+  --ink-12: var(--stage-graphite);
+  --ink-03: var(--glass-stage);
+  --line-structural: var(--stage-paper-62);
+  --line-box: var(--grey-51);
+  --line-quiet: var(--stage-graphite);
+  --signal-attn: var(--signal-go);
+  --novel: var(--signal-live);
+  --dusk: var(--hum);
+  --graphite: var(--stage-paper-90);
+  --glass-tint: var(--stage-ink-40);
+  --paper-62: var(--stage-line-box);
+  --paper-70: color-mix(in srgb, var(--glass-stage) 70%, transparent);
+  --paper-82: color-mix(in srgb, var(--glass-stage) 82%, transparent);
+  --paper-90: color-mix(in srgb, var(--glass-stage) 90%, transparent);
+  caret-color: var(--signal-live);
+}
+html[data-ground="stage"] :where(.ctl-pill.ghost, .hub-mo-btn-row.is-live .ctl-btn.is-press-demo:not(.primary), #hub .ctl-chip.active, .hub-page .ctl-chip.active, .hub-spec-demo .ctl-chip.active, .hub-shell .ctl-chip.active, #hub .ctl-btn.primary, .hub-page .ctl-btn.primary, .hub-spec-demo .ctl-btn.primary, .hub-shell .ctl-btn.primary, #hub .ctl-btn:active:not(:disabled), .hub-page .ctl-btn:active:not(:disabled), .hub-spec-demo .ctl-btn:active:not(:disabled), .hub-shell .ctl-btn:active:not(:disabled), #controls .ctl-btn.primary, #controls .ctl-btn:active:not(:disabled), #controls .ctl-chip.active, .hub-glass-stage-field, .hub-graph-presence, .hub-graph-lane, .cli-stage--repl, .cli-statusbar, .cli-log, mark) { --paper: var(--stage-paper); --ink: var(--stage-ink); --ink-60: var(--stage-ink-60); --ink-50: var(--stage-ink-50); --ink-40: var(--stage-ink-40); --ink-20: var(--stage-ink-20); --ink-12: var(--stage-ink-12); --ink-03: var(--stage-ink-03); --line-structural: var(--stage-line-structural); --line-box: var(--stage-line-box); --line-quiet: var(--stage-line-quiet); --signal-attn: var(--stage-signal-attn); --novel: var(--stage-novel); --dusk: var(--stage-dusk); --graphite: var(--stage-graphite); --glass-tint: var(--stage-glass-tint); --paper-62: var(--stage-paper-62); --paper-70: var(--stage-paper-70); --paper-82: var(--stage-paper-82); --paper-90: var(--stage-paper-90); }
+html[data-ground="stage"] [fill="#000"] { fill: var(--ink); }
+html[data-ground="stage"] [stroke="#000"] { stroke: var(--ink); }
+html[data-ground="stage"] ::selection { background: var(--hum); color: var(--ink); }
+.ground-toggle { block-size: 0; align-self: center; }   /* the 20px switch rides the line's midline; no line grows */
+.ground-toggle > .mono { color: var(--ink-60); }
+</style><!-- stage-ground:end --></head>
 <body>
 
   <!-- ── PERSISTENT CHROME NAVIGATION BAR (2-ROW SOVEREIGN INSTRUMENT BAR) ── -->
@@ -1142,7 +1181,13 @@ body {
 
       <div class="hub-clock" id="hubClockDisplay" title="Europe/Stockholm official time">TUE 07 OCT · 12:35:00 · STOCKHOLM</div>
 
-      <button type="button" class="hub-seed-btn" id="hubSeedToggleBtn" onclick="toggleSeedDrawer();" title="Quick capture seed [S]">+ SEED</button>
+      
+        
+        
+        
+        
+        <label class="pix-ctl ground-toggle" title="Stage: the dark ground"><span class="mono m6">Stage</span><input type="checkbox" aria-label="Stage: the dark ground"><span class="pix-toggle" aria-hidden="true"><span class="lane"></span><span class="knob"></span></span></label>
+        <button type="button" class="hub-seed-btn" id="hubSeedToggleBtn" onclick="toggleSeedDrawer();" title="Quick capture seed [S]">+ SEED</button>
 
       <button type="button" class="hub-presence" id="hubOpPresenceBtn" onclick="cycleOperator();" title="Click to cycle active operator">
         <span class="hub-pdot live" id="hubPresenceDot"></span> <span id="currentOperator">OP1:JACOB</span> × CORTEX HUB
@@ -3975,5 +4020,5 @@ TEL_03: ACTOR: @SCOUT    · TASK: PIPELINE SEG  · RUNNING 12m
   })();
   </script>
 
-</body>
+<script id="stage-ground-toggle">(function(){var r=document.documentElement,K='epoq.ground';function set(g,keep){r.setAttribute('data-ground',g);document.querySelectorAll('.ground-toggle input').forEach(function(i){i.checked=g==='stage'});if(keep)try{localStorage.setItem(K,g)}catch(e){}}set(r.getAttribute('data-ground')==='stage'?'stage':'paper');document.addEventListener('change',function(e){var i=e.target;if(i&&i.closest&&i.closest('.ground-toggle'))set(i.checked?'stage':'paper',true)});window.addEventListener('storage',function(e){if(e.key===K&&(e.newValue==='stage'||e.newValue==='paper'))set(e.newValue)});var m=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');if(m&&m.addEventListener)m.addEventListener('change',function(e){var k;try{k=localStorage.getItem(K)}catch(x){}if(k!=='stage'&&k!=='paper')set(e.matches?'stage':'paper')})})();</script></body>
 </html>
